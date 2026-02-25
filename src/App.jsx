@@ -19,17 +19,11 @@ import ServiceMix from './components/ServiceMix';
 import ResourcePerformance from './components/ResourcePerformance';
 import PartsFavorites from './components/PartsFavorites';
 
-// New Customer Segment Expansion Widgets
-import RevenueSegmentation from './components/RevenueSegmentation';
-import VisitBehavior from './components/VisitBehavior';
-import SpendingPattern from './components/SpendingPattern';
-import MotorcycleProfile from './components/MotorcycleProfile';
-import RetentionLoyalty from './components/RetentionLoyalty';
-import GeographyMap from './components/GeographyMap';
-import StaffAllocation from './components/StaffAllocation';
-
 // Revenue Trend Expansion
 import RevenueDashboard from './components/RevenueDashboard';
+
+// Customer Intel Hub Replacement
+import CustomerIntelDashboard from './components/CustomerIntelDashboard';
 
 function App() {
   const [activeTab, setActiveTab] = useState('overview');
@@ -58,9 +52,9 @@ function App() {
                 <TrendingUp size={18} /> Revenue Trend
               </a>
               <a href="#"
-                onClick={() => setActiveTab('segments')}
-                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'segments' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
-                <Users size={18} /> Advanced Segments
+                onClick={() => setActiveTab('intel')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'intel' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <Users size={18} /> Customer Intel
               </a>
             </div>
           </div>
@@ -122,27 +116,8 @@ function App() {
           </>
         )}
 
-        {activeTab === 'segments' && (
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', paddingBottom: '2rem' }}>
-            <div style={{ marginBottom: '0.5rem' }}>
-              <h2 style={{ fontSize: '1.5rem', color: 'var(--accent-purple)' }}>Customer Segment Intelligence</h2>
-              <p className="text-muted">Analyzing operational footprints: Regular vs Group / Corporate Fleets.</p>
-            </div>
-
-            <RevenueSegmentation />
-            <VisitBehavior />
-
-            <div className="charts-grid">
-              <SpendingPattern />
-              <MotorcycleProfile />
-            </div>
-
-            <div className="charts-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
-              <RetentionLoyalty />
-              <GeographyMap />
-              <StaffAllocation />
-            </div>
-          </div>
+        {activeTab === 'intel' && (
+          <CustomerIntelDashboard />
         )}
 
         {activeTab === 'revenue' && (
