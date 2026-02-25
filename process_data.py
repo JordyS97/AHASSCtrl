@@ -93,6 +93,89 @@ def process_files():
     # Aggregations
     print("Pre-aggregating advanced dashboard data...")
     generate_dashboard_json(master_df)
+    
+    print("Pre-aggregating Revenue Trend dashboard data...")
+    generate_revenue_dashboard_json(master_df)
+
+def generate_revenue_dashboard_json(df):
+    """Generates the specific JSON payload required for the Revenue Trend Dashboard."""
+    # Ensure Tgl Faktur is workable datetime
+    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%b %d', errors='coerce').apply(lambda d: d.replace(year=2024) if not pd.isna(d) else d)
+    df['Month'] = df['DateObj'].dt.month
+    df['MonthName'] = df['DateObj'].dt.strftime('%b')
+
+    # Remove totally bunk dates
+    valid_df = df.dropna(subset=['Month']).copy()
+
+    # Get distinct CM SAP for the global filter
+    workshops = valid_df['CM SAP'].dropna().unique().tolist()
+    if "" in workshops: workshops.remove("")
+
+    # 1. Master Monthly Trend & Segments (Group vs Regular)
+    # Aggregate metrics per month per CM SAP per Customer Class
+    monthly_agg = valid_df.groupby(['Month', 'MonthName', 'CM SAP', 'Customer Class']).agg({
+        'Revenue': 'sum',
+        'Gross Profit': 'sum',
+        'Total Faktur': 'sum',
+        'Diskon': 'sum',
+        'PPN': 'sum'
+    }).reset_index()
+
+    # We need a structured format so the UI can filter efficiently:
+    # { "CM SAP A": { "Jan": { "Regular": {rev, gp}, "Group": {rev, gp} } } }
+    
+    master_dict = {}
+    master_dict["All_Workshops"] = {} # Pre-calculate "All"
+    for w in workshops:
+        master_dict[str(w)] = {}
+
+    for _, r in monthly_agg.iterrows():
+        w = str(r['CM SAP'])
+        m = str(r['MonthName'])
+        c = str(r['Customer Class'])
+
+        # Store in Specific Workshop
+        if m not in master_dict[w]:
+            master_dict[w][m] = {}
+        master_dict[w][m][c] = {
+            "revenue": float(r['Revenue']),
+            "gp": float(r['Gross Profit']),
+            "discount": float(r['Diskon']),
+            "dpp": float(r['Revenue']) # DPP is Revenue
+        }
+
+        # Accumulate into "All_Workshops"
+        if m not in master_dict["All_Workshops"]:
+            master_dict["All_Workshops"][m] = {"Regular": {"revenue": 0, "gp": 0, "discount": 0, "dpp": 0}, "Group": {"revenue": 0, "gp": 0, "discount": 0, "dpp": 0}}
+        
+        master_dict["All_Workshops"][m][c]["revenue"] += float(r['Revenue'])
+        master_dict["All_Workshops"][m][c]["gp"] += float(r['Gross Profit'])
+        master_dict["All_Workshops"][m][c]["discount"] += float(r['Diskon'])
+        master_dict["All_Workshops"][m][c]["dpp"] += float(r['Revenue'])
+
+    # 2. Service Mix (Jenis vs GP) - Global totals
+    service_mix = valid_df.groupby('Jenis')['Gross Profit'].sum().reset_index()
+    service_mix_json = [{"name": str(r['Jenis']), "value": float(r['Gross Profit'])} for _, r in service_mix.iterrows() if r['Gross Profit'] > 0]
+    
+    # Take top 4, group rest into "Other"
+    service_mix_json.sort(key=lambda x: x["value"], reverse=True)
+    if len(service_mix_json) > 4:
+        top_4 = service_mix_json[:4]
+        other_val = sum(x["value"] for x in service_mix_json[4:])
+        top_4.append({"name": "Other", "value": other_val})
+        service_mix_json = top_4
+
+    # Compile the final payload
+    payload = {
+        "workshops": ["All Workshops"] + workshops,
+        "monthlyData": master_dict,
+        "serviceMixGP": service_mix_json
+    }
+
+    output_path = os.path.join(OUTPUT_DIR, "revenue_dashboard_data.json")
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, indent=4)
+    print(f"Revenue Dashboard JSON generated at: {output_path}")
 
 def generate_dashboard_json(df):
     # Base KPIs

@@ -28,6 +28,9 @@ import RetentionLoyalty from './components/RetentionLoyalty';
 import GeographyMap from './components/GeographyMap';
 import StaffAllocation from './components/StaffAllocation';
 
+// Revenue Trend Expansion
+import RevenueDashboard from './components/RevenueDashboard';
+
 function App() {
   const [activeTab, setActiveTab] = useState('overview');
 
@@ -48,6 +51,11 @@ function App() {
                 onClick={() => setActiveTab('overview')}
                 style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'overview' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
                 <LayoutDashboard size={18} /> Dashboard
+              </a>
+              <a href="#"
+                onClick={() => setActiveTab('revenue')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'revenue' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <TrendingUp size={18} /> Revenue Trend
               </a>
               <a href="#"
                 onClick={() => setActiveTab('segments')}
@@ -76,21 +84,23 @@ function App() {
 
       {/* Main Content Area */}
       <main className="main-content">
-        <header className="top-header">
-          <div>
-            <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Workshop Performance <span className="text-cyan">_</span></h1>
-            <p className="panel-subtitle">AHASS CTRL - Operational Intelligence Dashboard</p>
-          </div>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-            <div className="glass-panel" style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              <div style={{ width: 8, height: 8, background: 'var(--accent-green)', borderRadius: '50%' }}></div>
-              LIVE
+        {activeTab !== 'revenue' && (
+          <header className="top-header">
+            <div>
+              <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Workshop Performance <span className="text-cyan">_</span></h1>
+              <p className="panel-subtitle">AHASS CTRL - Operational Intelligence Dashboard</p>
             </div>
-            <div className="glass-panel" style={{ padding: '0.5rem 1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              Last sync: Just now
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <div className="glass-panel" style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                <div style={{ width: 8, height: 8, background: 'var(--accent-green)', borderRadius: '50%' }}></div>
+                LIVE
+              </div>
+              <div className="glass-panel" style={{ padding: '0.5rem 1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                Last sync: Just now
+              </div>
             </div>
-          </div>
-        </header>
+          </header>
+        )}
 
         {activeTab === 'overview' && (
           <>
@@ -133,6 +143,10 @@ function App() {
               <StaffAllocation />
             </div>
           </div>
+        )}
+
+        {activeTab === 'revenue' && (
+          <RevenueDashboard />
         )}
 
       </main>
