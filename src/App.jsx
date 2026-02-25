@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
 import {
   LayoutDashboard,
@@ -19,7 +19,18 @@ import ServiceMix from './components/ServiceMix';
 import ResourcePerformance from './components/ResourcePerformance';
 import PartsFavorites from './components/PartsFavorites';
 
+// New Customer Segment Expansion Widgets
+import RevenueSegmentation from './components/RevenueSegmentation';
+import VisitBehavior from './components/VisitBehavior';
+import SpendingPattern from './components/SpendingPattern';
+import MotorcycleProfile from './components/MotorcycleProfile';
+import RetentionLoyalty from './components/RetentionLoyalty';
+import GeographyMap from './components/GeographyMap';
+import StaffAllocation from './components/StaffAllocation';
+
 function App() {
+  const [activeTab, setActiveTab] = useState('overview');
+
   return (
     <div className="dashboard-layout">
       {/* Sidebar */}
@@ -33,11 +44,15 @@ function App() {
           <div>
             <div className="panel-subtitle" style={{ fontSize: '0.7rem', letterSpacing: 1, textTransform: 'uppercase' }}>OVERVIEW</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--accent-cyan)', textDecoration: 'none' }}>
+              <a href="#"
+                onClick={() => setActiveTab('overview')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'overview' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
                 <LayoutDashboard size={18} /> Dashboard
               </a>
-              <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-                <TrendingUp size={18} /> Revenue Trend
+              <a href="#"
+                onClick={() => setActiveTab('segments')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'segments' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <Users size={18} /> Advanced Segments
               </a>
             </div>
           </div>
@@ -72,28 +87,53 @@ function App() {
               LIVE
             </div>
             <div className="glass-panel" style={{ padding: '0.5rem 1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-              Last sync: 14:32 WIB
+              Last sync: Just now
             </div>
           </div>
         </header>
 
-        {/* --- MOCKUP WIDGET LAYOUT --- */}
+        {activeTab === 'overview' && (
+          <>
+            {/* Row 1: KPIs */}
+            <KpiCards />
 
-        {/* Row 1: KPIs */}
-        <KpiCards />
+            {/* Row 2: Charts and Flows */}
+            <div className="charts-grid">
+              <OperationalTrends />
+              <FinancialFlow />
+            </div>
 
-        {/* Row 2: Charts and Flows */}
-        <div className="charts-grid">
-          <OperationalTrends />
-          <FinancialFlow />
-        </div>
+            {/* Row 3: Mix and Resources */}
+            <div className="charts-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+              <ServiceMix />
+              <ResourcePerformance />
+              <PartsFavorites />
+            </div>
+          </>
+        )}
 
-        {/* Row 3: Mix and Resources */}
-        <div className="charts-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
-          <ServiceMix />
-          <ResourcePerformance />
-          <PartsFavorites />
-        </div>
+        {activeTab === 'segments' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', paddingBottom: '2rem' }}>
+            <div style={{ marginBottom: '0.5rem' }}>
+              <h2 style={{ fontSize: '1.5rem', color: 'var(--accent-purple)' }}>Customer Segment Intelligence</h2>
+              <p className="text-muted">Analyzing operational footprints: Regular vs Group / Corporate Fleets.</p>
+            </div>
+
+            <RevenueSegmentation />
+            <VisitBehavior />
+
+            <div className="charts-grid">
+              <SpendingPattern />
+              <MotorcycleProfile />
+            </div>
+
+            <div className="charts-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+              <RetentionLoyalty />
+              <GeographyMap />
+              <StaffAllocation />
+            </div>
+          </div>
+        )}
 
       </main>
     </div>
