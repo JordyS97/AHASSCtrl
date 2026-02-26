@@ -1,9 +1,11 @@
 import React from 'react';
 import { TrendingUp, TrendingDown, Wrench, BarChart2 } from 'lucide-react';
-
-import dashboardData from '../dashboard_data.json';
+import { useData } from '../DataContext';
 
 const KpiCards = () => {
+    const { datasets } = useData();
+    const dashboardData = datasets.dashboard;
+    if (!dashboardData) return <div className="kpi-grid"><div className="glass-panel" style={{ padding: '2rem', color: 'var(--text-muted)' }}>Loading...</div></div>;
     const { kpis } = dashboardData;
 
     const kpiData = [

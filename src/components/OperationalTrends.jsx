@@ -1,11 +1,12 @@
 import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
-
-import dashboardData from '../dashboard_data.json';
-
-const data = dashboardData.trends;
+import { useData } from '../DataContext';
 
 const OperationalTrends = () => {
+    const { datasets } = useData();
+    const dashboardData = datasets.dashboard;
+    if (!dashboardData?.trends) return <div className="glass-panel" style={{ height: '400px', color: 'var(--text-muted)', padding: '2rem' }}>Loading...</div>;
+    const data = dashboardData.trends;
     return (
         <div className="glass-panel" style={{ height: '400px', display: 'flex', flexDirection: 'column' }}>
             <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>

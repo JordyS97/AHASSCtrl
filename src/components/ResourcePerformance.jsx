@@ -1,8 +1,10 @@
 import React from 'react';
-
-import dashboardData from '../dashboard_data.json';
+import { useData } from '../DataContext';
 
 const ResourcePerformance = () => {
+    const { datasets } = useData();
+    const dashboardData = datasets.dashboard;
+    if (!dashboardData?.ranking) return <div className="glass-panel" style={{ height: '350px', color: 'var(--text-muted)', padding: '2rem' }}>Loading...</div>;
     // Add colors to dynamic data
     const baseColors = ['var(--accent-cyan)', 'var(--accent-purple)', 'var(--accent-green)', 'var(--accent-orange)', 'var(--accent-blue)'];
     const staffData = dashboardData.ranking.map((d, i) => ({ ...d, color: baseColors[i % baseColors.length] }));

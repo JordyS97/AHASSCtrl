@@ -1,8 +1,10 @@
 import React from 'react';
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts';
-import advancedData from '../advanced_dashboard_data.json';
+import { useData } from '../DataContext';
 
 const RevenueSegmentation = () => {
+    const { datasets } = useData();
+    const advancedData = datasets.advanced;
     // Graceful fallback while JSON is rendering/missing
     const segData = advancedData?.segmentation || [];
 

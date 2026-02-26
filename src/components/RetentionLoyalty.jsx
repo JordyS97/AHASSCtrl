@@ -1,8 +1,10 @@
 import React from 'react';
-import advancedData from '../advanced_dashboard_data.json';
+import { useData } from '../DataContext';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 const RetentionLoyalty = () => {
+    const { datasets } = useData();
+    const advancedData = datasets.advanced;
     const defaultData = { repeat_rate: 0, total_customers: 0 };
     const regRet = advancedData?.retention?.Regular || defaultData;
     const grpRet = advancedData?.retention?.Group || defaultData;

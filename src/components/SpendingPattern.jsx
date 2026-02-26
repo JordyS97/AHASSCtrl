@@ -1,8 +1,10 @@
 import React from 'react';
-import advancedData from '../advanced_dashboard_data.json';
+import { useData } from '../DataContext';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
 
 const SpendingPattern = () => {
+    const { datasets } = useData();
+    const advancedData = datasets.advanced;
     const spending = advancedData?.spending || [];
 
     // Transform for Recharts

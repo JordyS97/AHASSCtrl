@@ -1,20 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import IntelKpis from './IntelKpis';
 import SegmentProfileComparison from './SegmentProfileComparison';
 import RfmMatrix from './RfmMatrix';
 import FleetProfile from './FleetProfile';
 import BehaviorDeepDive from './BehaviorDeepDive';
 import ServicePreferenceBars from './ServicePreferenceBars';
+import { useData } from '../../DataContext';
 
 const SegmentTab = () => {
-    const [dataset, setDataset] = useState(null);
-
-    useEffect(() => {
-        fetch('/data/customer_intel_data.json')
-            .then(res => res.json())
-            .then(data => setDataset(data))
-            .catch(err => console.error("Error loading intel data:", err));
-    }, []);
+    const { datasets } = useData();
+    const dataset = datasets.customerIntel;
 
     if (!dataset) return <div style={{ color: 'var(--accent-cyan)', padding: '2rem' }}>Crunching ~1 Million Rows... Loading Intel...</div>;
 

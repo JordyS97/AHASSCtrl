@@ -1,9 +1,6 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell } from 'recharts';
-
-// Waterfall chart representation using stacked bars
-// Starting from Total Faktur, then -Discount, -PPN, resulting in Revenue (DPP), -COGS, resulting in GP.
-import dashboardData from '../dashboard_data.json';
+import { useData } from '../DataContext';
 
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
@@ -27,6 +24,9 @@ const CustomTooltip = ({ active, payload }) => {
 };
 
 const FinancialFlow = () => {
+    const { datasets } = useData();
+    const dashboardData = datasets.dashboard;
+    if (!dashboardData?.financialFlow) return <div className="glass-panel" style={{ height: '400px', color: 'var(--text-muted)', padding: '2rem' }}>Loading...</div>;
     const { financialFlow } = dashboardData;
     const { faktur, diskon, ppn, dpp, cogs, gp } = financialFlow;
 

@@ -1,7 +1,9 @@
 import React from 'react';
-import advancedData from '../advanced_dashboard_data.json';
+import { useData } from '../DataContext';
 
 const MotorcycleProfile = () => {
+    const { datasets } = useData();
+    const advancedData = datasets.advanced;
     const defaultProfile = { top_models: {}, avg_km: 0, avg_year: 0 };
     const regProfile = advancedData?.motorProfile?.Regular || defaultProfile;
     const grpProfile = advancedData?.motorProfile?.Group || defaultProfile;

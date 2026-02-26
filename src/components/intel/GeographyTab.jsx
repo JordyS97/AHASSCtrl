@@ -1,19 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import GeographyKpis from './GeographyKpis';
 import GeoDensityMap from './GeoDensityMap';
 import DistrictRankings from './DistrictRankings';
 import DistrictReachHeatmap from './DistrictReachHeatmap';
 import DistanceDonut from './DistanceDonut';
+import { useData } from '../../DataContext';
 
 const GeographyTab = () => {
-    const [dataset, setDataset] = useState(null);
-
-    useEffect(() => {
-        fetch('/data/customer_intel_data.json')
-            .then(res => res.json())
-            .then(data => setDataset(data))
-            .catch(err => console.error("Error loading geo data:", err));
-    }, []);
+    const { datasets } = useData();
+    const dataset = datasets.customerIntel;
 
     if (!dataset) return <div style={{ color: 'var(--accent-cyan)', padding: '2rem' }}>Mapping Geographies...</div>;
 

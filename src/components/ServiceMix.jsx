@@ -1,10 +1,12 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend } from 'recharts';
-
-import dashboardData from '../dashboard_data.json';
+import { useData } from '../DataContext';
 
 const ServiceMix = () => {
-    const data = dashboardData.serviceMix;
+    const { datasets } = useData();
+    const dashboardData = datasets.dashboard;
+    if (!dashboardData) return <div className="glass-panel" style={{ height: '350px', color: 'var(--text-muted)', padding: '2rem' }}>Loading...</div>;
+    const data = dashboardData.serviceMix || [];
     return (
         <div className="glass-panel" style={{ height: '350px', display: 'flex', flexDirection: 'column' }}>
             <div style={{ marginBottom: '1rem' }}>

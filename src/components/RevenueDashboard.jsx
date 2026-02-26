@@ -1,14 +1,18 @@
 import React, { useState, useMemo } from 'react';
-import revenueData from '../revenue_dashboard_data.json';
+import { useData } from '../DataContext';
 import RevenueKpis from './RevenueKpis';
 import MasterTrendChart from './MasterTrendChart';
 import MonthlyBreakdownTable from './MonthlyBreakdownTable';
 import RevenueWidgets from './RevenueWidgets';
 
 const RevenueDashboard = () => {
+    const { datasets } = useData();
+    const revenueData = datasets.revenue;
     // Top Level Global State
     const [selectedCM, setSelectedCM] = useState('All Workshops');
     const [selectedDate, setSelectedDate] = useState('Jan-Dec 2024');
+
+    if (!revenueData) return <div style={{ color: 'var(--text-muted)', padding: '2rem' }}>Loading Revenue Data...</div>;
 
     const workshops = revenueData?.workshops || ['All Workshops'];
     const monthlyDataRaw = revenueData?.monthlyData || {};

@@ -1,99 +1,116 @@
 {
     "kpis": {
-        "revenue": 85057.32,
-        "gp": 34293.39,
-        "units": 430103,
-        "margin": 40.3
+        "revenue": 28117.24,
+        "gp": 12517.7,
+        "units": 110933,
+        "margin": 44.5
     },
     "segmentation": [
         {
+            "class": "Group",
+            "revenue": 6616.79,
+            "gp": 3042.74,
+            "avg_trx": 108.38
+        },
+        {
             "class": "Regular",
-            "revenue": 85057.32,
-            "gp": 34293.39,
-            "avg_trx": 194.94
+            "revenue": 21500.45,
+            "gp": 9474.96,
+            "avg_trx": 451.88
         }
     ],
     "trends": [
         {
-            "date": "Sep 16",
-            "Regular": 129.06,
-            "Group": 0.0
+            "date": "Oct 17",
+            "Regular": 49.49,
+            "Group": 34.15
         },
         {
-            "date": "Sep 17",
-            "Regular": 218.79,
-            "Group": 0.0
+            "date": "Oct 18",
+            "Regular": 56.6,
+            "Group": 52.53
         },
         {
-            "date": "Sep 18",
-            "Regular": 181.72,
-            "Group": 0.0
+            "date": "Oct 19",
+            "Regular": 12.12,
+            "Group": 6.85
         },
         {
-            "date": "Sep 19",
-            "Regular": 184.41,
-            "Group": 0.0
+            "date": "Oct 20",
+            "Regular": 55.96,
+            "Group": 44.6
         },
         {
-            "date": "Sep 20",
-            "Regular": 191.85,
-            "Group": 0.0
+            "date": "Oct 21",
+            "Regular": 46.63,
+            "Group": 31.38
         },
         {
-            "date": "Sep 21",
-            "Regular": 128.13,
-            "Group": 0.0
+            "date": "Oct 22",
+            "Regular": 47.95,
+            "Group": 38.51
         },
         {
-            "date": "Sep 22",
-            "Regular": 152.59,
-            "Group": 0.0
+            "date": "Oct 23",
+            "Regular": 44.47,
+            "Group": 31.52
         },
         {
-            "date": "Sep 23",
-            "Regular": 182.85,
-            "Group": 0.0
+            "date": "Oct 24",
+            "Regular": 41.3,
+            "Group": 40.97
         },
         {
-            "date": "Sep 24",
-            "Regular": 192.39,
-            "Group": 0.0
+            "date": "Oct 25",
+            "Regular": 61.72,
+            "Group": 37.41
         },
         {
-            "date": "Sep 25",
-            "Regular": 201.84,
-            "Group": 0.0
+            "date": "Oct 26",
+            "Regular": 6.67,
+            "Group": 6.57
         },
         {
-            "date": "Sep 26",
-            "Regular": 209.85,
-            "Group": 0.0
+            "date": "Oct 27",
+            "Regular": 62.81,
+            "Group": 51.52
         },
         {
-            "date": "Sep 27",
-            "Regular": 202.8,
-            "Group": 0.0
+            "date": "Oct 28",
+            "Regular": 56.65,
+            "Group": 44.68
         },
         {
-            "date": "Sep 28",
-            "Regular": 109.33,
-            "Group": 0.0
+            "date": "Oct 29",
+            "Regular": 48.76,
+            "Group": 34.31
         },
         {
-            "date": "Sep 29",
-            "Regular": 150.12,
-            "Group": 0.0
+            "date": "Oct 30",
+            "Regular": 62.38,
+            "Group": 42.03
         },
         {
-            "date": "Sep 30",
-            "Regular": 246.26,
-            "Group": 0.0
+            "date": "Oct 31",
+            "Regular": 65.38,
+            "Group": 39.16
         }
     ],
     "visitMix": [
         {
             "Customer Class": "Regular",
-            "Unknown": 1418312
+            "Grand Total": 1,
+            "H531": 1,
+            "H532": 1,
+            "H533": 1,
+            "H534": 1,
+            "H535": 1,
+            "H536": 1,
+            "H537": 1,
+            "H538": 1,
+            "H539": 1,
+            "Kode BA": 1,
+            "UE": 1
         }
     ],
     "heatmap": [
@@ -155,27 +172,38 @@
     ],
     "spending": [
         {
+            "class": "Group",
+            "avg_discount": -160,
+            "avg_faktur": 39425
+        },
+        {
             "class": "Regular",
-            "avg_discount": 854,
-            "avg_faktur": 59116
+            "avg_discount": -1611,
+            "avg_faktur": 130900
         }
     ],
     "motorProfile": {
         "Regular": {
             "top_models": {
-                "MD1A-Vario 125 CBS ISS SPION PLUS": 52173,
-                "MT0-PCX 160 CBS": 46945,
-                "LR1-PCX160 CBS": 42763,
-                "MM0A-BEAT STREET PLUS": 40841,
-                "CM0-BEAT": 40725
+                "CM0-BEAT": 6864,
+                "MT0-PCX 160 CBS": 5447,
+                "LR1-PCX160 CBS": 5058,
+                "MD1A-Vario 125 CBS ISS SPION PLUS": 4923,
+                "LP0-NEW SCOOPY PRESTIGE": 4587
             },
-            "avg_km": 4937987,
-            "avg_year": 2022
+            "avg_km": 24762190,
+            "avg_year": 2021
         },
         "Group": {
-            "top_models": {},
-            "avg_km": 0,
-            "avg_year": 0
+            "top_models": {
+                "MT0-PCX 160 CBS": 21405,
+                "MJ1A-BEAT SPORTY CBS SPION PLUS": 11604,
+                "MM1A-BEAT STREET SPION PLUS": 10824,
+                "MD1B-VARIO 125 CBS ISS SPION HOOK PLUS": 10737,
+                "MC1B-VARIO 125 CBS SPION HOOK PLUS": 8051
+            },
+            "avg_km": 710679,
+            "avg_year": 2025
         }
     },
     "retention": {
@@ -184,102 +212,102 @@
             "total_customers": 1
         },
         "Group": {
-            "repeat_rate": 0,
-            "total_customers": 0
+            "repeat_rate": 100.0,
+            "total_customers": 1
         }
     },
     "geography": [
         {
             "kabupaten": "LOMBOK TENGAH",
-            "Regular": 383301,
-            "Group": 0
+            "Regular": 42068,
+            "Group": 61278
         },
         {
             "kabupaten": "LOMBOK BARAT",
-            "Regular": 249447,
-            "Group": 0
+            "Regular": 33616,
+            "Group": 30372
         },
         {
             "kabupaten": "KOTA MATARAM",
-            "Regular": 229662,
-            "Group": 0
+            "Regular": 37729,
+            "Group": 17714
         },
         {
             "kabupaten": "LOMBOK TIMUR",
-            "Regular": 165266,
-            "Group": 0
+            "Regular": 17140,
+            "Group": 27188
         },
         {
             "kabupaten": "SUMBAWA",
-            "Regular": 130086,
-            "Group": 0
+            "Regular": 18777,
+            "Group": 14153
         },
         {
             "kabupaten": "BIMA",
-            "Regular": 58807,
-            "Group": 0
+            "Regular": 9280,
+            "Group": 5723
         },
         {
             "kabupaten": "KOTA BIMA",
-            "Regular": 53992,
-            "Group": 0
-        },
-        {
-            "kabupaten": "LOMBOK UTARA",
-            "Regular": 46311,
-            "Group": 0
+            "Regular": 9342,
+            "Group": 3764
         },
         {
             "kabupaten": "JAKARTA SELATAN",
-            "Regular": 43376,
-            "Group": 0
+            "Regular": 162,
+            "Group": 12935
+        },
+        {
+            "kabupaten": "LOMBOK UTARA",
+            "Regular": 5838,
+            "Group": 7025
         },
         {
             "kabupaten": "SUMBAWA BARAT",
-            "Regular": 15260,
-            "Group": 0
+            "Regular": 1418,
+            "Group": 2410
         }
     ],
     "staffAllocation": [
         {
             "name": "NASRULLAH",
-            "Regular": 6267.62,
-            "Group": 0.0
+            "Regular": 961.46,
+            "Group": 506.07
+        },
+        {
+            "name": "I MADE SULASTRA",
+            "Regular": 910.38,
+            "Group": 490.46
         },
         {
             "name": "ASHABUL KAHFI",
-            "Regular": 4574.19,
-            "Group": 0.0
-        },
-        {
-            "name": "FUADDI",
-            "Regular": 4564.46,
-            "Group": 0.0
-        },
-        {
-            "name": "MUHAMMAD HASANA",
-            "Regular": 4465.57,
-            "Group": 0.0
+            "Regular": 709.75,
+            "Group": 439.89
         },
         {
             "name": "TAHZUL PAROZI",
-            "Regular": 4056.28,
-            "Group": 0.0
+            "Regular": 776.33,
+            "Group": 344.45
+        },
+        {
+            "name": "FUADDI",
+            "Regular": 617.52,
+            "Group": 442.11
+        },
+        {
+            "name": "MUHAMMAD HASANA",
+            "Regular": 408.92,
+            "Group": 530.54
         },
         {
             "name": "JUMADIM",
-            "Regular": 4045.33,
-            "Group": 0.0
-        },
-        {
-            "name": "I MADE EKA WIDY",
-            "Regular": 4032.92,
-            "Group": 0.0
+            "Regular": 465.85,
+            "Group": 451.56
         },
         {
             "name": "OKY RAHMAT IQBA",
-            "Regular": 3712.47,
-            "Group": 0.0
+            "Regular": 606.14,
+            "Group": 302.43
         }
     ]
 }

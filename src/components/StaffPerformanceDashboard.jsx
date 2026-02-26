@@ -1,24 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // Sub-Tab Components
 import SaTab from './staff/SaTab';
 import MechanicTab from './staff/MechanicTab';
 import SaMechanicMatrixTab from './staff/SaMechanicMatrixTab';
 import TeamOverviewTab from './staff/TeamOverviewTab';
+import { useData } from '../DataContext';
 
 const StaffPerformanceDashboard = () => {
     const [activeTab, setActiveTab] = useState('SERVICE ADVISOR');
     const [selectedCM, setSelectedCM] = useState('All Workshops');
     const [selectedDate, setSelectedDate] = useState('Jan-Dec 2024');
-    const [dataset, setDataset] = useState(null);
-
-    // Fetch the JSON payload asynchronously
-    useEffect(() => {
-        fetch('/data/staff_performance_data.json')
-            .then(res => res.json())
-            .then(data => setDataset(data))
-            .catch(err => console.error("Error loading staff data:", err));
-    }, []);
+    const { datasets } = useData();
+    const dataset = datasets.staffPerformance;
 
     if (!dataset) {
         return <div style={{ color: 'var(--accent-orange)', padding: '2rem' }}>Loading Staff Telemetry...</div>;

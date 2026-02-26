@@ -1,8 +1,10 @@
 import React from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid, Legend, LineChart, Line } from 'recharts';
-import advancedData from '../advanced_dashboard_data.json';
+import { useData } from '../DataContext';
 
 const VisitBehavior = () => {
+    const { datasets } = useData();
+    const advancedData = datasets.advanced;
     const visitMix = advancedData?.visitMix || [];
     const heatmap = advancedData?.heatmap || [];
 

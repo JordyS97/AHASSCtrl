@@ -1,6 +1,6 @@
 import React, { useMemo } from 'react';
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, PieChart, Pie, Legend } from 'recharts';
-import revenueDataRaw from '../revenue_dashboard_data.json';
+import { useData } from '../DataContext';
 
 const RevenueWidgets = ({ dataset, selectedCM }) => {
 
@@ -36,6 +36,8 @@ const RevenueWidgets = ({ dataset, selectedCM }) => {
     // 2. Service Mix GP
     // We extracted this globally in Python, so it doesn't strictly adhere to the CM filter unless we drill down.
     // For now, using the global extract to match the UI mock.
+    const { datasets } = useData();
+    const revenueDataRaw = datasets.revenue;
     const serviceMix = revenueDataRaw?.serviceMixGP || [];
     const PIE_COLORS = ['#00f2fe', '#f59e0b', '#a855f7', '#ec4899', '#10b981'];
 

@@ -1,8 +1,10 @@
 import React from 'react';
-
-import dashboardData from '../dashboard_data.json';
+import { useData } from '../DataContext';
 
 const PartsFavorites = () => {
+    const { datasets } = useData();
+    const dashboardData = datasets.dashboard;
+    if (!dashboardData?.parts) return <div className="glass-panel" style={{ height: '350px', color: 'var(--text-muted)', padding: '2rem' }}>Loading...</div>;
     const partsData = dashboardData.parts.map(p => ({ ...p, isUp: true })); // default to positive trend for now
     return (
         <div className="glass-panel" style={{ height: '350px', display: 'flex', flexDirection: 'column' }}>
