@@ -8,7 +8,7 @@ const MasterTrendChart = ({ dataset }) => {
     const [chartType, setChartType] = useState('Area'); // Line | Area | Bar
 
     // Base UI toggles mappings
-    const metricsMap = { revenue: 'Revenue', gp: 'Gross Profit', dpp: 'DPP', discount: 'Discount' };
+    const metricsMap = { revenue: 'Revenue', gp: 'GP', dpp: 'DPP', discount: 'Discount' };
     const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
     // Transform raw `{ "Jan": { "Regular": {rev...}, "Group": {rev...} } }` into array map for Recharts

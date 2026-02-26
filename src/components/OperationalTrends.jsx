@@ -10,7 +10,7 @@ const OperationalTrends = () => {
         <div className="glass-panel" style={{ height: '400px', display: 'flex', flexDirection: 'column' }}>
             <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
                 <div>
-                    <h3 className="panel-title">Revenue & Gross Profit Trend</h3>
+                    <h3 className="panel-title">Revenue & GP Trend</h3>
                     <p className="panel-subtitle">Tgl Faktur • Sales vs Total Faktur vs GP</p>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
@@ -31,7 +31,7 @@ const OperationalTrends = () => {
                         />
                         <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
                         <Line type="monotone" dataKey="revenue" name="Revenue" stroke="var(--accent-cyan)" strokeWidth={3} dot={{ r: 4, fill: 'var(--bg-color)', strokeWidth: 2 }} activeDot={{ r: 6 }} />
-                        <Line type="monotone" dataKey="gp" name="Gross Profit" stroke="var(--accent-green)" strokeWidth={3} dot={{ r: 4, fill: 'var(--bg-color)', strokeWidth: 2 }} activeDot={{ r: 6 }} />
+                        <Line type="monotone" dataKey="gp" name="GP" stroke="var(--accent-green)" strokeWidth={3} dot={{ r: 4, fill: 'var(--bg-color)', strokeWidth: 2 }} activeDot={{ r: 6 }} />
                     </LineChart>
                 </ResponsiveContainer>
             </div>

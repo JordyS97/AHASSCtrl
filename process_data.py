@@ -18,7 +18,7 @@ COLUMNS_TO_KEEP = [
     'Nama Pembayar', 'KM Sekarang', 'Tahun Rakit', 'Kecamatan Pemilik', 
     'Kabupaten Pemilik', 'Nama Pemilik', 'Sales', 'Harga Part', 
     'Nama Motor', 'Sumber Booking', 'Jam Cetak PKB',
-    'No Polisi', 'Metode Pembayaran', 'Nama Final Inspector'
+    'No Polisi', 'Metode Pembayaran', 'Nama Final Inspector', 'Kode Promo'
 ]
 
 def format_date(df):
@@ -57,7 +57,7 @@ def process_files():
             if f.endswith('.csv'):
                 df = pd.read_csv(f, usecols=lambda c: c in COLUMNS_TO_KEEP)
             else:
-                df = pd.read_excel(f, usecols=lambda c: c in COLUMNS_TO_KEEP)
+                df = pd.read_excel(f, sheet_name="Export", usecols=lambda c: c in COLUMNS_TO_KEEP)
             
             df.dropna(how='all', inplace=True)
             dfs.append(df)
@@ -73,17 +73,41 @@ def process_files():
 
     for col in COLUMNS_TO_KEEP:
         if col not in master_df.columns:
-            master_df[col] = 0 if col in ['Total Faktur', 'PPN', 'Diskon', 'Gross Profit', 'Jumlah', 'KM Sekarang', 'Tahun Rakit'] else "Unknown"
+            master_df[col] = 0 if col in ['Total Faktur', 'PPN', 'Diskon', 'Gross Profit', 'Jumlah', 'KM Sekarang', 'Tahun Rakit', 'Sales', 'Harga Part'] else "Unknown"
 
-    numeric_cols = ['Gross Profit', 'Total Faktur', 'PPN', 'Diskon', 'Jumlah', 'KM Sekarang']
+    numeric_cols = ['Gross Profit', 'Total Faktur', 'PPN', 'Diskon', 'Jumlah', 'KM Sekarang', 'Sales', 'Harga Part']
     for col in numeric_cols:
         master_df[col] = pd.to_numeric(master_df[col], errors='coerce').fillna(0)
 
-    # Classify Customer
-    master_df['Customer Class'] = master_df['Nama Pembayar'].apply(get_customer_class)
+    # Classify Customer using NAMA PEMILIK
+    master_df['Customer Class'] = master_df['Nama Pemilik'].apply(get_customer_class)
     
-    master_df['Revenue'] = master_df['Total Faktur'] - master_df['PPN']
-    master_df['COGS'] = master_df['Revenue'] - master_df['Gross Profit']
+    # Sales = Revenue
+    master_df['Revenue'] = master_df['Sales']
+    
+    # Kode Promo = Promo Code
+    if 'Kode Promo' in master_df.columns:
+        master_df['Promo Code'] = master_df['Kode Promo']
+    else:
+        master_df['Promo Code'] = "Unknown"
+        
+    # Diskon as absolute number
+    master_df['Diskon'] = master_df['Diskon'].abs()
+    
+    # Total Faktur = Revenue - Discount
+    master_df['Total Faktur'] = master_df['Revenue'] - master_df['Diskon']
+    
+    # DPP = Total Faktur / 1.11
+    master_df['DPP'] = master_df['Total Faktur'] / 1.11
+    
+    # PPN = Total Faktur - DPP
+    master_df['PPN'] = master_df['Total Faktur'] - master_df['DPP']
+    
+    # Harga Part = COGS
+    master_df['COGS'] = master_df['Harga Part']
+    
+    # Gross Profit = GP
+    master_df['GP'] = master_df['Gross Profit']
     master_df = format_date(master_df)
 
     # Save Compressed CSV

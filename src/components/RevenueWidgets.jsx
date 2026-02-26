@@ -29,7 +29,7 @@ const RevenueWidgets = ({ dataset, selectedCM }) => {
             { name: 'Tax (11%)', value: -tax, fill: 'var(--accent-orange)' },
             { name: 'DPP', value: dpp, fill: 'var(--accent-cyan)' },
             { name: 'COGS', value: -cogs, fill: 'var(--accent-purple)' },
-            { name: 'Gross Profit', value: gp, fill: 'var(--accent-green)' },
+            { name: 'GP', value: gp, fill: 'var(--accent-green)' },
         ];
     }, [dataset]);
 
@@ -77,7 +77,7 @@ const RevenueWidgets = ({ dataset, selectedCM }) => {
                 <div className="glass-panel" style={{ flex: 1, display: 'flex', flexDirection: 'column' }}>
                     <div style={{ marginBottom: '1rem' }}>
                         <h3 className="panel-title">GP by Service Type</h3>
-                        <p className="panel-subtitle">Jenis · Gross Profit split</p>
+                        <p className="panel-subtitle">Jenis · GP split</p>
                     </div>
                     <div style={{ flex: 1, minHeight: 0, position: 'relative' }}>
                         <ResponsiveContainer width="100%" height="100%">

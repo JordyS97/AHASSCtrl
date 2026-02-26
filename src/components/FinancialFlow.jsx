@@ -36,7 +36,7 @@ const FinancialFlow = () => {
         { name: 'Tax/PPN', start: faktur - diskon - ppn, end: faktur - diskon, val: -ppn, color: 'var(--accent-orange)' },
         { name: 'DPP/Rev.', start: 0, end: dpp, val: dpp, color: 'var(--accent-cyan)' },
         { name: 'COGS', start: gp, end: dpp, val: -cogs, color: 'var(--accent-purple)' },
-        { name: 'Gross Profit', start: 0, end: gp, val: gp, color: 'var(--accent-green)' },
+        { name: 'GP', start: 0, end: gp, val: gp, color: 'var(--accent-green)' },
     ];
 
     const maxVal = Math.max(...data.map(d => Math.max(d.start, d.end)));
@@ -87,7 +87,7 @@ const FinancialFlow = () => {
                     <span className="text-cyan fw-bold">{Math.round(faktur).toLocaleString()} Jt</span>
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '12px' }}>
-                    <span className="text-muted">Gross Profit</span>
+                    <span className="text-muted">GP</span>
                     <span className="text-green fw-bold">{Math.round(gp).toLocaleString()} Jt</span>
                 </div>
             </div>

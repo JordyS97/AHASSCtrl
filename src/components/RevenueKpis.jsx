@@ -77,7 +77,7 @@ const RevenueKpis = ({ dataset }) => {
     return (
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6, 1fr)', gap: '1rem' }}>
             <KpiCard title="Total Revenue" value={kpis.revenue} unit="Rp" color="var(--accent-cyan)" increase={true} margin="+14.2%" trendData={sparkData1} />
-            <KpiCard title="Gross Profit" value={kpis.grossProfit} unit="Rp" color="var(--accent-green)" increase={true} margin="+9.8%" trendData={sparkData1} />
+            <KpiCard title="GP" value={kpis.grossProfit} unit="Rp" color="var(--accent-green)" increase={true} margin="+9.8%" trendData={sparkData1} />
             <KpiCard title="DPP (Excl. Tax)" value={kpis.dpp} unit="Rp" color="var(--accent-cyan)" increase={true} margin="+14.2%" trendData={sparkData1} />
             <KpiCard title="Total Discount" value={kpis.discount} unit="M" color="var(--accent-orange)" increase={true} margin="+3.1%" trendData={sparkData2} />
             <KpiCard title="GP Margin" value={kpis.margin} unit="%" color="var(--accent-orange)" increase={false} margin="-1.5pp" trendData={sparkData2} />

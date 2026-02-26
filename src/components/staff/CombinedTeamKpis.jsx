@@ -30,7 +30,7 @@ const CombinedTeamKpis = ({ saKpis, mecKpis }) => {
             title: "GLOBAL GP GENERATION",
             value: formatNum(avgGp * (saKpis.total_sa || 1)),
             unit: "",
-            sub: "Total Gross Profit from Services",
+            sub: "Total GP from Services",
             color: '#FFB800',
             icon: <DollarSign size={16} />
         },

@@ -30,7 +30,7 @@ const RevenueDashboard = () => {
                         Revenue <span className="text-cyan">Trend</span> Analysis
                     </h2>
                     <p className="text-muted" style={{ fontSize: '0.9rem', letterSpacing: '2px', textTransform: 'uppercase' }}>
-                        Tgl Faktur · Sales · Total Faktur · DPP · Gross Profit · Diskon — Full Year View
+                        Tgl Faktur · Sales · Total Faktur · DPP · GP · Diskon — Full Year View
                     </p>
                 </div>
 
