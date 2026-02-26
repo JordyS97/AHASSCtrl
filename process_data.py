@@ -82,6 +82,14 @@ def process_files():
     numeric_cols = ['Gross Profit', 'Total Faktur', 'PPN', 'Diskon', 'Jumlah', 'KM Sekarang', 'Sales', 'Harga Part']
     for col in numeric_cols:
         master_df[col] = pd.to_numeric(master_df[col], errors='coerce').fillna(0)
+        # Downcast floats and integers recursively to save memory
+        master_df[col] = pd.to_numeric(master_df[col], downcast='integer')
+        master_df[col] = pd.to_numeric(master_df[col], downcast='float')
+
+    # Convert non-numeric categorical columns to Pandas 'category' dtype to save memory
+    cat_cols = [c for c in master_df.columns if c not in numeric_cols and c not in ['Tgl Faktur']]
+    for c in cat_cols:
+        master_df[c] = master_df[c].astype('category')
 
     # Classify Customer using NAMA PEMILIK
     master_df['Customer Class'] = master_df['Nama Pemilik'].apply(get_customer_class)
@@ -115,8 +123,8 @@ def process_files():
     master_df = format_date(master_df)
 
     # Save Compressed CSV
-    csv_path = os.path.join(OUTPUT_DIR, "compressed_data.csv")
-    master_df.to_csv(csv_path, index=False)
+    csv_path = os.path.join(OUTPUT_DIR, "compressed_data.csv.gz")
+    master_df.to_csv(csv_path, index=False, compression='gzip')
     print(f"Saved Shrunk CSV: {csv_path}")
 
     # Aggregations
