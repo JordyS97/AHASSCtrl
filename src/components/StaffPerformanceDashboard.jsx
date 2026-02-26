@@ -10,7 +10,6 @@ import { useData } from '../DataContext';
 const StaffPerformanceDashboard = () => {
     const [activeTab, setActiveTab] = useState('SERVICE ADVISOR');
     const [selectedCM, setSelectedCM] = useState('All Workshops');
-    const [selectedDate, setSelectedDate] = useState('Jan-Dec 2024');
     const { datasets } = useData();
     const dataset = datasets.staffPerformance;
 
@@ -36,13 +35,9 @@ const StaffPerformanceDashboard = () => {
                 <div style={{ display: 'flex', gap: '1rem' }}>
                     <div className="glass-panel" style={{ padding: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                         <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', paddingLeft: '0.5rem' }}>Date:</span>
-                        <select
-                            value={selectedDate}
-                            onChange={(e) => setSelectedDate(e.target.value)}
-                            style={{ background: 'rgba(0,0,0,0.3)', color: '#FFB800', border: '1px solid rgba(255, 184, 0, 0.3)', padding: '0.4rem 0.8rem', borderRadius: '4px', cursor: 'pointer', outline: 'none' }}
-                        >
-                            <option value="Jan-Dec 2024">Jan-Dec 2024</option>
-                        </select>
+                        <span style={{ color: '#FFB800', padding: '0.4rem 0.8rem', fontSize: '0.85rem', fontWeight: 600 }}>
+                            {dataset?.dateRange || 'All Data'}
+                        </span>
                     </div>
 
                     <div className="glass-panel" style={{ padding: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>

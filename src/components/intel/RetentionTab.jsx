@@ -25,7 +25,7 @@ const RetentionTab = () => {
             <div className="charts-grid" style={{ gridTemplateColumns: '2fr 1fr' }}>
                 <CohortMatrix cohorts={dataset.cohorts} />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                    <VisitFrequencyFunnel rfmData={dataset.rfm_matrix} />
+                    <VisitFrequencyFunnel visitFrequency={dataset.visitFrequency} />
                     <RetentionPlaybook />
                 </div>
             </div>

@@ -1,23 +1,25 @@
 import React from 'react';
 
-const VisitFrequencyFunnel = ({ rfmData }) => {
-    // Determine counts of customers making 1, 2-3, 4-6, 7-11, and 12+ visits
-    if (!rfmData) return null;
+const VisitFrequencyFunnel = ({ visitFrequency }) => {
+    if (!visitFrequency || visitFrequency.length === 0) return null;
 
-    let v1 = 0, v2_3 = 0, v4_6 = 0, v7_11 = 0, v12_plus = 0;
-    // Note: F in RFM matrix is mapped 1 to 5.
-    // 1 -> 1, 2 -> 2, 3 -> 3, 4 -> 4, 5+ -> 5
-    // Actually the true underlying raw counts aren't in rfmData easily. 
-    // We will map based on the 1-5 matrix buckets for the UI, matching the mockup's visual funnel.
-
-    // As per the mockup, we hardcode the funnel buckets for the layout visually demonstrating retention
-    const funnel = [
-        { label: '1 visit only', count: 2024, max: 2024, color: 'var(--danger-red)' },
-        { label: '2-3 visits', count: 1458, max: 2024, color: 'var(--accent-orange)' },
-        { label: '4-6 visits', count: 891, max: 2024, color: 'var(--accent-cyan)' },
-        { label: '7-12 visits', count: 446, max: 2024, color: 'var(--accent-green)' },
-        { label: '12+ visits', count: 182, max: 2024, color: 'var(--accent-green)' },
+    const colors = [
+        'var(--danger-red)',
+        'var(--accent-orange)',
+        'var(--accent-cyan)',
+        'var(--accent-green)',
+        'var(--accent-green)'
     ];
+
+    const maxCount = Math.max(...visitFrequency.map(f => f.count));
+    const totalCustomers = visitFrequency.reduce((sum, f) => sum + f.count, 0);
+    const singleVisitPct = totalCustomers > 0 ? Math.round((visitFrequency[0].count / totalCustomers) * 100) : 0;
+
+    const funnel = visitFrequency.map((f, i) => ({
+        ...f,
+        color: colors[i] || 'var(--text-muted)',
+        max: maxCount
+    }));
 
     return (
         <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column' }}>
@@ -47,14 +49,14 @@ const VisitFrequencyFunnel = ({ rfmData }) => {
                                     {f.label === '12+ visits' && ' ★'}
                                 </div>
                             </div>
-                            <span style={{ width: '40px', textAlign: 'right', fontSize: '0.85rem', color: 'var(--text-muted)' }}>{f.count.toLocaleString()}</span>
+                            <span style={{ width: '50px', textAlign: 'right', fontSize: '0.85rem', color: 'var(--text-muted)' }}>{f.count.toLocaleString()}</span>
                         </div>
                     )
                 })}
             </div>
 
             <div style={{ marginTop: '1.5rem', padding: '0.8rem', background: 'rgba(255, 80, 80, 0.05)', borderRadius: '8px', borderLeft: '3px solid var(--danger-red)' }}>
-                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}><span style={{ color: 'var(--danger-red)' }}>⚠ 42%</span> of customers visited only once — key retention opportunity</p>
+                <p style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}><span style={{ color: 'var(--danger-red)' }}>⚠ {singleVisitPct}%</span> of customers visited only once — key retention opportunity</p>
             </div>
         </div>
     );

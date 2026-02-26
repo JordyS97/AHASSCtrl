@@ -15,7 +15,7 @@ const SaMatrixTable = ({ saList }) => {
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem' }}>
                 <div>
                     <h3 style={{ fontSize: '0.9rem', color: 'var(--text-main)', letterSpacing: '1px', textTransform: 'uppercase', margin: 0 }}>Full SA Performance Matrix</h3>
-                    <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', margin: '0.2rem 0 0 0' }}>All KPIs per Service Advisor — Jan-Dec 2024</p>
+                    <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', margin: '0.2rem 0 0 0' }}>All KPIs per Service Advisor — Full Period</p>
                 </div>
                 <div style={{ display: 'flex', gap: '0.5rem' }}>
                     <button style={{ background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: 'var(--text-muted)', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.7rem', cursor: 'pointer' }}>SORT: REVENUE ↓</button>

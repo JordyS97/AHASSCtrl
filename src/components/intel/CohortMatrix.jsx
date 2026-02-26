@@ -14,7 +14,10 @@ const CohortMatrix = ({ cohorts }) => {
         return 'rgba(255, 80, 80, 0.5)';
     };
 
-    const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    // Get cohort keys sorted (they are like M202501, M202502, etc.)
+    const cohortKeys = Object.keys(cohorts).sort();
+    // Show at most the first 6 cohorts for display
+    const displayKeys = cohortKeys.slice(0, 6);
 
     return (
         <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', overflowX: 'auto' }}>
@@ -37,17 +40,17 @@ const CohortMatrix = ({ cohorts }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {/* Render up to Jun for demo brevity if not enough space, else render all */}
-                    {[1, 2, 3, 4, 5, 6].map((m) => {
-                        const mData = cohorts[`M${m}`] || {};
+                    {displayKeys.map((key) => {
+                        const mData = cohorts[key] || {};
                         const size = mData.size || 0;
-                        if (size === 0) return null; // Skip empty months
+                        const label = mData.label || key;
+                        if (size === 0) return null;
 
                         return (
-                            <tr key={m}>
+                            <tr key={key}>
                                 <td style={{ padding: '0.6rem 0.5rem 0.6rem 0', color: 'var(--text-muted)' }}>
-                                    <div style={{ fontWeight: 600, color: '#ececec' }}>{monthNames[m - 1]} 2024</div>
-                                    <div style={{ fontSize: '0.65rem' }}>{size} cust</div>
+                                    <div style={{ fontWeight: 600, color: '#ececec' }}>{label}</div>
+                                    <div style={{ fontSize: '0.65rem' }}>{size.toLocaleString()} cust</div>
                                 </td>
                                 <td style={{ padding: '0.6rem 0.5rem 0.6rem 0' }}>
                                     <div style={{ background: 'rgba(255,255,255,0.1)', padding: '0.3rem', borderRadius: '4px', textAlign: 'center', color: '#fff' }}>100%</div>

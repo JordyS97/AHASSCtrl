@@ -255,7 +255,14 @@ def generate_customer_intel_json(df):
     # Ensure DateObj is workable
     df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
     valid_df = df.dropna(subset=['DateObj']).copy()
+    valid_df['Year'] = valid_df['DateObj'].dt.year
     valid_df['MonthIdx'] = valid_df['DateObj'].dt.month
+    valid_df['YearMonth'] = valid_df['Year'] * 100 + valid_df['MonthIdx']  # e.g. 202501
+
+    # Derive date range label
+    min_date = valid_df['DateObj'].min()
+    max_date = valid_df['DateObj'].max()
+    date_range_label = f"{min_date.strftime('%b %y')} – {max_date.strftime('%b %y')}" if min_date is not pd.NaT else 'All Data'
     
     # 1. Identifier logic: Try No Polisi -> fallback to Nama Pemilik -> fallback to index.
     if 'No Polisi' in valid_df.columns:
@@ -307,30 +314,59 @@ def generate_customer_intel_json(df):
     avg_rev_per_cust = float(rfm['Monetary'].mean())
 
     # --- 2. COHORT RETENTION ---
-    # Determine the cohort month (first visit month) per user
-    rfm['CohortMonth'] = rfm['FirstVisit'].dt.month
-    cohort_map = rfm.set_index('CustomerID')['CohortMonth'].to_dict()
-    valid_df['Cohort'] = valid_df['CustomerID'].map(cohort_map)
+    # Determine the cohort YearMonth (first visit year-month) per user
+    rfm['CohortYM'] = rfm['FirstVisit'].dt.year * 100 + rfm['FirstVisit'].dt.month
+    cohort_map = rfm.set_index('CustomerID')['CohortYM'].to_dict()
+    valid_df['CohortYM'] = valid_df['CustomerID'].map(cohort_map)
     
-    cohort_data = valid_df.groupby(['Cohort', 'MonthIdx'])['CustomerID'].nunique().reset_index()
-    cohort_sizes = cohort_data[cohort_data['Cohort'] == cohort_data['MonthIdx']].set_index('Cohort')['CustomerID'].to_dict()
+    # Get sorted unique year-months from data
+    all_ym = sorted(valid_df['YearMonth'].dropna().unique().astype(int).tolist())
+    ym_to_idx = {ym: i for i, ym in enumerate(all_ym)}
+    
+    cohort_data = valid_df.groupby(['CohortYM', 'YearMonth'])['CustomerID'].nunique().reset_index()
+    cohort_sizes = cohort_data[cohort_data['CohortYM'] == cohort_data['YearMonth']].set_index('CohortYM')['CustomerID'].to_dict()
+
+    # Build cohort labels: "Jan 25", "Feb 25", etc.
+    month_names_short = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+    def ym_to_label(ym):
+        y = int(ym) // 100
+        m = int(ym) % 100
+        return f"{month_names_short[m-1]} {str(y)[-2:]}"
 
     cohort_matrix = {}
-    for c in range(1, 13):
-        cohort_matrix[f"M{c}"] = {}
-        c_size = cohort_sizes.get(c, 0)
-        cohort_matrix[f"M{c}"]["size"] = c_size
-        max_m = 13 - c
-        for m_offset in range(1, max_m + 1):
-            target_m = c + m_offset
-            # count retained
-            retained = cohort_data[(cohort_data['Cohort'] == c) & (cohort_data['MonthIdx'] == target_m)]['CustomerID'].sum()
+    cohort_labels = []  # ordered list of cohort labels for the frontend
+    for ym in all_ym:
+        key = f"M{ym}"
+        label = ym_to_label(ym)
+        cohort_labels.append(label)
+        cohort_matrix[key] = {"label": label}
+        c_size = cohort_sizes.get(ym, 0)
+        cohort_matrix[key]["size"] = c_size
+        idx = ym_to_idx[ym]
+        for m_offset in range(1, len(all_ym) - idx):
+            target_ym = all_ym[idx + m_offset]
+            retained = cohort_data[(cohort_data['CohortYM'] == ym) & (cohort_data['YearMonth'] == target_ym)]['CustomerID'].sum()
             percent = (retained / c_size * 100) if c_size > 0 else 0
-            cohort_matrix[f"M{c}"][f"M+{m_offset}"] = round(percent, 1)
+            cohort_matrix[key][f"M+{m_offset}"] = round(percent, 1)
+
+    # --- VISIT FREQUENCY ---
+    visits_per_customer = valid_df.groupby('CustomerID')['No PKB'].nunique()
+    v1 = int((visits_per_customer == 1).sum())
+    v2_3 = int(((visits_per_customer >= 2) & (visits_per_customer <= 3)).sum())
+    v4_6 = int(((visits_per_customer >= 4) & (visits_per_customer <= 6)).sum())
+    v7_12 = int(((visits_per_customer >= 7) & (visits_per_customer <= 12)).sum())
+    v12_plus = int((visits_per_customer > 12).sum())
+    visit_frequency = [
+        {"label": "1 visit only", "count": v1},
+        {"label": "2-3 visits", "count": v2_3},
+        {"label": "4-6 visits", "count": v4_6},
+        {"label": "7-12 visits", "count": v7_12},
+        {"label": "12+ visits", "count": v12_plus}
+    ]
 
     # --- 3. FLEET PROFILE (KM & Year) ---
     km_bins = valid_df.groupby('Customer Class')['KM Sekarang'].apply(lambda x: np.histogram(x.dropna(), bins=[0, 5000, 10000, 15000, 20000, 25000, 30000, 100000])[0].tolist()).to_dict()
-    year_bins = valid_df.groupby('Customer Class')['Tahun Rakit'].apply(lambda x: np.histogram(x.dropna(), bins=range(2017, 2026))[0].tolist()).to_dict()
+    year_bins = valid_df.groupby('Customer Class')['Tahun Rakit'].apply(lambda x: np.histogram(x.dropna(), bins=range(2017, 2027))[0].tolist()).to_dict()
 
     # --- 4. BEHAVIOR DEEP DIVE ---
     # We will mock the booking vs walkin & payment method exact values if real columns are missing
@@ -369,6 +405,7 @@ def generate_customer_intel_json(df):
 
     # Final Payload
     payload = {
+        "dateRange": date_range_label,
         "kpis": {
             "total_customers": total_customers,
             "group_customers": group_customers,
@@ -377,6 +414,8 @@ def generate_customer_intel_json(df):
         },
         "rfm_matrix": matrix_cells,
         "cohorts": cohort_matrix,
+        "cohortLabels": cohort_labels,
+        "visitFrequency": visit_frequency,
         "fleet": {
             "km_bins": km_bins,
             "year_bins": year_bins
@@ -589,6 +628,11 @@ def generate_staff_performance_json(df):
     df['MonthName'] = df['DateObj'].dt.strftime('%b')
     valid_df = df.dropna(subset=['Month']).copy()
 
+    # Derive date range label
+    min_date = valid_df['DateObj'].min()
+    max_date = valid_df['DateObj'].max()
+    date_range_label = f"{min_date.strftime('%b %y')} – {max_date.strftime('%b %y')}" if min_date is not pd.NaT else 'All Data'
+
     # 1. SA Performance
     sa_df = valid_df[valid_df['Nama Service Advisor'].notna() & (valid_df['Nama Service Advisor'] != 'Unknown')]
     sa_agg = sa_df.groupby('Nama Service Advisor').agg(
@@ -762,6 +806,7 @@ def generate_staff_performance_json(df):
     avg_quality = sum(m['quality_pct'] for m in mec_metrics) / total_mec if total_mec > 0 else 0
 
     payload = {
+        "dateRange": date_range_label,
         "sa_kpis": {
             "total_sa": total_sa,
             "total_pkb": total_sa_pkb,

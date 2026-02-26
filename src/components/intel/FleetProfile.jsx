@@ -13,7 +13,7 @@ const FleetProfile = ({ fleet }) => {
         Group: (kmBins.Group || [])[idx] || 0,
     }));
 
-    const yearData = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025].map((yr, idx) => ({
+    const yearData = [2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025, 2026].map((yr, idx) => ({
         name: yr,
         Regular: (yearBins.Regular || [])[idx] || 0,
         Group: (yearBins.Group || [])[idx] || 0,
