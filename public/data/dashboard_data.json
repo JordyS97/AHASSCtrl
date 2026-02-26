@@ -1,132 +1,241 @@
 {
     "kpis": {
-        "revenue": 28117.24,
-        "gp": 12517.7,
-        "units": 110933,
-        "margin": 44.5
+        "revenue": 40168.21,
+        "gp": 16219.2,
+        "units": 257943,
+        "margin": 40.4
     },
     "financialFlow": {
-        "faktur": 31210.14,
-        "diskon": -323.51,
-        "ppn": 3092.89,
-        "dpp": 28117.24,
-        "cogs": 15599.54,
-        "gp": 12517.7
+        "faktur": 39535.6,
+        "diskon": 632.61,
+        "ppn": 3917.94,
+        "dpp": 35617.66,
+        "cogs": 40168.21,
+        "gp": 16219.2
     },
     "trends": [
         {
-            "date": "Oct 22",
-            "revenue": 86.46,
-            "gp": 39.0
+            "date": "Jan 27",
+            "revenue": 99.37,
+            "gp": 45.33
         },
         {
-            "date": "Oct 23",
-            "revenue": 75.99,
-            "gp": 32.69
+            "date": "Jan 28",
+            "revenue": 99.22,
+            "gp": 37.93
         },
         {
-            "date": "Oct 24",
-            "revenue": 82.27,
-            "gp": 36.99
+            "date": "Jan 29",
+            "revenue": 105.13,
+            "gp": 41.68
         },
         {
-            "date": "Oct 25",
-            "revenue": 99.13,
-            "gp": 41.84
+            "date": "Jan 30",
+            "revenue": 99.68,
+            "gp": 36.89
         },
         {
-            "date": "Oct 26",
-            "revenue": 13.23,
-            "gp": 5.51
+            "date": "Jan 31",
+            "revenue": 124.68,
+            "gp": 47.18
         },
         {
-            "date": "Oct 27",
-            "revenue": 114.33,
-            "gp": 47.84
+            "date": "Feb 01",
+            "revenue": 20.12,
+            "gp": 7.12
         },
         {
-            "date": "Oct 28",
-            "revenue": 101.33,
-            "gp": 47.38
+            "date": "Feb 02",
+            "revenue": 117.64,
+            "gp": 48.36
         },
         {
-            "date": "Oct 29",
-            "revenue": 83.07,
-            "gp": 37.49
+            "date": "Feb 03",
+            "revenue": 102.89,
+            "gp": 40.53
         },
         {
-            "date": "Oct 30",
-            "revenue": 104.41,
-            "gp": 45.47
+            "date": "Feb 04",
+            "revenue": 105.89,
+            "gp": 43.06
         },
         {
-            "date": "Oct 31",
-            "revenue": 104.55,
-            "gp": 42.9
+            "date": "Feb 05",
+            "revenue": 112.76,
+            "gp": 45.54
+        },
+        {
+            "date": "Feb 06",
+            "revenue": 123.93,
+            "gp": 51.34
+        },
+        {
+            "date": "Feb 07",
+            "revenue": 129.64,
+            "gp": 58.46
+        },
+        {
+            "date": "Feb 08",
+            "revenue": 24.9,
+            "gp": 8.93
+        },
+        {
+            "date": "Feb 09",
+            "revenue": 123.77,
+            "gp": 50.06
+        },
+        {
+            "date": "Feb 10",
+            "revenue": 119.71,
+            "gp": 47.65
+        },
+        {
+            "date": "Feb 11",
+            "revenue": 113.38,
+            "gp": 51.59
+        },
+        {
+            "date": "Feb 12",
+            "revenue": 114.66,
+            "gp": 51.1
+        },
+        {
+            "date": "Feb 13",
+            "revenue": 122.51,
+            "gp": 59.14
+        },
+        {
+            "date": "Feb 14",
+            "revenue": 109.73,
+            "gp": 49.29
+        },
+        {
+            "date": "Feb 15",
+            "revenue": 14.55,
+            "gp": 5.34
+        },
+        {
+            "date": "Feb 16",
+            "revenue": 139.43,
+            "gp": 58.0
+        },
+        {
+            "date": "Feb 17",
+            "revenue": 28.81,
+            "gp": 10.86
+        },
+        {
+            "date": "Feb 18",
+            "revenue": 128.57,
+            "gp": 50.54
+        },
+        {
+            "date": "Feb 19",
+            "revenue": 97.49,
+            "gp": 47.23
+        },
+        {
+            "date": "Feb 20",
+            "revenue": 81.5,
+            "gp": 32.68
+        },
+        {
+            "date": "Feb 21",
+            "revenue": 113.97,
+            "gp": 45.53
+        },
+        {
+            "date": "Feb 22",
+            "revenue": 10.79,
+            "gp": 4.04
+        },
+        {
+            "date": "Feb 23",
+            "revenue": 88.43,
+            "gp": 38.06
+        },
+        {
+            "date": "Feb 24",
+            "revenue": 58.64,
+            "gp": 22.07
+        },
+        {
+            "date": "Feb 25",
+            "revenue": 82.29,
+            "gp": 34.21
         }
     ],
-    "serviceMix": [],
+    "serviceMix": [
+        {
+            "name": "Jasa",
+            "value": 11329.46
+        },
+        {
+            "name": "Part",
+            "value": 4889.74
+        }
+    ],
     "ranking": [
         {
-            "id": "031",
+            "id": "01",
             "name": "NASRULLAH",
-            "units": 9207,
-            "revenue": 1467.54
+            "units": 21961,
+            "revenue": 4061.57
         },
         {
-            "id": "024",
-            "name": "I MADE SULASTRA",
-            "units": 9295,
-            "revenue": 1400.84
-        },
-        {
-            "id": "06",
+            "id": "02",
             "name": "ASHABUL KAHFI",
-            "units": 8929,
-            "revenue": 1149.64
+            "units": 20495,
+            "revenue": 2993.05
         },
         {
-            "id": "041",
+            "id": "03",
             "name": "TAHZUL PAROZI",
-            "units": 7893,
-            "revenue": 1120.78
+            "units": 18384,
+            "revenue": 2975.86
         },
         {
-            "id": "018",
+            "id": "04",
             "name": "FUADDI",
-            "units": 7862,
-            "revenue": 1059.63
+            "units": 18444,
+            "revenue": 2809.89
+        },
+        {
+            "id": "05",
+            "name": "MUHAMMAD HASANAIN",
+            "units": 18864,
+            "revenue": 2572.61
         }
     ],
     "parts": [
         {
-            "no": "88888ATS",
+            "no": "88888ATS30ML",
             "part": "ATS Oil Additive",
-            "qty": 75887,
+            "qty": 178886,
             "trend": "+0%"
         },
         {
-            "no": "082322MB",
+            "no": "082322MBK0LN1",
             "part": "MPX2 10W30 SL 0,8L IDE",
-            "qty": 29309,
+            "qty": 74040,
             "trend": "+0%"
         },
         {
-            "no": "082342MB",
+            "no": "08294M99Z8YN1",
+            "part": "(D) SCOOTER GEAR OIL (120ML) I",
+            "qty": 42807,
+            "trend": "+0%"
+        },
+        {
+            "no": "082342MBK0LZ9",
             "part": "MPX2 10W30 SLMB 0,8L FED",
-            "qty": 21806,
+            "qty": 41659,
             "trend": "+0%"
         },
         {
-            "no": "08232M99",
-            "part": "SCOOTER GEAR OIL (120ML)REP",
-            "qty": 18728,
-            "trend": "+0%"
-        },
-        {
-            "no": "082322MB",
+            "no": "082322MBK3LN1",
             "part": "MPX2 10W30 SLMB 0,65L IDE E",
-            "qty": 17214,
+            "qty": 30948,
             "trend": "+0%"
         }
     ]

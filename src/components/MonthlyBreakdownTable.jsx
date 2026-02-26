@@ -1,8 +1,9 @@
 import React, { useMemo } from 'react';
 
-const MonthlyBreakdownTable = ({ dataset }) => {
+const MonthlyBreakdownTable = ({ dataset, monthOrder: propMonthOrder }) => {
 
-    const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const defaultMonthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthOrder = propMonthOrder || defaultMonthOrder;
 
     const formatM = (val) => `${(val / 1000000).toFixed(0)}M`;
 

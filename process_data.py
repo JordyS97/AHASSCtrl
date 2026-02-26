@@ -145,6 +145,9 @@ def process_files():
     print("Pre-aggregating advanced dashboard data...")
     generate_dashboard_json(master_df)
     
+    print("Pre-aggregating Overview Dashboard data...")
+    generate_overview_dashboard_json(master_df)
+
     print("Pre-aggregating Revenue Trend dashboard data...")
     generate_revenue_dashboard_json(master_df)
 
@@ -153,6 +156,99 @@ def process_files():
 
     print("Pre-aggregating Staff Performance dashboard data...")
     generate_staff_performance_json(master_df)
+
+def generate_overview_dashboard_json(df):
+    """Generates the Overview Dashboard JSON (dashboard_data.json)."""
+    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
+    valid_df = df.dropna(subset=['DateObj']).copy()
+
+    total_rev = valid_df['Revenue'].sum()
+    total_gp = valid_df['Gross Profit'].sum()
+    total_faktur = valid_df['Total Faktur'].sum()
+    total_diskon = valid_df['Diskon'].sum()
+    total_ppn = valid_df['PPN'].sum()
+    total_dpp = valid_df['DPP'].sum() if 'DPP' in valid_df.columns else total_rev
+    total_cogs = valid_df['COGS'].sum() if 'COGS' in valid_df.columns else (total_rev - total_gp)
+    unit_entry = valid_df['No PKB'].nunique() if 'No PKB' in valid_df.columns else 0
+    gp_margin = (total_gp / total_rev * 100) if total_rev > 0 else 0
+
+    # Daily trends - last 30 days of data
+    daily = valid_df.groupby('Tgl Faktur').agg({'Revenue': 'sum', 'Gross Profit': 'sum'}).reset_index()
+    daily = daily.sort_values('Tgl Faktur').tail(30)
+    trend_json = []
+    for _, r in daily.iterrows():
+        date_str = str(r['Tgl Faktur'])
+        # Format as "Mon DD" e.g. "Feb 15"
+        try:
+            dt = pd.to_datetime(date_str)
+            date_label = dt.strftime('%b %d')
+        except:
+            date_label = date_str[-5:]
+        trend_json.append({
+            "date": date_label,
+            "revenue": round(r['Revenue'] / 1000000, 2),
+            "gp": round(r['Gross Profit'] / 1000000, 2)
+        })
+
+    # Service Mix by GP (Jasa vs Part)
+    service_mix = []
+    if 'Jenis' in valid_df.columns:
+        sm = valid_df.groupby('Jenis')['Gross Profit'].sum().reset_index()
+        sm = sm.sort_values('Gross Profit', ascending=False)
+        service_mix = [{"name": str(r['Jenis']), "value": round(r['Gross Profit'] / 1000000, 2)} for _, r in sm.iterrows() if r['Gross Profit'] > 0]
+
+    # Top 5 SA ranking
+    ranking = []
+    if 'Nama Service Advisor' in valid_df.columns:
+        sa_rank = valid_df.groupby('Nama Service Advisor').agg({'No PKB': 'nunique', 'Revenue': 'sum'}).reset_index()
+        sa_rank = sa_rank.sort_values('Revenue', ascending=False).head(5)
+        for i, (_, r) in enumerate(sa_rank.iterrows()):
+            ranking.append({
+                "id": str(i + 1).zfill(2),
+                "name": str(r['Nama Service Advisor'])[:20],
+                "units": int(r['No PKB']),
+                "revenue": round(r['Revenue'] / 1000000, 2)
+            })
+
+    # Top 5 parts
+    parts = []
+    if 'No Part' in valid_df.columns and 'Nama Jasa/Part' in valid_df.columns:
+        parts_only = valid_df[valid_df['Jenis'] == 'Part'] if 'Jenis' in valid_df.columns else valid_df
+        top_parts = parts_only.groupby(['No Part', 'Nama Jasa/Part'])['Jumlah'].sum().reset_index()
+        top_parts = top_parts.sort_values('Jumlah', ascending=False).head(5)
+        for _, r in top_parts.iterrows():
+            parts.append({
+                "no": str(r['No Part']),
+                "part": str(r['Nama Jasa/Part'])[:30],
+                "qty": int(r['Jumlah']),
+                "trend": "+0%"
+            })
+
+    payload = {
+        "kpis": {
+            "revenue": round(total_rev / 1000000, 2),
+            "gp": round(total_gp / 1000000, 2),
+            "units": unit_entry,
+            "margin": round(gp_margin, 1)
+        },
+        "financialFlow": {
+            "faktur": round(total_faktur / 1000000, 2),
+            "diskon": round(total_diskon / 1000000, 2),
+            "ppn": round(total_ppn / 1000000, 2),
+            "dpp": round(total_dpp / 1000000, 2),
+            "cogs": round(total_cogs / 1000000, 2),
+            "gp": round(total_gp / 1000000, 2)
+        },
+        "trends": trend_json,
+        "serviceMix": service_mix,
+        "ranking": ranking,
+        "parts": parts
+    }
+
+    output_path = os.path.join(OUTPUT_DIR, "dashboard_data.json")
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, indent=4)
+    print(f"Overview Dashboard JSON generated at: {output_path}")
 
 def generate_customer_intel_json(df):
     """Generates RFM, Cohort, Geo, and Behavior analytics payload."""
@@ -298,8 +394,9 @@ def generate_revenue_dashboard_json(df):
     """Generates the specific JSON payload required for the Revenue Trend Dashboard."""
     # Ensure Tgl Faktur is workable datetime
     df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
+    df['Year'] = df['DateObj'].dt.year
     df['Month'] = df['DateObj'].dt.month
-    df['MonthName'] = df['DateObj'].dt.strftime('%b')
+    df['MonthYearKey'] = df['DateObj'].dt.strftime('%b %y')  # e.g. "Jan 25", "Feb 26"
 
     # Remove totally bunk dates
     valid_df = df.dropna(subset=['Month']).copy()
@@ -308,9 +405,13 @@ def generate_revenue_dashboard_json(df):
     workshops = valid_df['CM SAP'].dropna().unique().tolist()
     if "" in workshops: workshops.remove("")
 
+    # Build sorted month order from the actual data
+    month_keys_df = valid_df[['Year', 'Month', 'MonthYearKey']].drop_duplicates().sort_values(['Year', 'Month'])
+    month_order = month_keys_df['MonthYearKey'].tolist()
+
     # 1. Master Monthly Trend & Segments (Group vs Regular)
     # Aggregate metrics per month per CM SAP per Customer Class
-    monthly_agg = valid_df.groupby(['Month', 'MonthName', 'CM SAP', 'Customer Class']).agg({
+    monthly_agg = valid_df.groupby(['Year', 'Month', 'MonthYearKey', 'CM SAP', 'Customer Class']).agg({
         'Revenue': 'sum',
         'Gross Profit': 'sum',
         'Total Faktur': 'sum',
@@ -319,7 +420,7 @@ def generate_revenue_dashboard_json(df):
     }).reset_index()
 
     # We need a structured format so the UI can filter efficiently:
-    # { "CM SAP A": { "Jan": { "Regular": {rev, gp}, "Group": {rev, gp} } } }
+    # { "CM SAP A": { "Jan 25": { "Regular": {rev, gp}, "Group": {rev, gp} } } }
     
     master_dict = {}
     master_dict["All_Workshops"] = {} # Pre-calculate "All"
@@ -328,7 +429,7 @@ def generate_revenue_dashboard_json(df):
 
     for _, r in monthly_agg.iterrows():
         w = str(r['CM SAP'])
-        m = str(r['MonthName'])
+        m = str(r['MonthYearKey'])
         c = str(r['Customer Class'])
 
         # Store in Specific Workshop
@@ -365,6 +466,7 @@ def generate_revenue_dashboard_json(df):
     # Compile the final payload
     payload = {
         "workshops": ["All Workshops"] + workshops,
+        "monthOrder": month_order,  # e.g. ["Jan 25", "Feb 25", ..., "Jan 26", "Feb 26"]
         "monthlyData": master_dict,
         "serviceMixGP": service_mix_json
     }

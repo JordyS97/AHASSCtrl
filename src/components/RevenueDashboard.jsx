@@ -10,19 +10,25 @@ const RevenueDashboard = () => {
     const revenueData = datasets.revenue;
     // Top Level Global State
     const [selectedCM, setSelectedCM] = useState('All Workshops');
-    const [selectedDate, setSelectedDate] = useState('Jan-Dec 2024');
 
     if (!revenueData) return <div style={{ color: 'var(--text-muted)', padding: '2rem' }}>Loading Revenue Data...</div>;
 
     const workshops = revenueData?.workshops || ['All Workshops'];
     const monthlyDataRaw = revenueData?.monthlyData || {};
+    const monthOrder = revenueData?.monthOrder || [];
 
     // Compute the filtered dataset based on the global CM SAP filter
-    // Shape: { "Jan": { "Regular": {rev, gp}, "Group": {rev, gp} } }
+    // Shape: { "Jan 25": { "Regular": {rev, gp}, "Group": {rev, gp} } }
     const filteredMonthlyData = useMemo(() => {
         const workshopKey = selectedCM === 'All Workshops' ? 'All_Workshops' : selectedCM;
         return monthlyDataRaw[workshopKey] || {};
     }, [selectedCM, monthlyDataRaw]);
+
+    // Derive available date range label from monthOrder
+    const dateRangeLabel = useMemo(() => {
+        if (monthOrder.length === 0) return 'All Data';
+        return `${monthOrder[0]} – ${monthOrder[monthOrder.length - 1]}`;
+    }, [monthOrder]);
 
     return (
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', paddingBottom: '2rem' }}>
@@ -43,15 +49,9 @@ const RevenueDashboard = () => {
 
                     <div className="glass-panel" style={{ padding: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
                         <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textTransform: 'uppercase', paddingLeft: '0.5rem' }}>Date:</span>
-                        <select
-                            value={selectedDate}
-                            onChange={(e) => setSelectedDate(e.target.value)}
-                            style={{ background: 'rgba(0,0,0,0.3)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 242, 254, 0.3)', padding: '0.4rem 0.8rem', borderRadius: '4px', cursor: 'pointer', outline: 'none' }}
-                        >
-                            <option value="Jan-Dec 2024">Jan-Dec 2024</option>
-                            <option value="Q1 2024">Q1 2024</option>
-                            <option value="Q2 2024">Q2 2024</option>
-                        </select>
+                        <span style={{ color: 'var(--accent-cyan)', padding: '0.4rem 0.8rem', fontSize: '0.85rem', fontWeight: 600 }}>
+                            {dateRangeLabel}
+                        </span>
                     </div>
 
                     <div className="glass-panel" style={{ padding: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.8rem' }}>
@@ -72,10 +72,10 @@ const RevenueDashboard = () => {
 
             {/* Rest of the Dashboard Components injected with filtered data */}
             <RevenueKpis dataset={filteredMonthlyData} />
-            <MasterTrendChart dataset={filteredMonthlyData} />
+            <MasterTrendChart dataset={filteredMonthlyData} monthOrder={monthOrder} />
 
             <div className="charts-grid" style={{ gridTemplateColumns: 'minmax(350px, 1.2fr) minmax(300px, 1fr) minmax(250px, 1fr)' }}>
-                <MonthlyBreakdownTable dataset={filteredMonthlyData} />
+                <MonthlyBreakdownTable dataset={filteredMonthlyData} monthOrder={monthOrder} />
                 <RevenueWidgets dataset={filteredMonthlyData} selectedCM={selectedCM} />
             </div>
 

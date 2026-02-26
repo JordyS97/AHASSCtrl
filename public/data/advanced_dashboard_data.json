@@ -1,116 +1,137 @@
 {
     "kpis": {
-        "revenue": 28117.24,
-        "gp": 12517.7,
-        "units": 110933,
-        "margin": 44.5
+        "revenue": 60585.3,
+        "gp": 24455.1,
+        "units": 257943,
+        "margin": 40.4
     },
     "segmentation": [
         {
             "class": "Group",
-            "revenue": 6616.79,
-            "gp": 3042.74,
-            "avg_trx": 108.38
+            "revenue": 2061.84,
+            "gp": 873.19,
+            "avg_trx": 280.53
         },
         {
             "class": "Regular",
-            "revenue": 21500.45,
-            "gp": 9474.96,
-            "avg_trx": 451.88
+            "revenue": 58523.46,
+            "gp": 23581.92,
+            "avg_trx": 230.15
         }
     ],
     "trends": [
         {
-            "date": "Oct 17",
-            "Regular": 49.49,
-            "Group": 34.15
+            "date": "2026-02-11",
+            "Regular": 112.55,
+            "Group": 0.82
         },
         {
-            "date": "Oct 18",
-            "Regular": 56.6,
-            "Group": 52.53
+            "date": "2026-02-12",
+            "Regular": 114.49,
+            "Group": 0.18
         },
         {
-            "date": "Oct 19",
-            "Regular": 12.12,
-            "Group": 6.85
+            "date": "2026-02-13",
+            "Regular": 114.08,
+            "Group": 8.43
         },
         {
-            "date": "Oct 20",
-            "Regular": 55.96,
-            "Group": 44.6
+            "date": "2026-02-14",
+            "Regular": 104.91,
+            "Group": 4.82
         },
         {
-            "date": "Oct 21",
-            "Regular": 46.63,
-            "Group": 31.38
+            "date": "2026-02-15",
+            "Regular": 14.55,
+            "Group": 0.0
         },
         {
-            "date": "Oct 22",
-            "Regular": 47.95,
-            "Group": 38.51
+            "date": "2026-02-16",
+            "Regular": 128.64,
+            "Group": 10.79
         },
         {
-            "date": "Oct 23",
-            "Regular": 44.47,
-            "Group": 31.52
+            "date": "2026-02-17",
+            "Regular": 28.6,
+            "Group": 0.22
         },
         {
-            "date": "Oct 24",
-            "Regular": 41.3,
-            "Group": 40.97
+            "date": "2026-02-18",
+            "Regular": 127.93,
+            "Group": 0.64
         },
         {
-            "date": "Oct 25",
-            "Regular": 61.72,
-            "Group": 37.41
+            "date": "2026-02-19",
+            "Regular": 97.07,
+            "Group": 0.41
         },
         {
-            "date": "Oct 26",
-            "Regular": 6.67,
-            "Group": 6.57
+            "date": "2026-02-20",
+            "Regular": 76.1,
+            "Group": 5.4
         },
         {
-            "date": "Oct 27",
-            "Regular": 62.81,
-            "Group": 51.52
+            "date": "2026-02-21",
+            "Regular": 113.31,
+            "Group": 0.66
         },
         {
-            "date": "Oct 28",
-            "Regular": 56.65,
-            "Group": 44.68
+            "date": "2026-02-22",
+            "Regular": 10.79,
+            "Group": 0.0
         },
         {
-            "date": "Oct 29",
-            "Regular": 48.76,
-            "Group": 34.31
+            "date": "2026-02-23",
+            "Regular": 81.43,
+            "Group": 7.0
         },
         {
-            "date": "Oct 30",
-            "Regular": 62.38,
-            "Group": 42.03
+            "date": "2026-02-24",
+            "Regular": 54.05,
+            "Group": 4.59
         },
         {
-            "date": "Oct 31",
-            "Regular": 65.38,
-            "Group": 39.16
+            "date": "2026-02-25",
+            "Regular": 81.65,
+            "Group": 0.64
         }
     ],
     "visitMix": [
         {
+            "Customer Class": "Group",
+            "AHASS Event yang di Develop oleh AHASS": 609,
+            "AHASS Event yang di Develop oleh AHM": 0,
+            "AHASS Event yang di Develop oleh MD": 27,
+            "Company (Perusahaan Swasta / BUMN) (C)": 8757,
+            "Door To Door / Home Care / Emergency Road Assistance, AHASS keliling (D)": 6782,
+            "Instansi (Pemerintahan / Koperasi) (I)": 27,
+            "Non - Promotion": 19058,
+            "Pit Express Indoor": 649,
+            "Pit Express Outdoor": 8,
+            "Pos AHASS": 231,
+            "Public Area / Join Dealer Activity (P)": 0,
+            "Reminder (CE Apps)": 261,
+            "Reminder (Call)": 840,
+            "Reminder (SMS)": 721,
+            "Reminder (WA Reminder)": 312
+        },
+        {
             "Customer Class": "Regular",
-            "Grand Total": 1,
-            "H531": 1,
-            "H532": 1,
-            "H533": 1,
-            "H534": 1,
-            "H535": 1,
-            "H536": 1,
-            "H537": 1,
-            "H538": 1,
-            "H539": 1,
-            "Kode BA": 1,
-            "UE": 1
+            "AHASS Event yang di Develop oleh AHASS": 35568,
+            "AHASS Event yang di Develop oleh AHM": 72,
+            "AHASS Event yang di Develop oleh MD": 939,
+            "Company (Perusahaan Swasta / BUMN) (C)": 164,
+            "Door To Door / Home Care / Emergency Road Assistance, AHASS keliling (D)": 17865,
+            "Instansi (Pemerintahan / Koperasi) (I)": 3,
+            "Non - Promotion": 650633,
+            "Pit Express Indoor": 14472,
+            "Pit Express Outdoor": 977,
+            "Pos AHASS": 48058,
+            "Public Area / Join Dealer Activity (P)": 27,
+            "Reminder (CE Apps)": 15797,
+            "Reminder (Call)": 34798,
+            "Reminder (SMS)": 15380,
+            "Reminder (WA Reminder)": 4120
         }
     ],
     "heatmap": [
@@ -173,141 +194,141 @@
     "spending": [
         {
             "class": "Group",
-            "avg_discount": -160,
-            "avg_faktur": 39425
+            "avg_discount": 1735,
+            "avg_faktur": 52124
         },
         {
             "class": "Regular",
-            "avg_discount": -1611,
-            "avg_faktur": 130900
+            "avg_discount": 948,
+            "avg_faktur": 68816
         }
     ],
     "motorProfile": {
         "Regular": {
             "top_models": {
-                "CM0-BEAT": 6864,
-                "MT0-PCX 160 CBS": 5447,
-                "LR1-PCX160 CBS": 5058,
-                "MD1A-Vario 125 CBS ISS SPION PLUS": 4923,
-                "LP0-NEW SCOOPY PRESTIGE": 4587
+                "MT0-PCX 160 CBS": 46888,
+                "MD1A-Vario 125 CBS ISS SPION PLUS": 40267,
+                "MC1A-Vario 125 CBS SPION PLUS": 28672,
+                "MM0A-BEAT STREET PLUS": 26678,
+                "LR1-PCX160 CBS": 25230
             },
-            "avg_km": 24762190,
-            "avg_year": 2021
+            "avg_km": 8140732,
+            "avg_year": 2023
         },
         "Group": {
             "top_models": {
-                "MT0-PCX 160 CBS": 21405,
-                "MJ1A-BEAT SPORTY CBS SPION PLUS": 11604,
-                "MM1A-BEAT STREET SPION PLUS": 10824,
-                "MD1B-VARIO 125 CBS ISS SPION HOOK PLUS": 10737,
-                "MC1B-VARIO 125 CBS SPION HOOK PLUS": 8051
+                "MJ0B-BEAT SPORTY CBS SPION AND SCREEN PLUS": 6191,
+                "HK0-New BeAT eSP CBS": 3030,
+                "MJ0C-BEAT SPORTY CBS SPION SCREEN HOOK PLUS": 2854,
+                "LH2-BEAT SPORTY CBS": 2648,
+                "MJ1A-BEAT SPORTY CBS SPION PLUS": 2438
             },
-            "avg_km": 710679,
-            "avg_year": 2025
+            "avg_km": 3678104,
+            "avg_year": 2023
         }
     },
     "retention": {
         "Regular": {
-            "repeat_rate": 100.0,
-            "total_customers": 1
+            "repeat_rate": 62.9,
+            "total_customers": 69822
         },
         "Group": {
-            "repeat_rate": 100.0,
-            "total_customers": 1
+            "repeat_rate": 65.0,
+            "total_customers": 206
         }
     },
     "geography": [
         {
             "kabupaten": "LOMBOK TENGAH",
-            "Regular": 42068,
-            "Group": 61278
+            "Regular": 240326,
+            "Group": 682
         },
         {
             "kabupaten": "LOMBOK BARAT",
-            "Regular": 33616,
-            "Group": 30372
+            "Regular": 152538,
+            "Group": 255
         },
         {
             "kabupaten": "KOTA MATARAM",
-            "Regular": 37729,
-            "Group": 17714
+            "Regular": 133059,
+            "Group": 1598
         },
         {
             "kabupaten": "LOMBOK TIMUR",
-            "Regular": 17140,
-            "Group": 27188
+            "Regular": 104412,
+            "Group": 107
         },
         {
             "kabupaten": "SUMBAWA",
-            "Regular": 18777,
-            "Group": 14153
+            "Regular": 78420,
+            "Group": 249
         },
         {
             "kabupaten": "BIMA",
-            "Regular": 9280,
-            "Group": 5723
+            "Regular": 37646,
+            "Group": 2
         },
         {
             "kabupaten": "KOTA BIMA",
-            "Regular": 9342,
-            "Group": 3764
+            "Regular": 32408,
+            "Group": 111
         },
         {
             "kabupaten": "JAKARTA SELATAN",
-            "Regular": 162,
-            "Group": 12935
+            "Regular": 311,
+            "Group": 31515
         },
         {
             "kabupaten": "LOMBOK UTARA",
-            "Regular": 5838,
-            "Group": 7025
+            "Regular": 29750,
+            "Group": 29
         },
         {
             "kabupaten": "SUMBAWA BARAT",
-            "Regular": 1418,
-            "Group": 2410
+            "Regular": 9086,
+            "Group": 8
         }
     ],
     "staffAllocation": [
         {
             "name": "NASRULLAH",
-            "Regular": 961.46,
-            "Group": 506.07
-        },
-        {
-            "name": "I MADE SULASTRA",
-            "Regular": 910.38,
-            "Group": 490.46
+            "Regular": 3711.49,
+            "Group": 350.08
         },
         {
             "name": "ASHABUL KAHFI",
-            "Regular": 709.75,
-            "Group": 439.89
+            "Regular": 2901.18,
+            "Group": 91.87
         },
         {
             "name": "TAHZUL PAROZI",
-            "Regular": 776.33,
-            "Group": 344.45
+            "Regular": 2865.56,
+            "Group": 110.31
         },
         {
             "name": "FUADDI",
-            "Regular": 617.52,
-            "Group": 442.11
+            "Regular": 2752.43,
+            "Group": 57.46
         },
         {
             "name": "MUHAMMAD HASANA",
-            "Regular": 408.92,
-            "Group": 530.54
-        },
-        {
-            "name": "JUMADIM",
-            "Regular": 465.85,
-            "Group": 451.56
+            "Regular": 2487.26,
+            "Group": 85.34
         },
         {
             "name": "OKY RAHMAT IQBA",
-            "Regular": 606.14,
-            "Group": 302.43
+            "Regular": 2446.68,
+            "Group": 102.35
+        },
+        {
+            "name": "JUMADIM",
+            "Regular": 2465.48,
+            "Group": 39.54
+        },
+        {
+            "name": "JODI APRILAHADI",
+            "Regular": 1880.86,
+            "Group": 236.11
         }
     ]
 }

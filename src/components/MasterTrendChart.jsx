@@ -1,7 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { AreaChart, Area, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, Legend } from 'recharts';
 
-const MasterTrendChart = ({ dataset }) => {
+const MasterTrendChart = ({ dataset, monthOrder: propMonthOrder }) => {
     // Local State controls
     const [segment, setSegment] = useState('All'); // All | Regular | Group
     const [metric, setMetric] = useState('revenue'); // revenue | gp | dpp | discount
@@ -9,7 +9,9 @@ const MasterTrendChart = ({ dataset }) => {
 
     // Base UI toggles mappings
     const metricsMap = { revenue: 'Revenue', gp: 'GP', dpp: 'DPP', discount: 'Discount' };
-    const monthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    // Use prop month order if provided, else fallback
+    const defaultMonthOrder = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const monthOrder = propMonthOrder || defaultMonthOrder;
 
     // Transform raw `{ "Jan": { "Regular": {rev...}, "Group": {rev...} } }` into array map for Recharts
     const chartData = useMemo(() => {
