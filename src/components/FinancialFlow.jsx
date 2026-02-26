@@ -30,10 +30,11 @@ const FinancialFlow = () => {
     const { financialFlow } = dashboardData;
     const { faktur, diskon, ppn, dpp, cogs, gp } = financialFlow;
 
+    const absDiskon = Math.abs(diskon);
     const data = [
         { name: 'Total Faktur', start: 0, end: faktur, val: faktur, color: 'var(--accent-cyan)' },
-        { name: 'Discount', start: faktur - diskon, end: faktur, val: -diskon, color: 'var(--accent-orange)' },
-        { name: 'Tax/PPN', start: faktur - diskon - ppn, end: faktur - diskon, val: -ppn, color: 'var(--accent-orange)' },
+        { name: 'Discount', start: faktur - absDiskon, end: faktur, val: -absDiskon, color: 'var(--accent-orange)' },
+        { name: 'Tax/PPN', start: faktur - absDiskon - ppn, end: faktur - absDiskon, val: -ppn, color: 'var(--accent-orange)' },
         { name: 'DPP/Rev.', start: 0, end: dpp, val: dpp, color: 'var(--accent-cyan)' },
         { name: 'COGS', start: gp, end: dpp, val: -cogs, color: 'var(--accent-purple)' },
         { name: 'GP', start: 0, end: gp, val: gp, color: 'var(--accent-green)' },

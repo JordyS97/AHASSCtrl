@@ -16,8 +16,15 @@ const MasterTrendChart = ({ dataset }) => {
         return monthOrder.map(month => {
             const dataPoint = dataset[month] || { Regular: {}, Group: {} };
 
-            const regVal = dataPoint.Regular[metric] || 0;
-            const grpVal = dataPoint.Group[metric] || 0;
+            let regVal = dataPoint.Regular[metric] || 0;
+            let grpVal = dataPoint.Group[metric] || 0;
+
+            // Source data stores discounts as negative — display as positive
+            if (metric === 'discount') {
+                regVal = Math.abs(regVal);
+                grpVal = Math.abs(grpVal);
+            }
+
             const allVal = regVal + grpVal;
 
             return {

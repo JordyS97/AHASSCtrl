@@ -32,7 +32,7 @@ const RevenueKpis = ({ dataset }) => {
             revenue: (rev / 1000000000).toFixed(2), // Billions
             grossProfit: (gp / 1000000000).toFixed(2),
             dpp: (dpp / 1000000000).toFixed(2), // Excl tax
-            discount: (discount / 1000000).toFixed(0), // Millions
+            discount: (Math.abs(discount) / 1000000).toFixed(0), // Millions
             margin: margin.toFixed(1),
             groupShare: groupShare.toFixed(1)
         };

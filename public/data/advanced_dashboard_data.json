@@ -1,0 +1,313 @@
+{
+    "kpis": {
+        "revenue": 28117.24,
+        "gp": 12517.7,
+        "units": 110933,
+        "margin": 44.5
+    },
+    "segmentation": [
+        {
+            "class": "Group",
+            "revenue": 6616.79,
+            "gp": 3042.74,
+            "avg_trx": 108.38
+        },
+        {
+            "class": "Regular",
+            "revenue": 21500.45,
+            "gp": 9474.96,
+            "avg_trx": 451.88
+        }
+    ],
+    "trends": [
+        {
+            "date": "Oct 17",
+            "Regular": 49.49,
+            "Group": 34.15
+        },
+        {
+            "date": "Oct 18",
+            "Regular": 56.6,
+            "Group": 52.53
+        },
+        {
+            "date": "Oct 19",
+            "Regular": 12.12,
+            "Group": 6.85
+        },
+        {
+            "date": "Oct 20",
+            "Regular": 55.96,
+            "Group": 44.6
+        },
+        {
+            "date": "Oct 21",
+            "Regular": 46.63,
+            "Group": 31.38
+        },
+        {
+            "date": "Oct 22",
+            "Regular": 47.95,
+            "Group": 38.51
+        },
+        {
+            "date": "Oct 23",
+            "Regular": 44.47,
+            "Group": 31.52
+        },
+        {
+            "date": "Oct 24",
+            "Regular": 41.3,
+            "Group": 40.97
+        },
+        {
+            "date": "Oct 25",
+            "Regular": 61.72,
+            "Group": 37.41
+        },
+        {
+            "date": "Oct 26",
+            "Regular": 6.67,
+            "Group": 6.57
+        },
+        {
+            "date": "Oct 27",
+            "Regular": 62.81,
+            "Group": 51.52
+        },
+        {
+            "date": "Oct 28",
+            "Regular": 56.65,
+            "Group": 44.68
+        },
+        {
+            "date": "Oct 29",
+            "Regular": 48.76,
+            "Group": 34.31
+        },
+        {
+            "date": "Oct 30",
+            "Regular": 62.38,
+            "Group": 42.03
+        },
+        {
+            "date": "Oct 31",
+            "Regular": 65.38,
+            "Group": 39.16
+        }
+    ],
+    "visitMix": [
+        {
+            "Customer Class": "Regular",
+            "Grand Total": 1,
+            "H531": 1,
+            "H532": 1,
+            "H533": 1,
+            "H534": 1,
+            "H535": 1,
+            "H536": 1,
+            "H537": 1,
+            "H538": 1,
+            "H539": 1,
+            "Kode BA": 1,
+            "UE": 1
+        }
+    ],
+    "heatmap": [
+        {
+            "hour": "7:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "8:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "9:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "10:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "11:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "12:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "13:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "14:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "15:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "16:00",
+            "Regular": 0,
+            "Group": 0
+        },
+        {
+            "hour": "17:00",
+            "Regular": 0,
+            "Group": 0
+        }
+    ],
+    "spending": [
+        {
+            "class": "Group",
+            "avg_discount": -160,
+            "avg_faktur": 39425
+        },
+        {
+            "class": "Regular",
+            "avg_discount": -1611,
+            "avg_faktur": 130900
+        }
+    ],
+    "motorProfile": {
+        "Regular": {
+            "top_models": {
+                "CM0-BEAT": 6864,
+                "MT0-PCX 160 CBS": 5447,
+                "LR1-PCX160 CBS": 5058,
+                "MD1A-Vario 125 CBS ISS SPION PLUS": 4923,
+                "LP0-NEW SCOOPY PRESTIGE": 4587
+            },
+            "avg_km": 24762190,
+            "avg_year": 2021
+        },
+        "Group": {
+            "top_models": {
+                "MT0-PCX 160 CBS": 21405,
+                "MJ1A-BEAT SPORTY CBS SPION PLUS": 11604,
+                "MM1A-BEAT STREET SPION PLUS": 10824,
+                "MD1B-VARIO 125 CBS ISS SPION HOOK PLUS": 10737,
+                "MC1B-VARIO 125 CBS SPION HOOK PLUS": 8051
+            },
+            "avg_km": 710679,
+            "avg_year": 2025
+        }
+    },
+    "retention": {
+        "Regular": {
+            "repeat_rate": 100.0,
+            "total_customers": 1
+        },
+        "Group": {
+            "repeat_rate": 100.0,
+            "total_customers": 1
+        }
+    },
+    "geography": [
+        {
+            "kabupaten": "LOMBOK TENGAH",
+            "Regular": 42068,
+            "Group": 61278
+        },
+        {
+            "kabupaten": "LOMBOK BARAT",
+            "Regular": 33616,
+            "Group": 30372
+        },
+        {
+            "kabupaten": "KOTA MATARAM",
+            "Regular": 37729,
+            "Group": 17714
+        },
+        {
+            "kabupaten": "LOMBOK TIMUR",
+            "Regular": 17140,
+            "Group": 27188
+        },
+        {
+            "kabupaten": "SUMBAWA",
+            "Regular": 18777,
+            "Group": 14153
+        },
+        {
+            "kabupaten": "BIMA",
+            "Regular": 9280,
+            "Group": 5723
+        },
+        {
+            "kabupaten": "KOTA BIMA",
+            "Regular": 9342,
+            "Group": 3764
+        },
+        {
+            "kabupaten": "JAKARTA SELATAN",
+            "Regular": 162,
+            "Group": 12935
+        },
+        {
+            "kabupaten": "LOMBOK UTARA",
+            "Regular": 5838,
+            "Group": 7025
+        },
+        {
+            "kabupaten": "SUMBAWA BARAT",
+            "Regular": 1418,
+            "Group": 2410
+        }
+    ],
+    "staffAllocation": [
+        {
+            "name": "NASRULLAH",
+            "Regular": 961.46,
+            "Group": 506.07
+        },
+        {
+            "name": "I MADE SULASTRA",
+            "Regular": 910.38,
+            "Group": 490.46
+        },
+        {
+            "name": "ASHABUL KAHFI",
+            "Regular": 709.75,
+            "Group": 439.89
+        },
+        {
+            "name": "TAHZUL PAROZI",
+            "Regular": 776.33,
+            "Group": 344.45
+        },
+        {
+            "name": "FUADDI",
+            "Regular": 617.52,
+            "Group": 442.11
+        },
+        {
+            "name": "MUHAMMAD HASANA",
+            "Regular": 408.92,
+            "Group": 530.54
+        },
+        {
+            "name": "JUMADIM",
+            "Regular": 465.85,
+            "Group": 451.56
+        },
+        {
+            "name": "OKY RAHMAT IQBA",
+            "Regular": 606.14,
+            "Group": 302.43
+        }
+    ]
+}

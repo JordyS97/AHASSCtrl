@@ -11,7 +11,7 @@ const SpendingPattern = () => {
     const data = spending.map(d => ({
         class: d.class,
         avgFaktur: d.avg_faktur / 1000,   // convert to thousands for easier charting
-        avgDiscount: d.avg_discount / 1000 // convert to thousands
+        avgDiscount: Math.abs(d.avg_discount) / 1000 // convert to thousands
     }));
 
     return (

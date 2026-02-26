@@ -14,7 +14,7 @@ const RevenueWidgets = ({ dataset, selectedCM }) => {
             const g = month?.Group || {};
             rev += (r.revenue || 0) + (g.revenue || 0);
             gp += (r.gp || 0) + (g.gp || 0);
-            discount += (r.discount || 0) + (g.discount || 0);
+            discount += Math.abs(r.discount || 0) + Math.abs(g.discount || 0);
         });
 
         const grossSales = rev + discount; // theoretical
