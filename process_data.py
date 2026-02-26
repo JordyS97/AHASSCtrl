@@ -4,8 +4,11 @@ import pandas as pd
 import json
 import numpy as np
 
-# Define the source directory and necessary columns
-SOURCE_DIR = r"D:\01. NTB\H23_Data Nota Service PowerBI"
+# Define the source directories and necessary columns
+SOURCE_DIRS = [
+    r"D:\01. NTB\H23_Data Nota Service PowerBI\2025",
+    r"D:\01. NTB\H23_Data Nota Service PowerBI\2026"
+]
 OUTPUT_DIR = r"d:\AntiGravity\Project04\data"
 
 if not os.path.exists(OUTPUT_DIR):
@@ -23,7 +26,7 @@ COLUMNS_TO_KEEP = [
 
 def format_date(df):
     try:
-        df['Tgl Faktur'] = pd.to_datetime(df['Tgl Faktur'], dayfirst=True, errors='coerce').dt.strftime('%b %d')
+        df['Tgl Faktur'] = pd.to_datetime(df['Tgl Faktur'], dayfirst=True, errors='coerce').dt.strftime('%Y-%m-%d')
     except Exception as e:
         print(f"Warning: Could not parse dates: {e}")
     return df
@@ -39,13 +42,14 @@ def get_customer_class(pembayar):
     return 'Regular'
 
 def process_files():
-    print(f"Scanning for Excel files in {SOURCE_DIR}...")
+    print(f"Scanning for Excel files in {SOURCE_DIRS}...")
     files = []
-    for ext in ["*.xlsx", "*.xls", "*.csv"]:
-        files.extend(glob.glob(os.path.join(SOURCE_DIR, "**", ext), recursive=True))
+    for d in SOURCE_DIRS:
+        for ext in ["*.xlsx", "*.xls", "*.csv"]:
+            files.extend(glob.glob(os.path.join(d, "**", ext), recursive=True))
 
     if not files:
-        print("No Excel files found! Please check the directory path.")
+        print("No Excel files found! Please check the directory paths.")
         return
 
     print(f"Found {len(files)} files. Starting compression...")
@@ -131,7 +135,7 @@ def process_files():
 def generate_customer_intel_json(df):
     """Generates RFM, Cohort, Geo, and Behavior analytics payload."""
     # Ensure DateObj is workable
-    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%b %d', errors='coerce').apply(lambda d: d.replace(year=2024) if not pd.isna(d) else d)
+    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
     valid_df = df.dropna(subset=['DateObj']).copy()
     valid_df['MonthIdx'] = valid_df['DateObj'].dt.month
     
@@ -146,8 +150,8 @@ def generate_customer_intel_json(df):
     # Simplify: Group by CustomerID
     customer_group = valid_df.groupby(['CustomerID', 'Customer Class'])
     
-    # R: Days since last visit from Dec 31
-    reference_date = pd.to_datetime('2024-12-31')
+    # R: Days since last visit from the maximum date in the dataset
+    reference_date = valid_df['DateObj'].max() if not valid_df.empty else pd.to_datetime('2026-12-31')
     rfm = customer_group.agg(
         Recency=('DateObj', lambda x: (reference_date - x.max()).days),
         Frequency=('No PKB', 'nunique'),
@@ -271,7 +275,7 @@ def generate_customer_intel_json(df):
 def generate_revenue_dashboard_json(df):
     """Generates the specific JSON payload required for the Revenue Trend Dashboard."""
     # Ensure Tgl Faktur is workable datetime
-    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%b %d', errors='coerce').apply(lambda d: d.replace(year=2024) if not pd.isna(d) else d)
+    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
     df['Month'] = df['DateObj'].dt.month
     df['MonthName'] = df['DateObj'].dt.strftime('%b')
 
@@ -456,7 +460,7 @@ def generate_dashboard_json(df):
 def generate_staff_performance_json(df):
     """Generates the massive payload for the Expert Staff Performance Dashboard."""
     # Ensure DateObj is workable
-    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%b %d', errors='coerce').apply(lambda d: d.replace(year=2024) if not pd.isna(d) else d)
+    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
     df['Month'] = df['DateObj'].dt.month
     df['MonthName'] = df['DateObj'].dt.strftime('%b')
     valid_df = df.dropna(subset=['Month']).copy()
