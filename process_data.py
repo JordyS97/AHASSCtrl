@@ -16,12 +16,12 @@ if not os.path.exists(OUTPUT_DIR):
 
 COLUMNS_TO_KEEP = [
     'Tgl Faktur', 'Total Faktur', 'PPN', 'Diskon', 'Gross Profit', 
-    'No PKB', 'Nama Tipe Kedatangan', 'Tipe PKB', 'Nama Service Advisor', 'Nama Mekanik',
+    'No PKB', ' Nama Tipe Kedatangan', 'Tipe PKB', 'Nama Service Advisor', 'Nama Mekanik',
     'No Part', 'Nama Jasa/Part', 'Jumlah', 'Jenis', 'CM SAP',
     'Nama Pembayar', 'KM Sekarang', 'Tahun Rakit', 'Kecamatan Pemilik', 
-    'Kabupaten Pemilik', 'Nama Pemilik', 'Sales', 'Harga Part', 
+    'Kabupaten Pemilik', 'Nama Pemilik ', 'Sales', 'Harga Part', 
     'Nama Motor', 'Sumber Booking', 'Jam Cetak PKB',
-    'No Polisi', 'Metode Pembayaran', 'Nama Final Inspector', 'Kode Promo'
+    'No Polisi', 'Metode Pembayaran', 'Nama Final Inspector ', 'Kode Promo'
 ]
 
 def format_date(df):
@@ -92,7 +92,14 @@ def process_files():
         master_df[c] = master_df[c].astype('category')
 
     # Classify Customer using NAMA PEMILIK
-    master_df['Customer Class'] = master_df['Nama Pemilik'].apply(get_customer_class)
+    master_df['Customer Class'] = master_df['Nama Pemilik '].apply(get_customer_class)
+    
+    # Rename columns to standard versions so the rest of the script works without modifications
+    master_df.rename(columns={
+        ' Nama Tipe Kedatangan': 'Nama Tipe Kedatangan',
+        'Nama Pemilik ': 'Nama Pemilik',
+        'Nama Final Inspector ': 'Nama Final Inspector'
+    }, inplace=True)
     
     # Sales = Revenue
     master_df['Revenue'] = master_df['Sales']
