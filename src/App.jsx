@@ -25,6 +25,9 @@ import RevenueDashboard from './components/RevenueDashboard';
 // Customer Intel Hub Replacement
 import CustomerIntelDashboard from './components/CustomerIntelDashboard';
 
+// Staff Performance Hub
+import StaffPerformanceDashboard from './components/StaffPerformanceDashboard';
+
 function App() {
   const [activeTab, setActiveTab] = useState('overview');
 
@@ -68,7 +71,9 @@ function App() {
               <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
                 <Wrench size={18} /> Parts & Materials
               </a>
-              <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
+              <a href="#"
+                onClick={() => setActiveTab('staff')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'staff' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
                 <UserCircle size={18} /> Staff Performance
               </a>
             </div>
@@ -78,7 +83,7 @@ function App() {
 
       {/* Main Content Area */}
       <main className="main-content">
-        {activeTab !== 'revenue' && (
+        {activeTab !== 'revenue' && activeTab !== 'staff' && (
           <header className="top-header">
             <div>
               <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Workshop Performance <span className="text-cyan">_</span></h1>
@@ -122,6 +127,10 @@ function App() {
 
         {activeTab === 'revenue' && (
           <RevenueDashboard />
+        )}
+
+        {activeTab === 'staff' && (
+          <StaffPerformanceDashboard />
         )}
 
       </main>

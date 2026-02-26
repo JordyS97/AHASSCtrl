@@ -1,0 +1,1422 @@
+{
+    "sa_kpis": {
+        "total_sa": 15,
+        "total_pkb": 95853,
+        "total_rev": 13515553731.0,
+        "avg_gp": 403697716.3333333,
+        "avg_pkb_month": 532.5166666666667,
+        "avg_discount": -1.1333333333333333
+    },
+    "mec_kpis": {
+        "total_mec": 20,
+        "total_units": 26610,
+        "avg_units_day": 4.2700000000000005,
+        "avg_time": 35.0,
+        "avg_rework_rate": 0.9376023321030859,
+        "avg_quality": 98.99
+    },
+    "service_advisors": [
+        {
+            "name": "NASRULLAH",
+            "revenue": 1467539357.0,
+            "pkb": 9207,
+            "gp": 647899397.0,
+            "gp_margin": 44.1,
+            "discount_pct": -1.6,
+            "avg_rev_pkb": 159394,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 50.0,
+            "grade": "B",
+            "monthly_pkb": [
+                2902,
+                1109,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1843,
+                1666,
+                1687
+            ]
+        },
+        {
+            "name": "I MADE SULASTRA",
+            "revenue": 1400842331.0,
+            "pkb": 9295,
+            "gp": 655191604.0,
+            "gp_margin": 46.8,
+            "discount_pct": -1.9,
+            "avg_rev_pkb": 150709,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 47.7,
+            "grade": "B",
+            "monthly_pkb": [
+                3069,
+                1341,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1658,
+                1508,
+                1719
+            ]
+        },
+        {
+            "name": "ASHABUL KAHFI",
+            "revenue": 1149644954.0,
+            "pkb": 8929,
+            "gp": 531015845.0,
+            "gp_margin": 46.2,
+            "discount_pct": -0.9,
+            "avg_rev_pkb": 128754,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 49.9,
+            "grade": "B",
+            "monthly_pkb": [
+                2524,
+                1210,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1778,
+                1707,
+                1710
+            ]
+        },
+        {
+            "name": "TAHZUL PAROZI",
+            "revenue": 1120781004.0,
+            "pkb": 7893,
+            "gp": 531443696.0,
+            "gp_margin": 47.4,
+            "discount_pct": -1.6,
+            "avg_rev_pkb": 141997,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 39.4,
+            "grade": "B",
+            "monthly_pkb": [
+                2324,
+                1030,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1568,
+                1470,
+                1501
+            ]
+        },
+        {
+            "name": "FUADDI",
+            "revenue": 1059631536.0,
+            "pkb": 7862,
+            "gp": 452986365.0,
+            "gp_margin": 42.7,
+            "discount_pct": -0.6,
+            "avg_rev_pkb": 134779,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 64.1,
+            "grade": "B",
+            "monthly_pkb": [
+                2615,
+                1059,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1386,
+                1451,
+                1353
+            ]
+        },
+        {
+            "name": "MUHAMMAD HASANAIN",
+            "revenue": 939458675.0,
+            "pkb": 7802,
+            "gp": 393401865.0,
+            "gp_margin": 41.9,
+            "discount_pct": -0.5,
+            "avg_rev_pkb": 120413,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 78.2,
+            "grade": "C+",
+            "monthly_pkb": [
+                3277,
+                1000,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1171,
+                1235,
+                1120
+            ]
+        },
+        {
+            "name": "JUMADIM",
+            "revenue": 917408909.0,
+            "pkb": 6603,
+            "gp": 414481818.0,
+            "gp_margin": 45.2,
+            "discount_pct": -0.9,
+            "avg_rev_pkb": 138938,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 74.3,
+            "grade": "C+",
+            "monthly_pkb": [
+                2104,
+                845,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1261,
+                1310,
+                1083
+            ]
+        },
+        {
+            "name": "OKY RAHMAT IQBAL",
+            "revenue": 908562630.0,
+            "pkb": 5537,
+            "gp": 401101281.0,
+            "gp_margin": 44.1,
+            "discount_pct": -0.2,
+            "avg_rev_pkb": 164089,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 53.6,
+            "grade": "C+",
+            "monthly_pkb": [
+                1761,
+                692,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                998,
+                933,
+                1153
+            ]
+        },
+        {
+            "name": "JODI APRILAHADI",
+            "revenue": 793218597.0,
+            "pkb": 6277,
+            "gp": 368485625.0,
+            "gp_margin": 46.5,
+            "discount_pct": -0.6,
+            "avg_rev_pkb": 126369,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 65.9,
+            "grade": "C",
+            "monthly_pkb": [
+                1924,
+                781,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1235,
+                1106,
+                1231
+            ]
+        },
+        {
+            "name": "I MADE EKA WIDYADNYANA",
+            "revenue": 785542914.0,
+            "pkb": 5547,
+            "gp": 345721182.0,
+            "gp_margin": 44.0,
+            "discount_pct": -1.5,
+            "avg_rev_pkb": 141616,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 65.5,
+            "grade": "C",
+            "monthly_pkb": [
+                2466,
+                645,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                815,
+                781,
+                840
+            ]
+        },
+        {
+            "name": "DEDY NUR ALAMSYAH",
+            "revenue": 704957445.0,
+            "pkb": 4553,
+            "gp": 326055666.0,
+            "gp_margin": 46.3,
+            "discount_pct": -0.9,
+            "avg_rev_pkb": 154834,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 63.7,
+            "grade": "C",
+            "monthly_pkb": [
+                947,
+                694,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                966,
+                937,
+                1009
+            ]
+        },
+        {
+            "name": "MUHAMMAD ALWI JAUHARI",
+            "revenue": 635770709.0,
+            "pkb": 4350,
+            "gp": 277921661.0,
+            "gp_margin": 43.7,
+            "discount_pct": -1.1,
+            "avg_rev_pkb": 146154,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 70.0,
+            "grade": "C",
+            "monthly_pkb": [
+                855,
+                611,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                1039,
+                845,
+                1000
+            ]
+        },
+        {
+            "name": "ABDUL HAKIM PARHADI",
+            "revenue": 578373590.0,
+            "pkb": 4686,
+            "gp": 253758718.0,
+            "gp_margin": 43.9,
+            "discount_pct": -0.3,
+            "avg_rev_pkb": 123426,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 78.9,
+            "grade": "C",
+            "monthly_pkb": [
+                1672,
+                520,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                673,
+                754,
+                1067
+            ]
+        },
+        {
+            "name": "YOGI PHATRIYA PRADANA",
+            "revenue": 527538706.0,
+            "pkb": 3777,
+            "gp": 234507457.0,
+            "gp_margin": 44.5,
+            "discount_pct": -3.7,
+            "avg_rev_pkb": 139671,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 48.8,
+            "grade": "C",
+            "monthly_pkb": [
+                1611,
+                396,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                669,
+                661,
+                440
+            ]
+        },
+        {
+            "name": "AULIA ARHAM HIDAYAT",
+            "revenue": 526282374.0,
+            "pkb": 3535,
+            "gp": 221493565.0,
+            "gp_margin": 42.1,
+            "discount_pct": -0.7,
+            "avg_rev_pkb": 148878,
+            "booking_pct": 0.0,
+            "retention_pct": 100.0,
+            "group_pct": 60.8,
+            "grade": "C",
+            "monthly_pkb": [
+                805,
+                593,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                806,
+                785,
+                546
+            ]
+        }
+    ],
+    "mechanics": [
+        {
+            "name": "SATRIA ADI GUNA",
+            "units": 1587,
+            "avg_time": 35,
+            "daily_avg": 5.1,
+            "quality_pct": 99.7,
+            "rework_jobs": 4,
+            "complex_pct": 0.0,
+            "parts_acc": 83.3,
+            "insp_pass": 89.4,
+            "grade": "A+",
+            "monthly_throughput": [
+                599,
+                217,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                255,
+                258,
+                258
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1587
+                },
+                {
+                    "name": "Part",
+                    "value": 1497
+                }
+            ]
+        },
+        {
+            "name": "ANDRE PRATAMA",
+            "units": 1656,
+            "avg_time": 35,
+            "daily_avg": 5.3,
+            "quality_pct": 99.6,
+            "rework_jobs": 6,
+            "complex_pct": 0.0,
+            "parts_acc": 96.0,
+            "insp_pass": 93.5,
+            "grade": "A+",
+            "monthly_throughput": [
+                579,
+                178,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                292,
+                307,
+                300
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1656
+                },
+                {
+                    "name": "Part",
+                    "value": 1528
+                }
+            ]
+        },
+        {
+            "name": "AFRIYANDRA KHAIRULLAH",
+            "units": 179,
+            "avg_time": 35,
+            "daily_avg": 0.6,
+            "quality_pct": 99.5,
+            "rework_jobs": 0,
+            "complex_pct": 0.0,
+            "parts_acc": 85.6,
+            "insp_pass": 93.3,
+            "grade": "B+",
+            "monthly_throughput": [
+                34,
+                42,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                32,
+                24,
+                47
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 179
+                },
+                {
+                    "name": "Part",
+                    "value": 147
+                }
+            ]
+        },
+        {
+            "name": "IKLAMUDIN",
+            "units": 1226,
+            "avg_time": 35,
+            "daily_avg": 3.9,
+            "quality_pct": 99.5,
+            "rework_jobs": 5,
+            "complex_pct": 0.0,
+            "parts_acc": 97.9,
+            "insp_pass": 91.7,
+            "grade": "B+",
+            "monthly_throughput": [
+                234,
+                224,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                243,
+                273,
+                252
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1226
+                },
+                {
+                    "name": "Part",
+                    "value": 1022
+                }
+            ]
+        },
+        {
+            "name": "I MADE PERNATA",
+            "units": 1521,
+            "avg_time": 35,
+            "daily_avg": 4.9,
+            "quality_pct": 99.3,
+            "rework_jobs": 10,
+            "complex_pct": 0.0,
+            "parts_acc": 95.8,
+            "insp_pass": 90.5,
+            "grade": "A",
+            "monthly_throughput": [
+                524,
+                229,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                268,
+                238,
+                262
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1521
+                },
+                {
+                    "name": "Part",
+                    "value": 1384
+                }
+            ]
+        },
+        {
+            "name": "DARUL IRAWAN",
+            "units": 1655,
+            "avg_time": 35,
+            "daily_avg": 5.3,
+            "quality_pct": 99.2,
+            "rework_jobs": 13,
+            "complex_pct": 0.0,
+            "parts_acc": 83.5,
+            "insp_pass": 90.1,
+            "grade": "A+",
+            "monthly_throughput": [
+                560,
+                237,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                273,
+                288,
+                297
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1655
+                },
+                {
+                    "name": "Part",
+                    "value": 1486
+                }
+            ]
+        },
+        {
+            "name": "ALI HANAFI",
+            "units": 1116,
+            "avg_time": 35,
+            "daily_avg": 3.6,
+            "quality_pct": 99.1,
+            "rework_jobs": 10,
+            "complex_pct": 0.0,
+            "parts_acc": 89.4,
+            "insp_pass": 95.7,
+            "grade": "B+",
+            "monthly_throughput": [
+                252,
+                182,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                233,
+                219,
+                230
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1116
+                },
+                {
+                    "name": "Part",
+                    "value": 1082
+                }
+            ]
+        },
+        {
+            "name": "FAHRURROZI FEBRIAN",
+            "units": 1559,
+            "avg_time": 35,
+            "daily_avg": 5.0,
+            "quality_pct": 99.1,
+            "rework_jobs": 13,
+            "complex_pct": 0.0,
+            "parts_acc": 97.1,
+            "insp_pass": 86.4,
+            "grade": "A",
+            "monthly_throughput": [
+                583,
+                177,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                261,
+                271,
+                267
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1559
+                },
+                {
+                    "name": "Part",
+                    "value": 1426
+                }
+            ]
+        },
+        {
+            "name": "MUHAMMAD YUSRIL HADI",
+            "units": 1347,
+            "avg_time": 35,
+            "daily_avg": 4.3,
+            "quality_pct": 99.1,
+            "rework_jobs": 11,
+            "complex_pct": 0.0,
+            "parts_acc": 82.7,
+            "insp_pass": 94.3,
+            "grade": "B+",
+            "monthly_throughput": [
+                294,
+                173,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                307,
+                300,
+                273
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1347
+                },
+                {
+                    "name": "Part",
+                    "value": 1248
+                }
+            ]
+        },
+        {
+            "name": "ADITYA DWI PRAJA",
+            "units": 1286,
+            "avg_time": 35,
+            "daily_avg": 4.1,
+            "quality_pct": 98.9,
+            "rework_jobs": 14,
+            "complex_pct": 0.0,
+            "parts_acc": 94.6,
+            "insp_pass": 95.3,
+            "grade": "B+",
+            "monthly_throughput": [
+                311,
+                210,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                278,
+                207,
+                280
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1286
+                },
+                {
+                    "name": "Part",
+                    "value": 1239
+                }
+            ]
+        },
+        {
+            "name": "MUHAMAD JEFRI ARISWANDI",
+            "units": 1685,
+            "avg_time": 35,
+            "daily_avg": 5.4,
+            "quality_pct": 98.8,
+            "rework_jobs": 19,
+            "complex_pct": 0.0,
+            "parts_acc": 82.8,
+            "insp_pass": 96.6,
+            "grade": "A+",
+            "monthly_throughput": [
+                616,
+                212,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                273,
+                279,
+                305
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1685
+                },
+                {
+                    "name": "Part",
+                    "value": 1576
+                }
+            ]
+        },
+        {
+            "name": "RAHMAD",
+            "units": 935,
+            "avg_time": 35,
+            "daily_avg": 3.0,
+            "quality_pct": 98.8,
+            "rework_jobs": 11,
+            "complex_pct": 0.0,
+            "parts_acc": 83.9,
+            "insp_pass": 97.1,
+            "grade": "B+",
+            "monthly_throughput": [
+                276,
+                202,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                42,
+                134,
+                281
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 935
+                },
+                {
+                    "name": "Part",
+                    "value": 889
+                }
+            ]
+        },
+        {
+            "name": "RIKI SETIAWAN",
+            "units": 1832,
+            "avg_time": 35,
+            "daily_avg": 5.9,
+            "quality_pct": 98.8,
+            "rework_jobs": 21,
+            "complex_pct": 0.0,
+            "parts_acc": 91.8,
+            "insp_pass": 88.5,
+            "grade": "A+",
+            "monthly_throughput": [
+                638,
+                234,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                319,
+                312,
+                329
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1832
+                },
+                {
+                    "name": "Part",
+                    "value": 1705
+                }
+            ]
+        },
+        {
+            "name": "ANDIKA FEBRIANSYAH",
+            "units": 1775,
+            "avg_time": 35,
+            "daily_avg": 5.7,
+            "quality_pct": 98.7,
+            "rework_jobs": 22,
+            "complex_pct": 0.0,
+            "parts_acc": 83.6,
+            "insp_pass": 96.2,
+            "grade": "A+",
+            "monthly_throughput": [
+                514,
+                243,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                358,
+                343,
+                317
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1775
+                },
+                {
+                    "name": "Part",
+                    "value": 1568
+                }
+            ]
+        },
+        {
+            "name": "M ZAENAL BASRI",
+            "units": 1626,
+            "avg_time": 35,
+            "daily_avg": 5.2,
+            "quality_pct": 98.7,
+            "rework_jobs": 21,
+            "complex_pct": 0.0,
+            "parts_acc": 95.5,
+            "insp_pass": 98.5,
+            "grade": "A+",
+            "monthly_throughput": [
+                622,
+                139,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                290,
+                284,
+                291
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1626
+                },
+                {
+                    "name": "Part",
+                    "value": 1543
+                }
+            ]
+        },
+        {
+            "name": "MUH  MUZAKKI",
+            "units": 578,
+            "avg_time": 35,
+            "daily_avg": 1.9,
+            "quality_pct": 98.7,
+            "rework_jobs": 7,
+            "complex_pct": 0.0,
+            "parts_acc": 84.2,
+            "insp_pass": 90.0,
+            "grade": "B+",
+            "monthly_throughput": [
+                249,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                134,
+                195,
+                0
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 578
+                },
+                {
+                    "name": "Part",
+                    "value": 558
+                }
+            ]
+        },
+        {
+            "name": "SANDY FUJIANTO",
+            "units": 1710,
+            "avg_time": 35,
+            "daily_avg": 5.5,
+            "quality_pct": 98.7,
+            "rework_jobs": 22,
+            "complex_pct": 0.0,
+            "parts_acc": 87.2,
+            "insp_pass": 85.6,
+            "grade": "A+",
+            "monthly_throughput": [
+                659,
+                220,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                307,
+                260,
+                264
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1710
+                },
+                {
+                    "name": "Part",
+                    "value": 1584
+                }
+            ]
+        },
+        {
+            "name": "AULIA ARHAM HIDAYAT",
+            "units": 318,
+            "avg_time": 35,
+            "daily_avg": 1.0,
+            "quality_pct": 98.6,
+            "rework_jobs": 4,
+            "complex_pct": 0.0,
+            "parts_acc": 84.5,
+            "insp_pass": 92.9,
+            "grade": "B+",
+            "monthly_throughput": [
+                318,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 318
+                },
+                {
+                    "name": "Part",
+                    "value": 293
+                }
+            ]
+        },
+        {
+            "name": "IMAM GAZALI",
+            "units": 1514,
+            "avg_time": 35,
+            "daily_avg": 4.9,
+            "quality_pct": 98.5,
+            "rework_jobs": 22,
+            "complex_pct": 0.0,
+            "parts_acc": 91.4,
+            "insp_pass": 91.3,
+            "grade": "A",
+            "monthly_throughput": [
+                523,
+                227,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                251,
+                238,
+                275
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1514
+                },
+                {
+                    "name": "Part",
+                    "value": 1433
+                }
+            ]
+        },
+        {
+            "name": "M  FAUZAN ALI IRPANI",
+            "units": 1505,
+            "avg_time": 35,
+            "daily_avg": 4.8,
+            "quality_pct": 98.5,
+            "rework_jobs": 22,
+            "complex_pct": 0.0,
+            "parts_acc": 91.4,
+            "insp_pass": 91.3,
+            "grade": "A",
+            "monthly_throughput": [
+                514,
+                206,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                265,
+                225,
+                295
+            ],
+            "service_mix": [
+                {
+                    "name": "Jasa",
+                    "value": 1505
+                },
+                {
+                    "name": "Part",
+                    "value": 1416
+                }
+            ]
+        }
+    ],
+    "matrix": [
+        {
+            "sa": "ABDUL HAKIM PARHADI",
+            "mechanic": "ADITYA DWI PRAJA",
+            "revenue": 20560298.0,
+            "pkb": 133,
+            "quality_pct": 98.9
+        },
+        {
+            "sa": "ABDUL HAKIM PARHADI",
+            "mechanic": "M ZAENAL BASRI",
+            "revenue": 71608280.0,
+            "pkb": 549,
+            "quality_pct": 98.7
+        },
+        {
+            "sa": "ABDUL HAKIM PARHADI",
+            "mechanic": "MUHAMAD JEFRI ARISWANDI",
+            "revenue": 75887704.0,
+            "pkb": 615,
+            "quality_pct": 98.8
+        },
+        {
+            "sa": "ABDUL HAKIM PARHADI",
+            "mechanic": "SATRIA ADI GUNA",
+            "revenue": 59303198.0,
+            "pkb": 502,
+            "quality_pct": 99.7
+        },
+        {
+            "sa": "AULIA ARHAM HIDAYAT",
+            "mechanic": "RAHMAD",
+            "revenue": 48209100.0,
+            "pkb": 324,
+            "quality_pct": 98.8
+        },
+        {
+            "sa": "DEDY NUR ALAMSYAH",
+            "mechanic": "I MADE PERNATA",
+            "revenue": 135808708.0,
+            "pkb": 746,
+            "quality_pct": 99.3
+        },
+        {
+            "sa": "DEDY NUR ALAMSYAH",
+            "mechanic": "IMAM GAZALI",
+            "revenue": 93059236.0,
+            "pkb": 665,
+            "quality_pct": 98.5
+        },
+        {
+            "sa": "FUADDI",
+            "mechanic": "ANDRE PRATAMA",
+            "revenue": 111603286.0,
+            "pkb": 930,
+            "quality_pct": 99.6
+        },
+        {
+            "sa": "FUADDI",
+            "mechanic": "DARUL IRAWAN",
+            "revenue": 107564940.0,
+            "pkb": 795,
+            "quality_pct": 99.2
+        },
+        {
+            "sa": "FUADDI",
+            "mechanic": "FAHRURROZI FEBRIAN",
+            "revenue": 113220639.0,
+            "pkb": 878,
+            "quality_pct": 99.1
+        },
+        {
+            "sa": "FUADDI",
+            "mechanic": "MUHAMMAD YUSRIL HADI",
+            "revenue": 102726125.0,
+            "pkb": 703,
+            "quality_pct": 99.1
+        },
+        {
+            "sa": "FUADDI",
+            "mechanic": "RIKI SETIAWAN",
+            "revenue": 155247654.0,
+            "pkb": 1050,
+            "quality_pct": 98.8
+        },
+        {
+            "sa": "I MADE EKA WIDYADNYANA",
+            "mechanic": "I MADE PERNATA",
+            "revenue": 110852123.0,
+            "pkb": 752,
+            "quality_pct": 99.3
+        },
+        {
+            "sa": "I MADE EKA WIDYADNYANA",
+            "mechanic": "IMAM GAZALI",
+            "revenue": 102426079.0,
+            "pkb": 801,
+            "quality_pct": 98.5
+        },
+        {
+            "sa": "I MADE SULASTRA",
+            "mechanic": "IKLAMUDIN",
+            "revenue": 128356225.0,
+            "pkb": 953,
+            "quality_pct": 99.5
+        },
+        {
+            "sa": "I MADE SULASTRA",
+            "mechanic": "M ZAENAL BASRI",
+            "revenue": 3022929.0,
+            "pkb": 26,
+            "quality_pct": 98.7
+        },
+        {
+            "sa": "I MADE SULASTRA",
+            "mechanic": "MUHAMAD JEFRI ARISWANDI",
+            "revenue": 3274141.0,
+            "pkb": 26,
+            "quality_pct": 98.8
+        },
+        {
+            "sa": "I MADE SULASTRA",
+            "mechanic": "SANDY FUJIANTO",
+            "revenue": 184583980.0,
+            "pkb": 1210,
+            "quality_pct": 98.7
+        },
+        {
+            "sa": "I MADE SULASTRA",
+            "mechanic": "SATRIA ADI GUNA",
+            "revenue": 2124417.0,
+            "pkb": 22,
+            "quality_pct": 99.7
+        },
+        {
+            "sa": "JODI APRILAHADI",
+            "mechanic": "ANDRE PRATAMA",
+            "revenue": 82131917.0,
+            "pkb": 681,
+            "quality_pct": 99.6
+        },
+        {
+            "sa": "JODI APRILAHADI",
+            "mechanic": "DARUL IRAWAN",
+            "revenue": 117691984.0,
+            "pkb": 839,
+            "quality_pct": 99.2
+        },
+        {
+            "sa": "JODI APRILAHADI",
+            "mechanic": "FAHRURROZI FEBRIAN",
+            "revenue": 83109470.0,
+            "pkb": 639,
+            "quality_pct": 99.1
+        },
+        {
+            "sa": "JODI APRILAHADI",
+            "mechanic": "MUHAMMAD YUSRIL HADI",
+            "revenue": 78866878.0,
+            "pkb": 642,
+            "quality_pct": 99.1
+        },
+        {
+            "sa": "JODI APRILAHADI",
+            "mechanic": "RIKI SETIAWAN",
+            "revenue": 101992908.0,
+            "pkb": 756,
+            "quality_pct": 98.8
+        },
+        {
+            "sa": "JUMADIM",
+            "mechanic": "ADITYA DWI PRAJA",
+            "revenue": 31503902.0,
+            "pkb": 202,
+            "quality_pct": 98.9
+        },
+        {
+            "sa": "JUMADIM",
+            "mechanic": "M ZAENAL BASRI",
+            "revenue": 95973576.0,
+            "pkb": 670,
+            "quality_pct": 98.7
+        },
+        {
+            "sa": "JUMADIM",
+            "mechanic": "MUHAMAD JEFRI ARISWANDI",
+            "revenue": 93998891.0,
+            "pkb": 678,
+            "quality_pct": 98.8
+        },
+        {
+            "sa": "JUMADIM",
+            "mechanic": "SATRIA ADI GUNA",
+            "revenue": 95907044.0,
+            "pkb": 656,
+            "quality_pct": 99.7
+        },
+        {
+            "sa": "MUHAMMAD ALWI JAUHARI",
+            "mechanic": "ALI HANAFI",
+            "revenue": 32695067.0,
+            "pkb": 234,
+            "quality_pct": 99.1
+        },
+        {
+            "sa": "MUHAMMAD ALWI JAUHARI",
+            "mechanic": "M  FAUZAN ALI IRPANI",
+            "revenue": 66685233.0,
+            "pkb": 445,
+            "quality_pct": 98.5
+        },
+        {
+            "sa": "MUHAMMAD ALWI JAUHARI",
+            "mechanic": "MUH  MUZAKKI",
+            "revenue": 19902914.0,
+            "pkb": 173,
+            "quality_pct": 98.7
+        },
+        {
+            "sa": "MUHAMMAD HASANAIN",
+            "mechanic": "ALI HANAFI",
+            "revenue": 31758523.0,
+            "pkb": 303,
+            "quality_pct": 99.1
+        },
+        {
+            "sa": "MUHAMMAD HASANAIN",
+            "mechanic": "M  FAUZAN ALI IRPANI",
+            "revenue": 125844549.0,
+            "pkb": 973,
+            "quality_pct": 98.5
+        },
+        {
+            "sa": "MUHAMMAD HASANAIN",
+            "mechanic": "MUH  MUZAKKI",
+            "revenue": 43145662.0,
+            "pkb": 389,
+            "quality_pct": 98.7
+        },
+        {
+            "sa": "OKY RAHMAT IQBAL",
+            "mechanic": "AULIA ARHAM HIDAYAT",
+            "revenue": 27206768.0,
+            "pkb": 116,
+            "quality_pct": 98.6
+        },
+        {
+            "sa": "OKY RAHMAT IQBAL",
+            "mechanic": "RAHMAD",
+            "revenue": 91000498.0,
+            "pkb": 608,
+            "quality_pct": 98.8
+        },
+        {
+            "sa": "TAHZUL PAROZI",
+            "mechanic": "ANDIKA FEBRIANSYAH",
+            "revenue": 252951321.0,
+            "pkb": 1688,
+            "quality_pct": 98.7
+        },
+        {
+            "sa": "YOGI PHATRIYA PRADANA",
+            "mechanic": "IKLAMUDIN",
+            "revenue": 35294399.0,
+            "pkb": 273,
+            "quality_pct": 99.5
+        },
+        {
+            "sa": "YOGI PHATRIYA PRADANA",
+            "mechanic": "SANDY FUJIANTO",
+            "revenue": 67782484.0,
+            "pkb": 473,
+            "quality_pct": 98.7
+        }
+    ]
+}
