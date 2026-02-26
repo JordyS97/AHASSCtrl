@@ -91,15 +91,15 @@ def process_files():
     for c in cat_cols:
         master_df[c] = master_df[c].astype('category')
 
-    # Classify Customer using NAMA PEMILIK
-    master_df['Customer Class'] = master_df['Nama Pemilik '].apply(get_customer_class)
-    
     # Rename columns to standard versions so the rest of the script works without modifications
     master_df.rename(columns={
         ' Nama Tipe Kedatangan': 'Nama Tipe Kedatangan',
         'Nama Pemilik ': 'Nama Pemilik',
         'Nama Final Inspector ': 'Nama Final Inspector'
     }, inplace=True)
+
+    # Classify Customer using NAMA PEMILIK
+    master_df['Customer Class'] = master_df['Nama Pemilik'].apply(get_customer_class)
     
     # Sales = Revenue
     master_df['Revenue'] = master_df['Sales']
@@ -129,10 +129,17 @@ def process_files():
     master_df['GP'] = master_df['Gross Profit']
     master_df = format_date(master_df)
 
-    # Save Compressed CSV
-    csv_path = os.path.join(OUTPUT_DIR, "compressed_data.csv.gz")
-    master_df.to_csv(csv_path, index=False, compression='gzip')
-    print(f"Saved Shrunk CSV: {csv_path}")
+    # Aggressively drop redundant/intermediate columns to shrink export size
+    cols_to_drop = [
+        'Nama Pembayar', 'Sales', 'Harga Part', 'Kode Promo',
+        'Kecamatan Pemilik', 'Nama Final Inspector', 'Metode Pembayaran'
+    ]
+    export_df = master_df.drop(columns=[c for c in cols_to_drop if c in master_df.columns])
+
+    # Save Compressed CSV as ZIP (more efficient dictionary compression and native to Windows)
+    csv_path = os.path.join(OUTPUT_DIR, "compressed_data.zip")
+    export_df.to_csv(csv_path, index=False, compression=dict(method='zip', archive_name='compressed_data.csv'))
+    print(f"Saved Shrunk CSV Archive: {csv_path}")
 
     # Aggregations
     print("Pre-aggregating advanced dashboard data...")
