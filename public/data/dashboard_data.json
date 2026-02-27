@@ -1,17 +1,17 @@
 {
     "kpis": {
-        "revenue": 40266.15,
-        "gp": 16256.28,
-        "units": 258632,
-        "margin": 40.4
+        "revenue": 5133.78,
+        "gp": 2091.05,
+        "units": 35649,
+        "margin": 40.7
     },
     "financialFlow": {
-        "faktur": 39632.09,
-        "diskon": 634.06,
-        "ppn": 3927.5,
-        "dpp": 35704.59,
-        "cogs": 40266.15,
-        "gp": 16256.28
+        "faktur": 5093.66,
+        "diskon": 40.12,
+        "ppn": 504.78,
+        "dpp": 4588.88,
+        "cogs": 5133.78,
+        "gp": 2091.05
     },
     "trends": [
         {
@@ -168,74 +168,74 @@
     "serviceMix": [
         {
             "name": "Jasa",
-            "value": 11354.75
+            "value": 1461.71
         },
         {
             "name": "Part",
-            "value": 4901.53
+            "value": 629.34
         }
     ],
     "ranking": [
         {
             "id": "01",
-            "name": "NASRULLAH",
-            "units": 22022,
-            "revenue": 4072.35
+            "name": "I MADE SULASTRA",
+            "units": 3508,
+            "revenue": 577.27
         },
         {
             "id": "02",
-            "name": "ASHABUL KAHFI",
-            "units": 20535,
-            "revenue": 2997.32
+            "name": "NASRULLAH",
+            "units": 2730,
+            "revenue": 465.51
         },
         {
             "id": "03",
             "name": "TAHZUL PAROZI",
-            "units": 18432,
-            "revenue": 2984.67
+            "units": 2621,
+            "revenue": 367.29
         },
         {
             "id": "04",
-            "name": "FUADDI",
-            "units": 18488,
-            "revenue": 2817.13
+            "name": "ASHABUL KAHFI",
+            "units": 2848,
+            "revenue": 364.93
         },
         {
             "id": "05",
-            "name": "MUHAMMAD HASANAIN",
-            "units": 18911,
-            "revenue": 2577.34
+            "name": "FUADDI",
+            "units": 2545,
+            "revenue": 354.42
         }
     ],
     "parts": [
         {
             "no": "88888ATS30ML",
             "part": "ATS Oil Additive",
-            "qty": 179417,
+            "qty": 24092,
             "trend": "+0%"
         },
         {
             "no": "082322MBK0LN1",
             "part": "MPX2 10W30 SL 0,8L IDE",
-            "qty": 74129,
-            "trend": "+0%"
-        },
-        {
-            "no": "08294M99Z8YN1",
-            "part": "(D) SCOOTER GEAR OIL (120ML) I",
-            "qty": 42909,
+            "qty": 8445,
             "trend": "+0%"
         },
         {
             "no": "082342MBK0LZ9",
             "part": "MPX2 10W30 SLMB 0,8L FED",
-            "qty": 41852,
+            "qty": 7016,
             "trend": "+0%"
         },
         {
             "no": "082322MBK3LN1",
             "part": "MPX2 10W30 SLMB 0,65L IDE E",
-            "qty": 31082,
+            "qty": 7006,
+            "trend": "+0%"
+        },
+        {
+            "no": "082342MBK0LZ0",
+            "part": "SPX2 10W30 SLMB 0,8L REP",
+            "qty": 4882,
             "trend": "+0%"
         }
     ]
