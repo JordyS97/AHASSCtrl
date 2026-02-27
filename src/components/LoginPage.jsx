@@ -27,6 +27,7 @@ const LoginPage = () => {
         <div style={{
             minHeight: '100vh',
             display: 'flex',
+            flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'center',
             background: 'var(--bg-color)',
