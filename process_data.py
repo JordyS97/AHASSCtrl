@@ -3,13 +3,20 @@ import glob
 import pandas as pd
 import json
 import numpy as np
+from dotenv import load_dotenv
+
+# Load .env from project root
+load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 # Define the source directories and necessary columns
 SOURCE_DIRS = [
-    r"D:\01. NTB\H23_Data Nota Service PowerBI\2025",
     r"D:\01. NTB\H23_Data Nota Service PowerBI\2026"
 ]
 OUTPUT_DIR = r"d:\AntiGravity\Project04\data"
+
+# Supabase config
+SUPABASE_URL = os.getenv('VITE_SUPABASE_URL', '')
+SUPABASE_SERVICE_KEY = os.getenv('SUPABASE_SERVICE_ROLE_KEY', '')
 
 if not os.path.exists(OUTPUT_DIR):
     os.makedirs(OUTPUT_DIR)
@@ -132,7 +139,7 @@ def process_files():
     # Aggressively drop redundant/intermediate columns to shrink export size
     cols_to_drop = [
         'Nama Pembayar', 'Sales', 'Harga Part', 'Kode Promo',
-        'Kecamatan Pemilik', 'Nama Final Inspector', 'Metode Pembayaran'
+        'Nama Final Inspector', 'Metode Pembayaran'
     ]
     export_df = master_df.drop(columns=[c for c in cols_to_drop if c in master_df.columns])
 
@@ -140,6 +147,11 @@ def process_files():
     csv_path = os.path.join(OUTPUT_DIR, "compressed_data.zip")
     export_df.to_csv(csv_path, index=False, compression=dict(method='zip', archive_name='compressed_data.csv'))
     print(f"Saved Shrunk CSV Archive: {csv_path}")
+
+    # Also save as gzip for Supabase Storage upload
+    gz_path = os.path.join(OUTPUT_DIR, "raw_data_2026.csv.gz")
+    export_df.to_csv(gz_path, index=False, compression='gzip')
+    print(f"Saved GZIP CSV: {gz_path}")
 
     # Aggregations
     print("Pre-aggregating advanced dashboard data...")
@@ -393,15 +405,110 @@ def generate_customer_intel_json(df):
         }
     behavior = {"Regular": calc_behavior('Regular'), "Group": calc_behavior('Group')}
 
-    # --- 5. GEOGRAPHY ---
-    # District volume
+    # --- 5. GEOGRAPHY (KABUPATEN + KECAMATAN HIERARCHY) ---
+    valid_df['Kecamatan Pemilik'] = valid_df['Kecamatan Pemilik'].fillna('Unknown')
     valid_df['Kabupaten Pemilik'] = valid_df['Kabupaten Pemilik'].fillna('Unknown')
-    geo = valid_df.groupby('Kabupaten Pemilik').agg(
+
+    # --- 5a. geoKabupaten: Rankings with Group/Regular split ---
+    kab_agg = valid_df.groupby(['Kabupaten Pemilik', 'Customer Class']).agg(
         cust_count=('CustomerID', 'nunique'),
         revenue=('Revenue', 'sum')
-    ).reset_index().sort_values('revenue', ascending=False).head(10)
-    
-    geo_list = [{"district": r['Kabupaten Pemilik'], "cust": r['cust_count'], "rev": float(r['revenue'])} for _, r in geo.iterrows()]
+    ).reset_index()
+    kab_totals = kab_agg.groupby('Kabupaten Pemilik').agg(
+        total_cust=('cust_count', 'sum'),
+        total_rev=('revenue', 'sum')
+    ).reset_index().sort_values('total_rev', ascending=False)
+
+    geo_kab_list = []
+    for _, kr in kab_totals.iterrows():
+        kab_name = str(kr['Kabupaten Pemilik'])
+        reg_row = kab_agg[(kab_agg['Kabupaten Pemilik'] == kab_name) & (kab_agg['Customer Class'] == 'Regular')]
+        grp_row = kab_agg[(kab_agg['Kabupaten Pemilik'] == kab_name) & (kab_agg['Customer Class'] == 'Group')]
+        reg_cust = int(reg_row['cust_count'].sum()) if len(reg_row) else 0
+        grp_cust = int(grp_row['cust_count'].sum()) if len(grp_row) else 0
+        total_c = int(kr['total_cust'])
+        total_r = float(kr['total_rev'])
+        geo_kab_list.append({
+            "kabupaten": kab_name,
+            "cust": total_c,
+            "revenue": total_r,
+            "Regular": reg_cust,
+            "Group": grp_cust,
+            "regPct": round(reg_cust / total_c * 100, 1) if total_c > 0 else 0,
+            "grpPct": round(grp_cust / total_c * 100, 1) if total_c > 0 else 0
+        })
+
+    # --- 5b. geoKecamatan: Per-kecamatan with parent kabupaten ---
+    kec_agg = valid_df.groupby(['Kabupaten Pemilik', 'Kecamatan Pemilik']).agg(
+        cust_count=('CustomerID', 'nunique'),
+        revenue=('Revenue', 'sum')
+    ).reset_index().sort_values('revenue', ascending=False)
+    geo_kec_list = [{
+        "kabupaten": str(r['Kabupaten Pemilik']),
+        "kecamatan": str(r['Kecamatan Pemilik']),
+        "cust": int(r['cust_count']),
+        "revenue": float(r['revenue'])
+    } for _, r in kec_agg.iterrows()]
+
+    # --- 5c. geoHierarchy: Kabupaten → Kecamatan monthly volumes (heatmap) ---
+    valid_df['MonthLabel'] = valid_df['DateObj'].dt.strftime('%b %y')
+    # Build month order from data
+    mo_df = valid_df[['Year', 'MonthIdx', 'MonthLabel']].drop_duplicates().sort_values(['Year', 'MonthIdx'])
+    heatmap_months = mo_df['MonthLabel'].tolist()
+
+    # Kabupaten monthly volumes
+    kab_monthly = valid_df.groupby(['Kabupaten Pemilik', 'Year', 'MonthIdx', 'MonthLabel'])['CustomerID'].nunique().reset_index(name='cust')
+    # Kecamatan monthly volumes
+    kec_monthly = valid_df.groupby(['Kabupaten Pemilik', 'Kecamatan Pemilik', 'Year', 'MonthIdx', 'MonthLabel'])['CustomerID'].nunique().reset_index(name='cust')
+
+    # Top kabupaten for heatmap (sorted by total volume)
+    top_kabs = [k['kabupaten'] for k in geo_kab_list[:10]]
+    geo_hierarchy = []
+    for kab_name in top_kabs:
+        # Build kabupaten month data
+        kab_m = kab_monthly[kab_monthly['Kabupaten Pemilik'] == kab_name]
+        kab_month_dict = {}
+        for _, mr in kab_m.iterrows():
+            kab_month_dict[str(mr['MonthLabel'])] = int(mr['cust'])
+        kab_months_arr = [kab_month_dict.get(m, 0) for m in heatmap_months]
+
+        # Build kecamatan children
+        kab_kecs = kec_agg[kec_agg['Kabupaten Pemilik'] == kab_name].sort_values('revenue', ascending=False).head(8)
+        children = []
+        for _, kr in kab_kecs.iterrows():
+            kec_name = str(kr['Kecamatan Pemilik'])
+            kec_m = kec_monthly[(kec_monthly['Kabupaten Pemilik'] == kab_name) & (kec_monthly['Kecamatan Pemilik'] == kec_name)]
+            kec_month_dict = {}
+            for _, mr2 in kec_m.iterrows():
+                kec_month_dict[str(mr2['MonthLabel'])] = int(mr2['cust'])
+            kec_months_arr = [kec_month_dict.get(m, 0) for m in heatmap_months]
+            children.append({
+                "name": kec_name,
+                "cust": int(kr['cust_count']),
+                "months": kec_months_arr
+            })
+
+        geo_hierarchy.append({
+            "kabupaten": kab_name,
+            "cust": int(kab_totals[kab_totals['Kabupaten Pemilik'] == kab_name]['total_cust'].iloc[0]),
+            "months": kab_months_arr,
+            "children": children
+        })
+
+    # --- 5d. geoKpis ---
+    n_kab = valid_df['Kabupaten Pemilik'].nunique()
+    n_kec = valid_df['Kecamatan Pemilik'].nunique()
+    top_kab = geo_kab_list[0] if geo_kab_list else {}
+    geo_kpis = {
+        "kabCount": n_kab,
+        "kecCount": n_kec,
+        "topKab": top_kab.get("kabupaten", "N/A"),
+        "topKabRev": top_kab.get("revenue", 0),
+        "topKabCust": top_kab.get("cust", 0)
+    }
+
+    # Legacy geography list (backward-compat for GeographyMap.jsx in advanced dashboard)
+    geo_list = [{"district": r['Kecamatan Pemilik'], "cust": r['cust_count'], "rev": float(r['revenue'])} for _, r in kec_agg.head(15).iterrows()]
 
     # Final Payload
     payload = {
@@ -421,7 +528,12 @@ def generate_customer_intel_json(df):
             "year_bins": year_bins
         },
         "behavior": behavior,
-        "geography": geo_list
+        "geography": geo_list,
+        "geoKabupaten": geo_kab_list,
+        "geoKecamatan": geo_kec_list,
+        "geoHierarchy": geo_hierarchy,
+        "geoKpis": geo_kpis,
+        "heatmapMonths": heatmap_months
     }
 
     output_path = os.path.join(OUTPUT_DIR, "customer_intel_data.json")
@@ -833,5 +945,65 @@ def generate_staff_performance_json(df):
         json.dump(payload, f, indent=4)
     print(f"Staff Performance JSON generated at: {output_path}")
 
+def upload_to_supabase():
+    """Upload all generated JSON payloads to Supabase dashboard_data table."""
+    if not SUPABASE_URL or not SUPABASE_SERVICE_KEY:
+        print("Supabase credentials not found in .env. Skipping upload.")
+        return
+
+    try:
+        from supabase import create_client
+        sb = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
+    except ImportError:
+        print("supabase-py not installed. Run: pip install supabase")
+        return
+    except Exception as e:
+        print(f"Could not connect to Supabase: {e}")
+        return
+
+    # Map file → dashboard_data key
+    file_key_map = {
+        'dashboard_data.json': 'dashboard',
+        'advanced_dashboard_data.json': 'advanced',
+        'revenue_dashboard_data.json': 'revenue',
+        'customer_intel_data.json': 'customerIntel',
+        'staff_performance_data.json': 'staffPerformance',
+    }
+
+    for filename, key in file_key_map.items():
+        filepath = os.path.join(OUTPUT_DIR, filename)
+        if not os.path.exists(filepath):
+            print(f"  Skipping {filename} (not found)")
+            continue
+
+        with open(filepath, 'r', encoding='utf-8') as f:
+            payload = json.load(f)
+
+        try:
+            sb.table('dashboard_data').upsert({
+                'key': key,
+                'data': payload,
+                'updated_at': pd.Timestamp.now().isoformat()
+            }, on_conflict='key').execute()
+            print(f"  ✓ Uploaded {key} to Supabase")
+        except Exception as e:
+            print(f"  ✗ Failed to upload {key}: {e}")
+
+    # Upload compressed CSV of raw data to Supabase Storage
+    csv_path = os.path.join(OUTPUT_DIR, 'raw_data_2026.csv.gz')
+    if os.path.exists(csv_path):
+        try:
+            with open(csv_path, 'rb') as f:
+                sb.storage.from_('csv-uploads').upload(
+                    'raw_data_2026.csv.gz', f,
+                    file_options={'content-type': 'application/gzip', 'upsert': 'true'}
+                )
+            print(f"  ✓ Uploaded compressed CSV to Supabase Storage")
+        except Exception as e:
+            print(f"  ✗ Failed to upload CSV: {e}")
+
+
 if __name__ == "__main__":
     process_files()
+    print("\n--- Uploading to Supabase ---")
+    upload_to_supabase()

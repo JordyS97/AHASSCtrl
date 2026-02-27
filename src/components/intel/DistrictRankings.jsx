@@ -1,18 +1,17 @@
 import React from 'react';
 
 const DistrictRankings = ({ geo }) => {
-    // Generate inline bars for the mix if we don't have explicit split in python yet
-    // Ensure geo exists or use massive mock for demo visuals
-    const defaultData = [
-        { kab: 'Kab. Bandung', cust: 1284, revStr: '2.84B', color: 'var(--accent-cyan)', gPct: 30, rPct: 70 },
-        { kab: 'Kab. Bekasi', cust: 842, revStr: '1.72B', color: 'var(--accent-cyan)', gPct: 40, rPct: 60 },
-        { kab: 'Kab. Bogor', cust: 620, revStr: '1.28B', color: 'var(--accent-cyan)', gPct: 60, rPct: 40 },
-        { kab: 'Kota Bandung', cust: 510, revStr: '1.04B', color: 'var(--accent-green)', gPct: 55, rPct: 45 },
-        { kab: 'Kab. Sumedang', cust: 388, revStr: '780M', color: 'var(--text-muted)', gPct: 45, rPct: 55 },
-        { kab: 'Kota Cimahi', cust: 286, revStr: '572M', color: 'var(--text-muted)', gPct: 20, rPct: 80 },
-        { kab: 'Kab. Karawang', cust: 212, revStr: '432M', color: 'var(--accent-orange)', gPct: 70, rPct: 30, highlight: true },
-        { kab: 'Kab. Purwakarta', cust: 128, revStr: '256M', color: 'var(--text-muted)', gPct: 60, rPct: 40 },
-    ];
+    const data = (geo || []).slice(0, 10);
+
+    const formatRevenue = (val) => {
+        if (val >= 1e9) return `${(val / 1e9).toFixed(2)}B`;
+        if (val >= 1e6) return `${(val / 1e6).toFixed(0)}M`;
+        return `${Math.round(val / 1e3)}K`;
+    };
+
+    // Determine highlight: item with highest Group % (emerging B2B opportunity)
+    const maxGrpPctIdx = data.reduce((maxIdx, item, idx, arr) =>
+        item.grpPct > (arr[maxIdx]?.grpPct || 0) ? idx : maxIdx, 0);
 
     return (
         <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column' }}>
@@ -35,22 +34,29 @@ const DistrictRankings = ({ geo }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {defaultData.map((row, idx) => (
-                        <tr key={idx} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)', transition: 'background 0.2s', cursor: 'default' }} onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'} onMouseLeave={e => e.currentTarget.style.background = 'transparent'}>
-                            <td style={{ padding: '0.8rem 0', color: row.highlight ? 'var(--accent-orange)' : 'var(--text-muted)' }}>
-                                0{idx + 1}{row.highlight && '★'}
-                            </td>
-                            <td style={{ padding: '0.8rem 0', color: '#ececec' }}>{row.kab}</td>
-                            <td style={{ padding: '0.8rem 0', textAlign: 'right', color: 'var(--text-muted)' }}>{row.cust.toLocaleString()}</td>
-                            <td style={{ padding: '0.8rem 0', textAlign: 'right', color: row.color, fontWeight: 600 }}>{row.revStr}</td>
-                            <td style={{ padding: '0.8rem 0', textAlign: 'center' }}>
-                                <div style={{ display: 'inline-flex', width: '40px', height: '6px', overflow: 'hidden', borderRadius: '3px' }}>
-                                    <div style={{ width: `${row.gPct}%`, background: 'var(--accent-purple)' }}></div>
-                                    <div style={{ width: `${row.rPct}%`, background: 'var(--accent-cyan)' }}></div>
-                                </div>
-                            </td>
-                        </tr>
-                    ))}
+                    {data.map((row, idx) => {
+                        const isHighlight = idx === maxGrpPctIdx && row.grpPct > 40;
+                        const revColor = idx < 3 ? 'var(--accent-cyan)' : isHighlight ? 'var(--accent-orange)' : 'var(--text-muted)';
+                        return (
+                            <tr key={row.kabupaten} style={{ borderBottom: '1px solid rgba(255,255,255,0.03)', transition: 'background 0.2s', cursor: 'default' }}
+                                onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.02)'}
+                                onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
+                            >
+                                <td style={{ padding: '0.8rem 0', color: isHighlight ? 'var(--accent-orange)' : 'var(--text-muted)' }}>
+                                    {String(idx + 1).padStart(2, '0')}{isHighlight && '★'}
+                                </td>
+                                <td style={{ padding: '0.8rem 0', color: '#ececec' }}>{row.kabupaten}</td>
+                                <td style={{ padding: '0.8rem 0', textAlign: 'right', color: 'var(--text-muted)' }}>{row.cust.toLocaleString()}</td>
+                                <td style={{ padding: '0.8rem 0', textAlign: 'right', color: revColor, fontWeight: 600 }}>{formatRevenue(row.revenue)}</td>
+                                <td style={{ padding: '0.8rem 0', textAlign: 'center' }}>
+                                    <div style={{ display: 'inline-flex', width: '40px', height: '6px', overflow: 'hidden', borderRadius: '3px' }}>
+                                        <div style={{ width: `${row.grpPct}%`, background: 'var(--accent-purple)' }}></div>
+                                        <div style={{ width: `${row.regPct}%`, background: 'var(--accent-cyan)' }}></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        );
+                    })}
                 </tbody>
             </table>
         </div>

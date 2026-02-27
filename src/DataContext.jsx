@@ -1,13 +1,24 @@
 import React, { createContext, useState, useEffect, useContext, useCallback } from 'react';
+import { supabase } from './supabaseClient';
 
 const DataContext = createContext(null);
 
+// Keys that map to the dashboard_data table
 const DATASET_KEYS = {
-    dashboard: { file: '/data/dashboard_data.json', storageKey: 'ahass_dashboard' },
-    advanced: { file: '/data/advanced_dashboard_data.json', storageKey: 'ahass_advanced' },
-    revenue: { file: '/data/revenue_dashboard_data.json', storageKey: 'ahass_revenue' },
-    customerIntel: { file: '/data/customer_intel_data.json', storageKey: 'ahass_customerIntel' },
-    staffPerformance: { file: '/data/staff_performance_data.json', storageKey: 'ahass_staffPerformance' },
+    dashboard: 'dashboard',
+    advanced: 'advanced',
+    revenue: 'revenue',
+    customerIntel: 'customerIntel',
+    staffPerformance: 'staffPerformance',
+};
+
+// Fallback files for local dev when data isn't in Supabase yet
+const FALLBACK_FILES = {
+    dashboard: '/data/dashboard_data.json',
+    advanced: '/data/advanced_dashboard_data.json',
+    revenue: '/data/revenue_dashboard_data.json',
+    customerIntel: '/data/customer_intel_data.json',
+    staffPerformance: '/data/staff_performance_data.json',
 };
 
 export function DataProvider({ children }) {
@@ -20,22 +31,30 @@ export function DataProvider({ children }) {
     });
     const [loading, setLoading] = useState(true);
 
-    // On mount: try localStorage first, then fetch defaults
     useEffect(() => {
         const loadAll = async () => {
             const loaded = {};
-            for (const [key, config] of Object.entries(DATASET_KEYS)) {
-                // Check localStorage first
-                const stored = localStorage.getItem(config.storageKey);
-                if (stored) {
-                    try {
-                        loaded[key] = JSON.parse(stored);
-                        continue;
-                    } catch { /* fall through to fetch */ }
-                }
-                // Fallback: fetch from static files
+
+            for (const [key, dbKey] of Object.entries(DATASET_KEYS)) {
                 try {
-                    const res = await fetch(config.file);
+                    // Try Supabase first
+                    const { data, error } = await supabase
+                        .from('dashboard_data')
+                        .select('data')
+                        .eq('key', dbKey)
+                        .single();
+
+                    if (!error && data?.data) {
+                        loaded[key] = data.data;
+                        continue;
+                    }
+                } catch {
+                    // Supabase not available, fall through
+                }
+
+                // Fallback: static JSON files (for dev or if Supabase data not yet uploaded)
+                try {
+                    const res = await fetch(FALLBACK_FILES[key]);
                     if (res.ok) {
                         loaded[key] = await res.json();
                     }
@@ -43,38 +62,63 @@ export function DataProvider({ children }) {
                     console.warn(`Could not load ${key}:`, err);
                 }
             }
+
             setDatasets(prev => ({ ...prev, ...loaded }));
             setLoading(false);
         };
+
         loadAll();
     }, []);
 
-    // Upload handler: update state + persist to localStorage
-    const updateDataset = useCallback((key, data) => {
+    // Upload handler: update state + persist to Supabase
+    const updateDataset = useCallback(async (key, data) => {
         if (!DATASET_KEYS[key]) {
             console.error(`Unknown dataset key: ${key}`);
             return;
         }
         setDatasets(prev => ({ ...prev, [key]: data }));
-        localStorage.setItem(DATASET_KEYS[key].storageKey, JSON.stringify(data));
+
+        // Upsert to Supabase
+        try {
+            await supabase
+                .from('dashboard_data')
+                .upsert({
+                    key: DATASET_KEYS[key],
+                    data: data,
+                    updated_at: new Date().toISOString()
+                }, { onConflict: 'key' });
+        } catch (err) {
+            console.warn(`Could not save ${key} to Supabase:`, err);
+        }
     }, []);
 
-    // Reset a single dataset back to the server default
+    // Reset a single dataset back to Supabase (or fallback)
     const resetDataset = useCallback(async (key) => {
         if (!DATASET_KEYS[key]) return;
-        localStorage.removeItem(DATASET_KEYS[key].storageKey);
         try {
-            const res = await fetch(DATASET_KEYS[key].file);
+            const { data, error } = await supabase
+                .from('dashboard_data')
+                .select('data')
+                .eq('key', DATASET_KEYS[key])
+                .single();
+
+            if (!error && data?.data) {
+                setDatasets(prev => ({ ...prev, [key]: data.data }));
+                return;
+            }
+        } catch { /* fallback */ }
+
+        try {
+            const res = await fetch(FALLBACK_FILES[key]);
             if (res.ok) {
-                const data = await res.json();
-                setDatasets(prev => ({ ...prev, [key]: data }));
+                const d = await res.json();
+                setDatasets(prev => ({ ...prev, [key]: d }));
             }
         } catch (err) {
             console.warn(`Could not reset ${key}:`, err);
         }
     }, []);
 
-    // Reset all datasets
     const resetAll = useCallback(async () => {
         for (const key of Object.keys(DATASET_KEYS)) {
             await resetDataset(key);

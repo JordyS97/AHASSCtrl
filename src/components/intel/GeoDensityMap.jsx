@@ -1,15 +1,36 @@
 import React from 'react';
 
+const BUBBLE_COLORS = [
+    { bg: 'rgba(0, 242, 254, 0.1)', border: 'var(--accent-cyan)' },
+    { bg: 'rgba(170, 80, 255, 0.1)', border: 'var(--accent-purple)' },
+    { bg: 'rgba(0, 255, 128, 0.1)', border: 'var(--accent-green)' },
+    { bg: 'rgba(255, 165, 0, 0.1)', border: 'var(--accent-orange)' },
+];
+
+// Pre-defined layout positions for up to 10 bubbles (percentage-based)
+const POSITIONS = [
+    { top: '38%', left: '42%' },
+    { top: '30%', left: '72%' },
+    { top: '62%', left: '25%' },
+    { top: '72%', left: '48%' },
+    { top: '68%', left: '68%' },
+    { top: '48%', left: '18%' },
+    { top: '25%', left: '55%' },
+    { top: '82%', left: '32%' },
+    { top: '55%', left: '82%' },
+    { top: '85%', left: '72%' },
+];
+
 const GeoDensityMap = ({ geo }) => {
-    // We will build a visually abstract floating bubble network mapping to relative regions as shown in the mockup.
-    // In a full production map, this would be an SVG lat/long projection.
+    const data = (geo || []).slice(0, 8);
+    const maxCust = data.length > 0 ? Math.max(...data.map(d => d.cust)) : 1;
 
     return (
         <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', minHeight: '400px' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
                 <div>
                     <h3 style={{ fontSize: '1.1rem', fontWeight: 600 }}>Customer Density Map</h3>
-                    <p className="text-muted" style={{ fontSize: '0.8rem', marginTop: '0.3rem' }}>Kecamatan × Kabupaten — bubble = cust count, color = segment</p>
+                    <p className="text-muted" style={{ fontSize: '0.8rem', marginTop: '0.3rem' }}>Kabupaten — bubble = cust count, color = segment mix</p>
                 </div>
                 <div style={{ padding: '0.3rem 0.8rem', borderRadius: '4px', background: 'rgba(255,255,255,0.05)', fontSize: '0.7rem', color: 'var(--text-muted)' }}>GEO MAP</div>
             </div>
@@ -32,46 +53,53 @@ const GeoDensityMap = ({ geo }) => {
                     <span style={{ position: 'absolute', top: -20, left: -25, fontSize: '0.7rem', color: 'var(--accent-cyan)', fontWeight: 600 }}>Workshop</span>
                 </div>
 
-                {/* Nodes (Abstract Representation) */}
-                <div style={{ position: 'absolute', top: '40%', left: '42%', transform: 'translate(-50%, -50%)', width: '140px', height: '100px', background: 'rgba(0, 242, 254, 0.1)', border: '1px solid var(--accent-cyan)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontWeight: 800, fontSize: '1.2rem', color: '#fff' }}>1,284</span>
-                    <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>Kab. Bandung</span>
-                </div>
+                {/* Dynamic Bubbles */}
+                {data.map((item, idx) => {
+                    const pos = POSITIONS[idx] || POSITIONS[0];
+                    const sizeScale = Math.max(0.4, item.cust / maxCust);
+                    const w = Math.round(60 + sizeScale * 90);
+                    const h = Math.round(40 + sizeScale * 65);
+                    const fontSize = sizeScale > 0.7 ? '1.2rem' : sizeScale > 0.4 ? '1rem' : '0.8rem';
+                    const labelSize = sizeScale > 0.5 ? '0.65rem' : '0.55rem';
+                    // Color: if Group% > 50% => purple, else cyan; special orange for emerging (low count)
+                    let colorIdx = 0;
+                    if (item.grpPct > 50) colorIdx = 1;
+                    else if (item.cust < maxCust * 0.3) colorIdx = 3;
+                    else if (item.grpPct > 30) colorIdx = 2;
+                    const color = BUBBLE_COLORS[colorIdx];
 
-                <div style={{ position: 'absolute', top: '35%', left: '75%', transform: 'translate(-50%, -50%)', width: '100px', height: '70px', background: 'rgba(0, 242, 254, 0.1)', border: '1px solid var(--accent-cyan)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontWeight: 800, fontSize: '1.1rem', color: '#fff' }}>842</span>
-                    <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Kab. Bekasi</span>
-                </div>
-
-                <div style={{ position: 'absolute', top: '65%', left: '25%', transform: 'translate(-50%, -50%)', width: '90px', height: '80px', background: 'rgba(170, 80, 255, 0.1)', border: '1px solid var(--accent-purple)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontWeight: 800, fontSize: '1.1rem', color: '#fff' }}>620</span>
-                    <span style={{ fontSize: '0.65rem', color: 'var(--text-muted)' }}>Kab. Bogor</span>
-                </div>
-
-                <div style={{ position: 'absolute', top: '75%', left: '45%', transform: 'translate(-50%, -50%)', width: '80px', height: '60px', background: 'rgba(0, 255, 128, 0.1)', border: '1px solid var(--accent-green)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontWeight: 800, fontSize: '1rem', color: '#fff' }}>510</span>
-                    <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)' }}>Kota Bandung</span>
-                </div>
-
-                <div style={{ position: 'absolute', top: '70%', left: '60%', transform: 'translate(-50%, -50%)', width: '80px', height: '50px', background: 'rgba(255, 165, 0, 0.1)', border: '1px solid var(--accent-orange)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontWeight: 800, fontSize: '1rem', color: '#fff' }}>388</span>
-                    <span style={{ fontSize: '0.6rem', color: 'var(--text-muted)' }}>Kab. Sumedang</span>
-                </div>
-
-                <div style={{ position: 'absolute', top: '80%', left: '28%', transform: 'translate(-50%, -50%)', width: '60px', height: '40px', background: 'rgba(0, 255, 128, 0.1)', border: '1px solid var(--accent-green)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontWeight: 800, fontSize: '0.8rem', color: '#fff' }}>286</span>
-                    <span style={{ fontSize: '0.5rem', color: 'var(--text-muted)' }}>Kota Cimahi</span>
-                </div>
-
-                <div style={{ position: 'absolute', top: '80%', left: '72%', transform: 'translate(-50%, -50%)', width: '60px', height: '40px', background: 'rgba(170, 80, 255, 0.1)', border: '1px solid var(--accent-purple)', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
-                    <span style={{ fontWeight: 800, fontSize: '0.8rem', color: '#fff' }}>212</span>
-                    <span style={{ fontSize: '0.5rem', color: 'var(--text-muted)' }}>Kab. Karawang</span>
-                </div>
+                    return (
+                        <div key={item.kabupaten} style={{
+                            position: 'absolute',
+                            top: pos.top,
+                            left: pos.left,
+                            transform: 'translate(-50%, -50%)',
+                            width: `${w}px`,
+                            height: `${h}px`,
+                            background: color.bg,
+                            border: `1px solid ${color.border}`,
+                            borderRadius: '12px',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            transition: 'transform 0.2s, box-shadow 0.2s',
+                            cursor: 'default',
+                            zIndex: 5
+                        }}
+                            onMouseEnter={e => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1.08)'; e.currentTarget.style.boxShadow = `0 0 20px ${color.border}`; }}
+                            onMouseLeave={e => { e.currentTarget.style.transform = 'translate(-50%, -50%) scale(1)'; e.currentTarget.style.boxShadow = 'none'; }}
+                        >
+                            <span style={{ fontWeight: 800, fontSize, color: '#fff' }}>{item.cust.toLocaleString()}</span>
+                            <span style={{ fontSize: labelSize, color: 'var(--text-muted)', textAlign: 'center', lineHeight: 1.2, maxWidth: '90%' }}>{item.kabupaten}</span>
+                        </div>
+                    );
+                })}
 
             </div>
 
             {/* Legend */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', position: 'absolute', bottom: '2rem', left: '2rem', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+            <div style={{ display: 'flex', gap: '1.5rem', marginTop: '1rem', fontSize: '0.7rem', color: 'var(--text-muted)' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><div style={{ width: 8, height: 8, background: 'var(--accent-cyan)', borderRadius: '2px' }}></div> Regular dominant</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><div style={{ width: 8, height: 8, background: 'var(--accent-purple)', borderRadius: '2px' }}></div> Group dominant</div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}><div style={{ width: 8, height: 8, background: 'var(--accent-green)', borderRadius: '2px' }}></div> High value mix</div>
