@@ -50,7 +50,7 @@ function AppContent() {
   if (loading) {
     return (
       <div style={{
-        minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        minHeight: '100vh', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: 'var(--bg-color)', color: 'var(--accent-cyan)', fontSize: '1.1rem'
       }}>
         <div style={{ textAlign: 'center' }}>
@@ -74,7 +74,7 @@ function AppContent() {
   if (!isApproved && !isAdmin) {
     return (
       <div style={{
-        minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center',
+        minHeight: '100vh', width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: 'var(--bg-color)',
         backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(0, 242, 254, 0.03) 0%, transparent 50%)',
         padding: '1rem'

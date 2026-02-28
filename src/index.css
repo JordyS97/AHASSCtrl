@@ -5,11 +5,11 @@
   --bg-color: #0d111a;
   --panel-bg: rgba(21, 27, 43, 0.7);
   --panel-border: rgba(30, 41, 59, 0.8);
-  
+
   /* Text Colors */
   --text-main: #f8fafc;
   --text-muted: #94a3b8;
-  
+
   /* Accents */
   --accent-cyan: #00f2fe;
   --accent-purple: #a855f7;
@@ -35,13 +35,14 @@ body {
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   overflow-x: hidden;
-  background-image: 
+  background-image:
     radial-gradient(circle at 15% 50%, rgba(0, 242, 254, 0.05), transparent 25%),
     radial-gradient(circle at 85% 30%, rgba(168, 85, 247, 0.05), transparent 25%);
 }
 
 #root {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
 }
 
@@ -79,27 +80,49 @@ body {
 }
 
 /* Typography Helpers */
-.text-cyan { color: var(--accent-cyan); }
-.text-purple { color: var(--accent-purple); }
-.text-green { color: var(--accent-green); }
-.text-orange { color: var(--accent-orange); }
-.text-muted { color: var(--text-muted); }
+.text-cyan {
+  color: var(--accent-cyan);
+}
 
-.mono-text { font-family: var(--font-mono); }
-.fw-bold { font-weight: 700; }
+.text-purple {
+  color: var(--accent-purple);
+}
+
+.text-green {
+  color: var(--accent-green);
+}
+
+.text-orange {
+  color: var(--accent-orange);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.mono-text {
+  font-family: var(--font-mono);
+}
+
+.fw-bold {
+  font-weight: 700;
+}
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
 }
+
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--panel-border);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(148, 163, 184, 0.5);
 }

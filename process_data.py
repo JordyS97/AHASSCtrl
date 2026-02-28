@@ -10,6 +10,7 @@ load_dotenv(os.path.join(os.path.dirname(__file__), '.env'))
 
 # Define the source directories and necessary columns
 SOURCE_DIRS = [
+    r"D:\01. NTB\H23_Data Nota Service PowerBI\2025",
     r"D:\01. NTB\H23_Data Nota Service PowerBI\2026"
 ]
 OUTPUT_DIR = r"d:\AntiGravity\Project04\data"
@@ -68,7 +69,18 @@ def process_files():
             if f.endswith('.csv'):
                 df = pd.read_csv(f, usecols=lambda c: c in COLUMNS_TO_KEEP)
             else:
-                df = pd.read_excel(f, sheet_name="Export", usecols=lambda c: c in COLUMNS_TO_KEEP)
+                # Try case-insensitive sheet names for "Export"
+                xls = pd.ExcelFile(f)
+                sheet_names = [s.lower() for s in xls.sheet_names]
+                target_sheet = None
+                if 'export' in sheet_names:
+                    target_sheet = xls.sheet_names[sheet_names.index('export')]
+                
+                if target_sheet:
+                    df = pd.read_excel(xls, sheet_name=target_sheet, usecols=lambda c: c in COLUMNS_TO_KEEP)
+                else:
+                    print(f"Warning: No 'Export' sheet found in {os.path.basename(f)}. Skipping.")
+                    continue
             
             df.dropna(how='all', inplace=True)
             dfs.append(df)
