@@ -23,30 +23,66 @@ export function AuthProvider({ children }) {
     };
 
     useEffect(() => {
-        // Get initial session
-        supabase.auth.getSession().then(async ({ data: { session: s } }) => {
-            setSession(s);
-            if (s?.user) {
-                const p = await fetchProfile(s.user.id);
-                setProfile(p);
+        let mounted = true;
+        console.log('AuthContext: [1] Effect started');
+
+        const initializeAuth = async () => {
+            try {
+                console.log('AuthContext: [2] Calling getSession()...');
+                const { data: { session: initialSession }, error } = await supabase.auth.getSession();
+
+                if (error) {
+                    console.error('AuthContext: [!] getSession error:', error.message);
+                }
+
+                if (!mounted) return;
+
+                console.log('AuthContext: [3] Session result:', initialSession ? 'logged in' : 'no session');
+                setSession(initialSession);
+
+                // Set loading to false immediately after session is resolved
+                // We fetch profile in the background so it doesn't block the UI
+                console.log('AuthContext: [6] Setting loading -> false');
+                setLoading(false);
+
+                if (initialSession?.user) {
+                    console.log('AuthContext: [4] Fetching profile in background for:', initialSession.user.id);
+                    fetchProfile(initialSession.user.id).then(p => {
+                        if (mounted && p) {
+                            console.log('AuthContext: [5] Profile background result: success');
+                            setProfile(p);
+                        }
+                    });
+                }
+            } catch (err) {
+                console.error('AuthContext: [!] Caught error during init:', err);
+                if (mounted) setLoading(false);
             }
-            setLoading(false);
-        });
+        };
+
+        initializeAuth();
 
         // Listen for auth changes
+        console.log('AuthContext: [7] Setting up auth listener');
         const { data: { subscription } } = supabase.auth.onAuthStateChange(
-            async (_event, s) => {
+            async (event, s) => {
+                console.log('AuthContext: [Listener] Event:', event, 'User:', s?.user?.id);
+                if (!mounted) return;
+
                 setSession(s);
                 if (s?.user) {
                     const p = await fetchProfile(s.user.id);
-                    setProfile(p);
+                    if (mounted) setProfile(p);
                 } else {
                     setProfile(null);
                 }
             }
         );
 
-        return () => subscription.unsubscribe();
+        return () => {
+            mounted = false;
+            subscription.unsubscribe();
+        };
     }, []);
 
     const signIn = async (email, password) => {
