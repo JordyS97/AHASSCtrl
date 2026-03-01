@@ -3,9 +3,9 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { useData } from '../DataContext';
 
 const UnitEntryTrend = () => {
-    const { unitEntryTrends } = useData();
+    const { dailyTrends } = useData();
 
-    if (!unitEntryTrends || unitEntryTrends.length === 0) {
+    if (!dailyTrends || dailyTrends.length === 0) {
         return <div className="glass-panel" style={{ height: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--text-muted)' }}>No data for selected range</div>;
     }
 
@@ -13,15 +13,15 @@ const UnitEntryTrend = () => {
         <div className="glass-panel" style={{ height: '300px', display: 'flex', flexDirection: 'column' }}>
             <div style={{ marginBottom: '1rem' }}>
                 <h3 className="panel-title">Unit Entry Trends</h3>
-                <p className="panel-subtitle">Monthly unique PKB count</p>
+                <p className="panel-subtitle">Daily unique PKB count</p>
             </div>
 
             <div style={{ flex: 1, minHeight: 0 }}>
                 <ResponsiveContainer width="100%" height="100%">
-                    <BarChart data={unitEntryTrends} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                    <BarChart data={dailyTrends} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
                         <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.05)" vertical={false} />
                         <XAxis
-                            dataKey="month"
+                            dataKey="date"
                             stroke="var(--text-muted)"
                             fontSize={11}
                             tickLine={false}
@@ -44,14 +44,14 @@ const UnitEntryTrend = () => {
                         />
                         <Bar
                             dataKey="units"
-                            fill="var(--accent-cyan)"
+                            fill="var(--accent-purple)"
                             radius={[4, 4, 0, 0]}
-                            barSize={30}
+                            barSize={12}
                         >
-                            {unitEntryTrends.map((entry, index) => (
+                            {dailyTrends.map((entry, index) => (
                                 <Cell
                                     key={`cell-${index}`}
-                                    fill={index === unitEntryTrends.length - 1 ? 'var(--accent-purple)' : 'var(--accent-cyan)'}
+                                    fill={index === dailyTrends.length - 1 ? 'var(--accent-cyan)' : 'var(--accent-purple)'}
                                     fillOpacity={0.8}
                                 />
                             ))}

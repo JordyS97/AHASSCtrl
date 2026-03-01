@@ -1,4 +1,27 @@
 .ue-dashboard {
+    --bg: #0d111a;
+    --surface: rgba(21, 27, 43, 0.7);
+    --surface2: rgba(30, 41, 59, 0.4);
+    --surface3: rgba(45, 55, 72, 0.5);
+    --bd: rgba(30, 41, 59, 0.8);
+    --bd2: rgba(51, 65, 85, 0.8);
+    --text: #f8fafc;
+    --text-m: #94a3b8;
+    --text-d: #64748b;
+    --ink: #f8fafc;
+
+    --blue: #3b82f6;
+    --blue-lt: rgba(59, 130, 246, 0.15);
+    --emerald: #10b981;
+    --emerald-lt: rgba(16, 185, 129, 0.15);
+    --violet: #a855f7;
+    --violet-lt: rgba(168, 85, 247, 0.15);
+    --amber: #f97316;
+    --amber-lt: rgba(249, 115, 22, 0.15);
+    --rose: #ef4444;
+    --rose-lt: rgba(239, 68, 68, 0.15);
+    --teal: #06b6d4;
+
     padding: 20px;
     font-family: 'Sora', sans-serif;
     color: var(--text);

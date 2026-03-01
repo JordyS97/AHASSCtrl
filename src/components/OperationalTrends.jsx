@@ -28,6 +28,7 @@ const OperationalTrends = () => {
                         <Tooltip
                             contentStyle={{ backgroundColor: 'var(--bg-color)', border: '1px solid var(--panel-border)', borderRadius: '8px' }}
                             itemStyle={{ color: 'var(--text-main)' }}
+                            formatter={(value) => typeof value === 'number' ? value.toFixed(2) : value}
                         />
                         <Legend iconType="circle" wrapperStyle={{ fontSize: '12px', paddingTop: '10px' }} />
                         <Line type="monotone" dataKey="revenue" name="Revenue" stroke="var(--accent-cyan)" strokeWidth={3} dot={{ r: 4, fill: 'var(--bg-color)', strokeWidth: 2 }} activeDot={{ r: 6 }} />
