@@ -140,12 +140,15 @@ export function DataProvider({ children }) {
         }
     }, [resetDataset]);
 
-    // Derived filtered data
     const filteredData = React.useMemo(() => {
-        if (!datasets.dailyMetrics) return [];
+        if (!datasets.dailyMetrics || !Array.isArray(datasets.dailyMetrics)) {
+            if (datasets.dailyMetrics) console.warn("dailyMetrics is not an array:", datasets.dailyMetrics);
+            return [];
+        }
         const start = new Date(dateRange.startDate);
         const end = new Date(dateRange.endDate);
         return datasets.dailyMetrics.filter(item => {
+            if (!item || !item.d) return false;
             const d = new Date(item.d);
             return d >= start && d <= end;
         });
@@ -154,11 +157,14 @@ export function DataProvider({ children }) {
     const kpis = React.useMemo(() => {
         if (filteredData.length === 0) return { revenue: 0, gp: 0, units: 0, margin: 0 };
         let rev = 0, gp = 0, units = 0;
-        filteredData.forEach(i => {
-            rev += i.r;
-            gp += i.g;
-            units += i.u;
-        });
+        if (Array.isArray(filteredData)) {
+            filteredData.forEach(i => {
+                if (!i) return;
+                rev += i.r || 0;
+                gp += i.g || 0;
+                units += i.u || 0;
+            });
+        }
         return {
             revenue: rev / 1000000,
             gp: gp / 1000000,
@@ -169,25 +175,32 @@ export function DataProvider({ children }) {
 
     const dailyTrends = React.useMemo(() => {
         const groups = {};
-        filteredData.forEach(i => {
-            if (!groups[i.d]) groups[i.d] = { date: i.d, revenue: 0, gp: 0, units: 0 };
-            groups[i.d].revenue += i.r / 1000000;
-            groups[i.d].gp += i.g / 1000000;
-            groups[i.d].units += i.u;
-        });
+        if (Array.isArray(filteredData)) {
+            filteredData.forEach(i => {
+                if (!i || typeof i.d !== 'string') return;
+                if (!groups[i.d]) groups[i.d] = { date: i.d, revenue: 0, gp: 0, units: 0 };
+                groups[i.d].revenue += (i.r || 0) / 1000000;
+                groups[i.d].gp += (i.g || 0) / 1000000;
+                groups[i.d].units += (i.u || 0);
+            });
+        }
         return Object.values(groups).sort((a, b) => a.date.localeCompare(b.date));
     }, [filteredData]);
 
     const unitEntryTrends = React.useMemo(() => {
         const months = {};
-        filteredData.forEach(i => {
-            const m = i.d.substring(0, 7); // YYYY-MM
-            if (!months[m]) {
-                const date = new Date(m + '-01');
-                months[m] = { month: date.toLocaleString('default', { month: 'short', year: '20' + date.getFullYear().toString().slice(-2) }), units: 0, rawDate: m };
-            }
-            months[m].units += i.u;
-        });
+        if (Array.isArray(filteredData)) {
+            filteredData.forEach(i => {
+                if (!i || typeof i.d !== 'string' || i.d.length < 7) return;
+                const m = i.d.substring(0, 7); // YYYY-MM
+                if (!months[m]) {
+                    const date = new Date(m + '-01');
+                    if (isNaN(date)) return;
+                    months[m] = { month: date.toLocaleString('default', { month: 'short', year: 'numeric' }), units: 0, rawDate: m };
+                }
+                months[m].units += (i.u || 0);
+            });
+        }
         return Object.values(months).sort((a, b) => a.rawDate.localeCompare(b.rawDate));
     }, [filteredData]);
 

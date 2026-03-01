@@ -13,7 +13,8 @@ import {
   UserCircle,
   Upload,
   Shield,
-  LogOut
+  LogOut,
+  Activity
 } from 'lucide-react';
 
 // Login
@@ -31,6 +32,9 @@ import UnitEntryTrend from './components/UnitEntryTrend';
 
 // Revenue Trend Expansion
 import RevenueDashboard from './components/RevenueDashboard';
+
+// Unit Entry Detailed Dashboard
+import UnitEntryDashboard from './components/UnitEntryDashboard';
 
 // Customer Intel Hub
 import CustomerIntelDashboard from './components/CustomerIntelDashboard';
@@ -152,6 +156,11 @@ function AppContent() {
                 <TrendingUp size={18} /> Revenue Trend
               </a>
               <a href="#"
+                onClick={() => setActiveTab('unit_entry')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'unit_entry' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <Activity size={18} /> Unit Entry Details
+              </a>
+              <a href="#"
                 onClick={() => setActiveTab('intel')}
                 style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'intel' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
                 <Users size={18} /> Customer Intel
@@ -221,7 +230,7 @@ function AppContent() {
 
       {/* Main Content Area */}
       <main className="main-content">
-        {activeTab !== 'revenue' && activeTab !== 'staff' && activeTab !== 'admin' && (
+        {activeTab !== 'revenue' && activeTab !== 'staff' && activeTab !== 'admin' && activeTab !== 'unit_entry' && (
           <header className="top-header">
             <div>
               <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Workshop Performance <span className="text-cyan">_</span></h1>
@@ -261,6 +270,7 @@ function AppContent() {
 
         {activeTab === 'intel' && <CustomerIntelDashboard />}
         {activeTab === 'revenue' && <RevenueDashboard />}
+        {activeTab === 'unit_entry' && <UnitEntryDashboard />}
         {activeTab === 'staff' && <StaffPerformanceDashboard />}
         {activeTab === 'upload' && <DataUpload />}
         {activeTab === 'admin' && <AdminPanel />}
@@ -269,13 +279,47 @@ function AppContent() {
   );
 }
 
+class ErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false, error: null, errorInfo: null };
+  }
+
+  static getDerivedStateFromError(error) {
+    return { hasError: true, error };
+  }
+
+  componentDidCatch(error, errorInfo) {
+    console.error("ErrorBoundary caught an error", error, errorInfo);
+    this.setState({ errorInfo });
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: '2rem', color: 'red', background: '#222', minHeight: '100vh' }}>
+          <h2>Application Crash</h2>
+          <details style={{ whiteSpace: 'pre-wrap' }}>
+            {this.state.error && this.state.error.toString()}
+            <br />
+            {this.state.errorInfo && this.state.errorInfo.componentStack}
+          </details>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
+
 function App() {
   return (
-    <AuthProvider>
-      <DataProvider>
-        <AppContent />
-      </DataProvider>
-    </AuthProvider>
+    <ErrorBoundary>
+      <AuthProvider>
+        <DataProvider>
+          <AppContent />
+        </DataProvider>
+      </AuthProvider>
+    </ErrorBoundary>
   );
 }
 
