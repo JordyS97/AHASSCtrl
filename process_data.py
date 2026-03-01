@@ -184,6 +184,9 @@ def process_files():
     print("Generating Granular Daily Metrics for frontend filters...")
     generate_daily_metrics_json(master_df)
 
+    print("Pre-aggregating Unit Entry analytics...")
+    generate_unit_entry_json(master_df)
+
 def generate_daily_metrics_json(df):
     """Generates granular daily metrics for frontend dynamic filtering."""
     df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
@@ -996,6 +999,197 @@ def generate_staff_performance_json(df):
         json.dump(payload, f, indent=4)
     print(f"Staff Performance JSON generated at: {output_path}")
 
+def generate_unit_entry_json(df):
+    """Generates Unit Entry Dashboard data payload."""
+    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
+    valid_df = df.dropna(subset=['DateObj']).copy()
+
+    # Base Metrics
+    total_ue = valid_df['No PKB'].nunique()
+    total_revenue = valid_df['Revenue'].sum()
+    total_gp = valid_df['GP'].sum()
+    gp_margin = (total_gp / total_revenue * 100) if total_revenue > 0 else 0
+    total_discount = valid_df['Diskon'].sum()
+    
+    valid_df['MonthName'] = valid_df['DateObj'].dt.strftime('%b')
+    valid_df['DayName'] = valid_df['DateObj'].dt.strftime('%A').str[:3]
+
+    month_order = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    day_order = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+
+    # --- 1. SA Rankings ---
+    sa_df = valid_df[valid_df['Nama Service Advisor'].notna() & (valid_df['Nama Service Advisor'] != 'Unknown')]
+    sa_agg = sa_df.groupby(['Nama Service Advisor', 'Customer Class'])['No PKB'].nunique().reset_index()
+    sa_metrics_dict = {}
+    for _, r in sa_agg.iterrows():
+        sa = r['Nama Service Advisor']
+        cls = r['Customer Class']
+        cnt = r['No PKB']
+        if sa not in sa_metrics_dict:
+            sa_metrics_dict[sa] = {'name': sa, 'Regular': 0, 'Group': 0, 'Total': 0}
+        sa_metrics_dict[sa][cls] += cnt
+        sa_metrics_dict[sa]['Total'] += cnt
+    
+    sa_metrics_list = list(sa_metrics_dict.values())
+    sa_metrics_list = sorted([v for v in sa_metrics_list if v['Total'] >= 10], key=lambda x: x['Total'], reverse=True)[:15]
+
+    # --- 2. Mechanic Rankings ---
+    mec_df = valid_df[valid_df['Nama Mekanik'].notna() & (valid_df['Nama Mekanik'] != 'Unknown')]
+    mec_agg = mec_df.groupby(['Nama Mekanik', 'Customer Class'])['No PKB'].nunique().reset_index()
+    mec_metrics_dict = {}
+    for _, r in mec_agg.iterrows():
+        mec = r['Nama Mekanik']
+        cls = r['Customer Class']
+        cnt = r['No PKB']
+        if mec not in mec_metrics_dict:
+            mec_metrics_dict[mec] = {'name': mec, 'Regular': 0, 'Group': 0, 'Total': 0}
+        mec_metrics_dict[mec][cls] += cnt
+        mec_metrics_dict[mec]['Total'] += cnt
+        
+    mec_metrics_list = list(mec_metrics_dict.values())
+    mec_metrics_list = sorted([v for v in mec_metrics_list if v['Total'] >= 10], key=lambda x: x['Total'], reverse=True)[:15]
+
+    # --- 3. Day x Month Heatmap ---
+    heatmap_raw = valid_df.groupby(['MonthName', 'DayName'])['No PKB'].nunique().reset_index()
+    heatmap_data = {}
+    master_max_val = 0
+    for _, r in heatmap_raw.iterrows():
+        m = r['MonthName']
+        d = r['DayName']
+        v = r['No PKB']
+        if v > master_max_val:
+            master_max_val = v
+        if m not in heatmap_data:
+            heatmap_data[m] = {}
+        heatmap_data[m][d] = v
+        
+    heatmap_result = []
+    for mo in month_order:
+        row_data = {"id": mo, "data": []}
+        for day in day_order:
+            val = heatmap_data.get(mo, {}).get(day, 0)
+            row_data["data"].append({"x": day, "y": val})
+        heatmap_result.append(row_data)
+
+    # --- 4. Service Type Chart ---
+    svc_agg = valid_df.groupby(['Jenis', 'Customer Class'])['No PKB'].nunique().reset_index()
+    svc_dict = {}
+    for _, r in svc_agg.iterrows():
+        j = str(r['Jenis']).split(' - ')[0] if pd.notna(r['Jenis']) else 'Other'
+        cls = r['Customer Class']
+        c = r['No PKB']
+        if j not in svc_dict:
+            svc_dict[j] = {'name': j, 'Regular': 0, 'Group': 0, 'Total': 0}
+        svc_dict[j][cls] += c
+        svc_dict[j]['Total'] += c
+    svc_list = sorted(list(svc_dict.values()), key=lambda x: x['Total'], reverse=True)[:10]
+
+    # --- 5. Monthly Summary Table (MoM) ---
+    month_agg = valid_df.groupby('MonthName').agg({
+        'No PKB': 'nunique',
+        'Revenue': 'sum',
+        'GP': 'sum'
+    }).reset_index()
+    
+    trend_table = []
+    sorted_months = [m for m in month_order if m in month_agg['MonthName'].values]
+    prev_ue, prev_rev, prev_gp = 0, 0, 0
+    
+    for m in sorted_months:
+        row = month_agg[month_agg['MonthName'] == m].iloc[0]
+        curr_ue = int(row['No PKB'])
+        curr_rev = float(row['Revenue'])
+        curr_gp = float(row['GP'])
+        
+        ue_mom = ((curr_ue - prev_ue) / prev_ue * 100) if prev_ue > 0 else 0
+        rev_mom = ((curr_rev - prev_rev) / prev_rev * 100) if prev_rev > 0 else 0
+        gp_mom = ((curr_gp - prev_gp) / prev_gp * 100) if prev_gp > 0 else 0
+        
+        trend_table.append({
+            "month": m,
+            "unit_entry": curr_ue,
+            "ue_mom": round(ue_mom, 1),
+            "revenue": curr_rev,
+            "rev_mom": round(rev_mom, 1),
+            "gp": curr_gp,
+            "gp_mom": round(gp_mom, 1)
+        })
+        prev_ue, prev_rev, prev_gp = curr_ue, curr_rev, curr_gp
+
+    # --- 6. Hourly Arrival Pattern ---
+    valid_df['Hour'] = pd.to_datetime(valid_df['Jam Cetak PKB'], format='%H:%M:%S', errors='coerce').dt.hour
+    hour_agg = valid_df[valid_df['Hour'].notna()].groupby('Hour')['No PKB'].nunique().reset_index()
+    hourly_pattern = []
+    for h in range(7, 18):
+        val = hour_agg[hour_agg['Hour'] == h]['No PKB'].sum() if h in hour_agg['Hour'].values else 0
+        hourly_pattern.append({"hour": f"{h:02d}:00", "units": int(val)})
+
+    # --- 7. Walk-in vs Booking vs Fleet ---
+    kedatangan_agg = valid_df.groupby(['MonthName', 'Nama Tipe Kedatangan'])['No PKB'].nunique().reset_index()
+    kedatangan_data = {}
+    for _, r in kedatangan_agg.iterrows():
+        m = r['MonthName']
+        raw_type = str(r['Nama Tipe Kedatangan']).upper()
+        
+        if 'BOOKING' in raw_type or 'WA' in raw_type or 'TELP' in raw_type: t = 'Booking'
+        elif 'KONTRAK' in raw_type or 'FLEET' in raw_type: t = 'Fleet Contract'
+        else: t = 'Walk-in'
+            
+        if m not in kedatangan_data: kedatangan_data[m] = {'name': m, 'Walk-in':0, 'Booking':0, 'Fleet Contract':0}
+        kedatangan_data[m][t] += r['No PKB']
+        
+    kedatangan_trend = [kedatangan_data.get(m, {'name':m, 'Walk-in':0, 'Booking':0, 'Fleet Contract':0}) for m in month_order]
+
+    # --- 8. Top Motorcycle Models ---
+    motor_agg = valid_df.groupby('Nama Motor')['No PKB'].nunique().reset_index()
+    top_motors = motor_agg.sort_values('No PKB', ascending=False).head(10)
+    top_models = [{"name": str(r['Nama Motor']).strip()[:20], "value": int(r['No PKB'])} for _, r in top_motors.iterrows()]
+
+    # --- 9. Detailed Records ---
+    records_df = valid_df.sort_values('DateObj', ascending=False)
+    records_unique = records_df.drop_duplicates(subset=['No PKB'])
+    records_unique = records_unique.head(500)
+    
+    detailed_records = []
+    for _, r in records_unique.iterrows():
+        detailed_records.append({
+            "tgl": str(r['Tgl Faktur']),
+            "no_pkb": str(r['No PKB']),
+            "nopol": str(r['No Polisi']) if pd.notna(r['No Polisi']) else '-',
+            "pemilik": str(r['Nama Pemilik']).strip(),
+            "customer_class": str(r['Customer Class']),
+            "motor": str(r['Nama Motor']).strip(),
+            "sa": str(r['Nama Service Advisor']),
+            "mekanik": str(r['Nama Mekanik']),
+            "revenue": float(r['Revenue'])
+        })
+
+    payload = {
+        "kpi": {
+            "total_ue": int(total_ue),
+            "total_revenue": float(total_revenue),
+            "gp_margin": round(gp_margin, 1),
+            "total_discount": float(total_discount)
+        },
+        "sa_rankings": sa_metrics_list,
+        "mechanic_rankings": mec_metrics_list,
+        "heatmap": {
+           "data": heatmap_result,
+           "max_val": int(master_max_val)
+        },
+        "service_types": svc_list,
+        "trend_table": trend_table,
+        "hourly_pattern": hourly_pattern,
+        "kedatangan_trend": kedatangan_trend,
+        "top_models": top_models,
+        "detailed_records": detailed_records
+    }
+
+    output_path = os.path.join(OUTPUT_DIR, "unit_entry_data.json")
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(payload, f, indent=4)
+    print(f"Unit Entry Analytics JSON generated at: {output_path}")
+
 def upload_to_supabase():
     """Upload all generated JSON payloads to Supabase dashboard_data table."""
     if not SUPABASE_URL or not SUPABASE_SERVICE_KEY:
@@ -1020,6 +1214,7 @@ def upload_to_supabase():
         'customer_intel_data.json': 'customerIntel',
         'staff_performance_data.json': 'staffPerformance',
         'daily_metrics.json': 'dailyMetrics',
+        'unit_entry_data.json': 'unitEntry',
     }
 
     for filename, key in file_key_map.items():

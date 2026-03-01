@@ -11,6 +11,7 @@ const DATASET_KEYS = {
     customerIntel: 'customerIntel',
     staffPerformance: 'staffPerformance',
     dailyMetrics: 'dailyMetrics',
+    unitEntry: 'unitEntry',
 };
 
 // Fallback files for local dev when data isn't in Supabase yet
@@ -21,6 +22,7 @@ const FALLBACK_FILES = {
     customerIntel: '/data/customer_intel_data.json',
     staffPerformance: '/data/staff_performance_data.json',
     dailyMetrics: '/data/daily_metrics.json',
+    unitEntry: '/data/unit_entry_data.json',
 };
 
 export function DataProvider({ children }) {
@@ -31,6 +33,7 @@ export function DataProvider({ children }) {
         customerIntel: null,
         staffPerformance: null,
         dailyMetrics: null,
+        unitEntry: null,
     });
     const [loading, setLoading] = useState(true);
     const [dateRange, setDateRange] = useState({

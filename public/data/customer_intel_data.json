@@ -1,136 +1,136 @@
 {
     "dateRange": "Jan 25 \u2013 Feb 26",
     "kpis": {
-        "total_customers": 122780,
-        "group_customers": 2653,
-        "reg_customers": 120256,
-        "avg_rev_per_cust": 328469.0780496139
+        "total_customers": 123054,
+        "group_customers": 2665,
+        "reg_customers": 120518,
+        "avg_rev_per_cust": 329036.14350194426
     },
     "rfm_matrix": [
         {
             "R": 1,
             "F": 1,
-            "count": 20445
+            "count": 20549
         },
         {
             "R": 1,
             "F": 2,
-            "count": 7013
+            "count": 7052
         },
         {
             "R": 1,
             "F": 3,
-            "count": 2340
+            "count": 2363
         },
         {
             "R": 1,
             "F": 4,
-            "count": 405
+            "count": 407
         },
         {
             "R": 1,
             "F": 5,
-            "count": 114
+            "count": 117
         },
         {
             "R": 2,
             "F": 1,
-            "count": 9358
+            "count": 9231
         },
         {
             "R": 2,
             "F": 2,
-            "count": 6510
+            "count": 6440
         },
         {
             "R": 2,
             "F": 3,
-            "count": 3833
+            "count": 3793
         },
         {
             "R": 2,
             "F": 4,
-            "count": 1398
+            "count": 1394
         },
         {
             "R": 2,
             "F": 5,
-            "count": 486
+            "count": 488
         },
         {
             "R": 3,
             "F": 1,
-            "count": 9529
+            "count": 9579
         },
         {
             "R": 3,
             "F": 2,
-            "count": 7506
+            "count": 7593
         },
         {
             "R": 3,
             "F": 3,
-            "count": 5362
+            "count": 5390
         },
         {
             "R": 3,
             "F": 4,
-            "count": 2950
+            "count": 2974
         },
         {
             "R": 3,
             "F": 5,
-            "count": 1575
+            "count": 1612
         },
         {
             "R": 4,
             "F": 1,
-            "count": 8821
+            "count": 8860
         },
         {
             "R": 4,
             "F": 2,
-            "count": 6986
+            "count": 6894
         },
         {
             "R": 4,
             "F": 3,
-            "count": 4884
+            "count": 4853
         },
         {
             "R": 4,
             "F": 4,
-            "count": 2923
+            "count": 2907
         },
         {
             "R": 4,
             "F": 5,
-            "count": 2246
+            "count": 2243
         },
         {
             "R": 5,
             "F": 1,
-            "count": 6053
+            "count": 6015
         },
         {
             "R": 5,
             "F": 2,
-            "count": 4738
+            "count": 4806
         },
         {
             "R": 5,
             "F": 3,
-            "count": 3221
+            "count": 3301
         },
         {
             "R": 5,
             "F": 4,
-            "count": 2058
+            "count": 2140
         },
         {
             "R": 5,
             "F": 5,
-            "count": 2155
+            "count": 2182
         }
     ],
     "cohorts": {
@@ -149,7 +149,7 @@
             "M+10": 7.7,
             "M+11": 7.0,
             "M+12": 5.0,
-            "M+13": 4.4
+            "M+13": 4.8
         },
         "M202502": {
             "label": "Feb 25",
@@ -165,7 +165,7 @@
             "M+9": 8.1,
             "M+10": 6.8,
             "M+11": 6.5,
-            "M+12": 4.8
+            "M+12": 5.3
         },
         "M202503": {
             "label": "Mar 25",
@@ -180,7 +180,7 @@
             "M+8": 7.9,
             "M+9": 7.2,
             "M+10": 6.4,
-            "M+11": 4.9
+            "M+11": 5.3
         },
         "M202504": {
             "label": "Apr 25",
@@ -194,7 +194,7 @@
             "M+7": 8.1,
             "M+8": 7.5,
             "M+9": 6.5,
-            "M+10": 4.5
+            "M+10": 4.9
         },
         "M202505": {
             "label": "May 25",
@@ -207,7 +207,7 @@
             "M+6": 8.5,
             "M+7": 8.5,
             "M+8": 6.1,
-            "M+9": 4.6
+            "M+9": 5.0
         },
         "M202506": {
             "label": "Jun 25",
@@ -219,7 +219,7 @@
             "M+5": 10.0,
             "M+6": 9.7,
             "M+7": 8.5,
-            "M+8": 6.4
+            "M+8": 7.1
         },
         "M202507": {
             "label": "Jul 25",
@@ -230,7 +230,7 @@
             "M+4": 12.2,
             "M+5": 10.6,
             "M+6": 9.4,
-            "M+7": 6.3
+            "M+7": 6.5
         },
         "M202508": {
             "label": "Aug 25",
@@ -240,7 +240,7 @@
             "M+3": 17.7,
             "M+4": 14.3,
             "M+5": 10.7,
-            "M+6": 7.6
+            "M+6": 8.0
         },
         "M202509": {
             "label": "Sep 25",
@@ -249,7 +249,7 @@
             "M+2": 22.4,
             "M+3": 17.7,
             "M+4": 14.9,
-            "M+5": 9.8
+            "M+5": 10.3
         },
         "M202510": {
             "label": "Oct 25",
@@ -257,29 +257,29 @@
             "M+1": 14.8,
             "M+2": 23.1,
             "M+3": 17.4,
-            "M+4": 11.9
+            "M+4": 12.6
         },
         "M202511": {
             "label": "Nov 25",
             "size": 6719,
             "M+1": 13.7,
             "M+2": 23.2,
-            "M+3": 14.2
+            "M+3": 15.2
         },
         "M202512": {
             "label": "Dec 25",
             "size": 7006,
             "M+1": 13.7,
-            "M+2": 20.2
+            "M+2": 21.1
         },
         "M202601": {
             "label": "Jan 26",
             "size": 7128,
-            "M+1": 11.3
+            "M+1": 12.1
         },
         "M202602": {
             "label": "Feb 26",
-            "size": 5968
+            "size": 6242
         }
     },
     "cohortLabels": [
@@ -301,68 +301,68 @@
     "visitFrequency": [
         {
             "label": "1 visit only",
-            "count": 54108
+            "count": 54136
         },
         {
             "label": "2-3 visits",
-            "count": 52329
+            "count": 52421
         },
         {
             "label": "4-6 visits",
-            "count": 14681
+            "count": 14819
         },
         {
             "label": "7-12 visits",
-            "count": 1539
+            "count": 1553
         },
         {
             "label": "12+ visits",
-            "count": 123
+            "count": 125
         }
     ],
     "fleet": {
         "km_bins": {
             "Group": [
-                6489,
-                3774,
+                6540,
+                3795,
                 3650,
-                3553,
-                3287,
+                3569,
+                3311,
                 3756,
-                12114
+                12135
             ],
             "Regular": [
-                382235,
-                127118,
-                51103,
-                39151,
-                41147,
-                33073,
-                132238
+                383475,
+                127583,
+                51357,
+                39283,
+                41314,
+                33166,
+                132888
             ]
         },
         "year_bins": {
             "Group": [
-                252,
+                266,
                 326,
-                1343,
-                783,
-                3309,
-                5887,
+                1374,
+                787,
+                3317,
+                5892,
                 6859,
-                12542,
-                6657
+                12553,
+                6745
             ],
             "Regular": [
-                17098,
-                22136,
-                27055,
-                28116,
-                41034,
-                57848,
-                78249,
-                232716,
-                290011
+                17164,
+                22212,
+                27173,
+                28250,
+                41196,
+                58122,
+                78513,
+                233074,
+                291529
             ]
         }
     },
@@ -387,167 +387,167 @@
     "geography": [
         {
             "district": "PUJUT",
-            "cust": 6681,
-            "rev": 2033450355.0
+            "cust": 6690,
+            "rev": 2037100725.0
         },
         {
             "district": "AMPENAN",
-            "cust": 4953,
-            "rev": 1751109360.0
+            "cust": 4965,
+            "rev": 1757493170.0
         },
         {
             "district": "PRAYA",
-            "cust": 5376,
-            "rev": 1732330553.0
+            "cust": 5387,
+            "rev": 1741291098.0
         },
         {
             "district": "SETIABUDI",
-            "cust": 2131,
-            "rev": 1712281195.0
+            "cust": 2144,
+            "rev": 1719378625.0
         },
         {
             "district": "PRAYA BARAT",
-            "cust": 5124,
-            "rev": 1662834378.0
+            "cust": 5135,
+            "rev": 1668821213.0
         },
         {
             "district": "MATARAM",
-            "cust": 3661,
-            "rev": 1242853266.0
+            "cust": 3665,
+            "rev": 1247042926.0
         },
         {
             "district": "GERUNG",
-            "cust": 3558,
-            "rev": 1063277950.0
+            "cust": 3566,
+            "rev": 1068688235.0
         },
         {
             "district": "PRAYA BARAT DAYA",
-            "cust": 3257,
-            "rev": 1005078785.0
+            "cust": 3260,
+            "rev": 1008339380.0
         },
         {
             "district": "JONGGAT",
-            "cust": 3647,
-            "rev": 995247566.0
+            "cust": 3655,
+            "rev": 998459176.0
         },
         {
             "district": "CAKRANEGARA",
-            "cust": 2854,
-            "rev": 967993461.0
+            "cust": 2857,
+            "rev": 971064501.0
         },
         {
             "district": "SANDUBAYA",
-            "cust": 2762,
-            "rev": 931083276.0
+            "cust": 2767,
+            "rev": 936092811.0
         },
         {
             "district": "SELAPRANG",
-            "cust": 2477,
-            "rev": 889274925.0
+            "cust": 2482,
+            "rev": 890994305.0
         },
         {
             "district": "PRAYA TENGAH",
-            "cust": 2872,
-            "rev": 830450425.0
+            "cust": 2876,
+            "rev": 832759655.0
         },
         {
             "district": "BATU LAYAR",
-            "cust": 2369,
-            "rev": 807826485.0
+            "cust": 2372,
+            "rev": 809912410.0
         },
         {
             "district": "KEDIRI",
-            "cust": 2523,
-            "rev": 790957811.0
+            "cust": 2529,
+            "rev": 794622636.0
         }
     ],
     "geoKabupaten": [
         {
             "kabupaten": "LOMBOK TENGAH",
-            "cust": 36878,
-            "revenue": 11035916939.0,
-            "Regular": 36788,
+            "cust": 36948,
+            "revenue": 11074491764.0,
+            "Regular": 36858,
             "Group": 90,
             "regPct": 99.8,
             "grpPct": 0.2
         },
         {
             "kabupaten": "LOMBOK BARAT",
-            "cust": 22257,
-            "revenue": 6747073997.0,
-            "Regular": 22217,
+            "cust": 22298,
+            "revenue": 6776207728.0,
+            "Regular": 22258,
             "Group": 40,
             "regPct": 99.8,
             "grpPct": 0.2
         },
         {
             "kabupaten": "KOTA MATARAM",
-            "cust": 18393,
-            "revenue": 6389904408.0,
-            "Regular": 18188,
+            "cust": 18428,
+            "revenue": 6413178393.0,
+            "Regular": 18223,
             "Group": 205,
             "regPct": 98.9,
             "grpPct": 1.1
         },
         {
             "kabupaten": "LOMBOK TIMUR",
-            "cust": 16459,
-            "revenue": 4543926244.0,
-            "Regular": 16451,
+            "cust": 16511,
+            "revenue": 4566653154.0,
+            "Regular": 16503,
             "Group": 8,
             "regPct": 100.0,
             "grpPct": 0.0
         },
         {
             "kabupaten": "SUMBAWA",
-            "cust": 9603,
-            "revenue": 3452814526.0,
-            "Regular": 9574,
+            "cust": 9631,
+            "revenue": 3469432646.0,
+            "Regular": 9602,
             "Group": 29,
             "regPct": 99.7,
             "grpPct": 0.3
         },
         {
             "kabupaten": "BIMA",
-            "cust": 5275,
-            "revenue": 1969445215.0,
-            "Regular": 5274,
+            "cust": 5291,
+            "revenue": 1976381070.0,
+            "Regular": 5290,
             "Group": 1,
             "regPct": 100.0,
             "grpPct": 0.0
         },
         {
             "kabupaten": "JAKARTA SELATAN",
-            "cust": 2166,
-            "revenue": 1732549675.0,
+            "cust": 2179,
+            "revenue": 1739668605.0,
             "Regular": 36,
-            "Group": 2130,
+            "Group": 2143,
             "regPct": 1.7,
             "grpPct": 98.3
         },
         {
             "kabupaten": "KOTA BIMA",
-            "cust": 4322,
-            "revenue": 1601782625.0,
-            "Regular": 4299,
+            "cust": 4328,
+            "revenue": 1607677885.0,
+            "Regular": 4305,
             "Group": 23,
             "regPct": 99.5,
             "grpPct": 0.5
         },
         {
             "kabupaten": "LOMBOK UTARA",
-            "cust": 4175,
-            "revenue": 1177182850.0,
-            "Regular": 4168,
+            "cust": 4181,
+            "revenue": 1179001645.0,
+            "Regular": 4174,
             "Group": 7,
             "regPct": 99.8,
             "grpPct": 0.2
         },
         {
             "kabupaten": "SUMBAWA BARAT",
-            "cust": 1205,
-            "revenue": 351277755.0,
-            "Regular": 1204,
+            "cust": 1206,
+            "revenue": 351932255.0,
+            "Regular": 1205,
             "Group": 1,
             "regPct": 99.9,
             "grpPct": 0.1
@@ -555,7 +555,7 @@
         {
             "kabupaten": "DOMPU",
             "cust": 989,
-            "revenue": 261413905.0,
+            "revenue": 263130645.0,
             "Regular": 989,
             "Group": 0,
             "regPct": 100.0,
@@ -564,7 +564,7 @@
         {
             "kabupaten": "KOTA TANGERANG",
             "cust": 116,
-            "revenue": 204698650.0,
+            "revenue": 205645450.0,
             "Regular": 98,
             "Group": 18,
             "regPct": 84.5,
@@ -572,21 +572,21 @@
         },
         {
             "kabupaten": "DENPASAR",
-            "cust": 422,
-            "revenue": 128559485.0,
-            "Regular": 323,
+            "cust": 424,
+            "revenue": 129277685.0,
+            "Regular": 325,
             "Group": 99,
-            "regPct": 76.5,
-            "grpPct": 23.5
+            "regPct": 76.7,
+            "grpPct": 23.3
         },
         {
             "kabupaten": "BADUNG",
-            "cust": 186,
-            "revenue": 68751485.0,
-            "Regular": 182,
+            "cust": 187,
+            "revenue": 69015985.0,
+            "Regular": 183,
             "Group": 4,
-            "regPct": 97.8,
-            "grpPct": 2.2
+            "regPct": 97.9,
+            "grpPct": 2.1
         },
         {
             "kabupaten": "JAKARTA PUSAT",
@@ -618,7 +618,7 @@
         {
             "kabupaten": "TABANAN",
             "cust": 54,
-            "revenue": 21670335.0,
+            "revenue": 21752835.0,
             "Regular": 54,
             "Group": 0,
             "regPct": 100.0,
@@ -626,12 +626,12 @@
         },
         {
             "kabupaten": "KOTA MAKASSAR",
-            "cust": 91,
-            "revenue": 21184115.0,
-            "Regular": 44,
+            "cust": 92,
+            "revenue": 21726715.0,
+            "Regular": 45,
             "Group": 47,
-            "regPct": 48.4,
-            "grpPct": 51.6
+            "regPct": 48.9,
+            "grpPct": 51.1
         },
         {
             "kabupaten": "KOTA SAMARINDA",
@@ -699,7 +699,7 @@
         {
             "kabupaten": "KLUNGKUNG",
             "cust": 29,
-            "revenue": 11074315.0,
+            "revenue": 11097315.0,
             "Regular": 29,
             "Group": 0,
             "regPct": 100.0,
@@ -753,7 +753,7 @@
         {
             "kabupaten": "KOTA SEMARANG",
             "cust": 35,
-            "revenue": 8653205.0,
+            "revenue": 8676205.0,
             "Regular": 35,
             "Group": 0,
             "regPct": 100.0,
@@ -787,6 +787,15 @@
             "grpPct": 0.0
         },
         {
+            "kabupaten": "MAGELANG",
+            "cust": 32,
+            "revenue": 6944200.0,
+            "Regular": 10,
+            "Group": 22,
+            "regPct": 31.2,
+            "grpPct": 68.8
+        },
+        {
             "kabupaten": "BREBES",
             "cust": 30,
             "revenue": 6745410.0,
@@ -794,15 +803,6 @@
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
-        },
-        {
-            "kabupaten": "MAGELANG",
-            "cust": 32,
-            "revenue": 6731400.0,
-            "Regular": 10,
-            "Group": 22,
-            "regPct": 31.2,
-            "grpPct": 68.8
         },
         {
             "kabupaten": "SEMARANG",
@@ -850,18 +850,27 @@
             "grpPct": 0.0
         },
         {
-            "kabupaten": "KARANGANYAR",
-            "cust": 14,
-            "revenue": 5544900.0,
-            "Regular": 14,
+            "kabupaten": "KUTAI KARTANEGARA",
+            "cust": 15,
+            "revenue": 5689100.0,
+            "Regular": 15,
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
         },
         {
-            "kabupaten": "KUTAI KARTANEGARA",
+            "kabupaten": "BANDUNG",
+            "cust": 12,
+            "revenue": 5587730.0,
+            "Regular": 12,
+            "Group": 0,
+            "regPct": 100.0,
+            "grpPct": 0.0
+        },
+        {
+            "kabupaten": "KARANGANYAR",
             "cust": 14,
-            "revenue": 5397700.0,
+            "revenue": 5544900.0,
             "Regular": 14,
             "Group": 0,
             "regPct": 100.0,
@@ -913,18 +922,9 @@
             "grpPct": 8.3
         },
         {
-            "kabupaten": "BANDUNG",
-            "cust": 11,
-            "revenue": 4924230.0,
-            "Regular": 11,
-            "Group": 0,
-            "regPct": 100.0,
-            "grpPct": 0.0
-        },
-        {
             "kabupaten": "CILACAP",
             "cust": 16,
-            "revenue": 4855540.0,
+            "revenue": 5038040.0,
             "Regular": 15,
             "Group": 1,
             "regPct": 93.8,
@@ -958,6 +958,15 @@
             "grpPct": 18.2
         },
         {
+            "kabupaten": "PURWOREJO",
+            "cust": 9,
+            "revenue": 4456900.0,
+            "Regular": 9,
+            "Group": 0,
+            "regPct": 100.0,
+            "grpPct": 0.0
+        },
+        {
             "kabupaten": "JEPARA",
             "cust": 12,
             "revenue": 4234200.0,
@@ -971,15 +980,6 @@
             "cust": 10,
             "revenue": 4114900.0,
             "Regular": 10,
-            "Group": 0,
-            "regPct": 100.0,
-            "grpPct": 0.0
-        },
-        {
-            "kabupaten": "PURWOREJO",
-            "cust": 9,
-            "revenue": 4005100.0,
-            "Regular": 9,
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
@@ -1075,6 +1075,15 @@
             "grpPct": 0.0
         },
         {
+            "kabupaten": "SIDOARJO",
+            "cust": 12,
+            "revenue": 3416200.0,
+            "Regular": 12,
+            "Group": 0,
+            "regPct": 100.0,
+            "grpPct": 0.0
+        },
+        {
             "kabupaten": "GUNUNG KIDUL",
             "cust": 13,
             "revenue": 3213350.0,
@@ -1094,12 +1103,12 @@
         },
         {
             "kabupaten": "TEGAL",
-            "cust": 10,
-            "revenue": 3127000.0,
-            "Regular": 9,
+            "cust": 11,
+            "revenue": 3150000.0,
+            "Regular": 10,
             "Group": 1,
-            "regPct": 90.0,
-            "grpPct": 10.0
+            "regPct": 90.9,
+            "grpPct": 9.1
         },
         {
             "kabupaten": "KULON PROGO",
@@ -1115,15 +1124,6 @@
             "cust": 9,
             "revenue": 3016400.0,
             "Regular": 9,
-            "Group": 0,
-            "regPct": 100.0,
-            "grpPct": 0.0
-        },
-        {
-            "kabupaten": "SIDOARJO",
-            "cust": 11,
-            "revenue": 2980100.0,
-            "Regular": 11,
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
@@ -1193,9 +1193,9 @@
         },
         {
             "kabupaten": "CIAMIS",
-            "cust": 6,
-            "revenue": 2637700.0,
-            "Regular": 6,
+            "cust": 7,
+            "revenue": 2660700.0,
+            "Regular": 7,
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
@@ -1532,6 +1532,15 @@
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
+        },
+        {
+            "kabupaten": "KOTA  PALOPO",
+            "cust": 4,
+            "revenue": 1226000.0,
+            "Regular": 2,
+            "Group": 2,
+            "regPct": 50.0,
+            "grpPct": 50.0
         },
         {
             "kabupaten": "KONAWE SELATAN",
@@ -1883,15 +1892,6 @@
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
-        },
-        {
-            "kabupaten": "KOTA  PALOPO",
-            "cust": 3,
-            "revenue": 743000.0,
-            "Regular": 1,
-            "Group": 2,
-            "regPct": 33.3,
-            "grpPct": 66.7
         },
         {
             "kabupaten": "JENEPONTO",
@@ -2470,7 +2470,7 @@
             "grpPct": 0.0
         },
         {
-            "kabupaten": "KOTA CIREBON",
+            "kabupaten": "HULU SUNGAI UTARA",
             "cust": 1,
             "revenue": 296400.0,
             "Regular": 1,
@@ -2479,7 +2479,7 @@
             "grpPct": 0.0
         },
         {
-            "kabupaten": "HULU SUNGAI UTARA",
+            "kabupaten": "KOTA CIREBON",
             "cust": 1,
             "revenue": 296400.0,
             "Regular": 1,
@@ -2632,6 +2632,15 @@
             "grpPct": 0.0
         },
         {
+            "kabupaten": "KOTA BANJARMASIN",
+            "cust": 2,
+            "revenue": 156800.0,
+            "Regular": 2,
+            "Group": 0,
+            "regPct": 100.0,
+            "grpPct": 0.0
+        },
+        {
             "kabupaten": "TULANG BAWANG",
             "cust": 1,
             "revenue": 155000.0,
@@ -2672,15 +2681,6 @@
             "cust": 1,
             "revenue": 141980.0,
             "Regular": 1,
-            "Group": 0,
-            "regPct": 100.0,
-            "grpPct": 0.0
-        },
-        {
-            "kabupaten": "KOTA BANJARMASIN",
-            "cust": 2,
-            "revenue": 138800.0,
-            "Regular": 2,
             "Group": 0,
             "regPct": 100.0,
             "grpPct": 0.0
@@ -2879,482 +2879,482 @@
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "PUJUT",
-            "cust": 6681,
-            "revenue": 2033450355.0
+            "cust": 6690,
+            "revenue": 2037100725.0
         },
         {
             "kabupaten": "KOTA MATARAM",
             "kecamatan": "AMPENAN",
-            "cust": 4953,
-            "revenue": 1751109360.0
+            "cust": 4965,
+            "revenue": 1757493170.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "PRAYA",
-            "cust": 5376,
-            "revenue": 1732330553.0
+            "cust": 5387,
+            "revenue": 1741291098.0
         },
         {
             "kabupaten": "JAKARTA SELATAN",
             "kecamatan": "SETIABUDI",
-            "cust": 2131,
-            "revenue": 1712281195.0
+            "cust": 2144,
+            "revenue": 1719378625.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "PRAYA BARAT",
-            "cust": 5124,
-            "revenue": 1662834378.0
+            "cust": 5135,
+            "revenue": 1668821213.0
         },
         {
             "kabupaten": "KOTA MATARAM",
             "kecamatan": "MATARAM",
-            "cust": 3661,
-            "revenue": 1242853266.0
+            "cust": 3665,
+            "revenue": 1247042926.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "GERUNG",
-            "cust": 3558,
-            "revenue": 1063277950.0
+            "cust": 3566,
+            "revenue": 1068688235.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "PRAYA BARAT DAYA",
-            "cust": 3257,
-            "revenue": 1005078785.0
+            "cust": 3260,
+            "revenue": 1008339380.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "JONGGAT",
-            "cust": 3647,
-            "revenue": 995247566.0
+            "cust": 3655,
+            "revenue": 998459176.0
         },
         {
             "kabupaten": "KOTA MATARAM",
             "kecamatan": "CAKRANEGARA",
-            "cust": 2854,
-            "revenue": 967993461.0
+            "cust": 2857,
+            "revenue": 971064501.0
         },
         {
             "kabupaten": "KOTA MATARAM",
             "kecamatan": "SANDUBAYA",
-            "cust": 2762,
-            "revenue": 931083276.0
+            "cust": 2767,
+            "revenue": 936092811.0
         },
         {
             "kabupaten": "KOTA MATARAM",
             "kecamatan": "SELAPRANG",
-            "cust": 2477,
-            "revenue": 889274925.0
+            "cust": 2482,
+            "revenue": 890994305.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "PRAYA TENGAH",
-            "cust": 2872,
-            "revenue": 830450425.0
+            "cust": 2876,
+            "revenue": 832759655.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "BATU LAYAR",
-            "cust": 2369,
-            "revenue": 807826485.0
+            "cust": 2372,
+            "revenue": 809912410.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "KEDIRI",
-            "cust": 2523,
-            "revenue": 790957811.0
+            "cust": 2529,
+            "revenue": 794622636.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "GUNUNGSARI",
-            "cust": 2437,
-            "revenue": 771823720.0
+            "cust": 2440,
+            "revenue": 773068061.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "SUMBAWA",
-            "cust": 2093,
-            "revenue": 760380465.0
+            "cust": 2099,
+            "revenue": 763249610.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "LABUAPI",
-            "cust": 2475,
-            "revenue": 748656425.0
-        },
-        {
-            "kabupaten": "LOMBOK BARAT",
-            "kecamatan": "SEKOTONG",
-            "cust": 2617,
-            "revenue": 738081847.0
+            "cust": 2481,
+            "revenue": 751700670.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "LEMBAR",
-            "cust": 2415,
-            "revenue": 736173460.0
+            "cust": 2421,
+            "revenue": 741995325.0
+        },
+        {
+            "kabupaten": "LOMBOK BARAT",
+            "kecamatan": "SEKOTONG",
+            "cust": 2620,
+            "revenue": 740428992.0
         },
         {
             "kabupaten": "KOTA MATARAM",
             "kecamatan": "SEKARBELA",
-            "cust": 1932,
-            "revenue": 607590120.0
+            "cust": 1939,
+            "revenue": 610490680.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "BATUKLIANG",
-            "cust": 2128,
-            "revenue": 557034900.0
+            "cust": 2133,
+            "revenue": 558264365.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "JANAPRIA",
-            "cust": 2105,
-            "revenue": 551251687.0
-        },
-        {
-            "kabupaten": "LOMBOK TENGAH",
-            "kecamatan": "KOPANG",
-            "cust": 1929,
-            "revenue": 543657410.0
+            "cust": 2115,
+            "revenue": 553747337.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "PRAYA TIMUR",
-            "cust": 1938,
-            "revenue": 542594696.0
+            "cust": 1941,
+            "revenue": 546116611.0
+        },
+        {
+            "kabupaten": "LOMBOK TENGAH",
+            "kecamatan": "KOPANG",
+            "cust": 1933,
+            "revenue": 545152905.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "MASBAGIK",
-            "cust": 1644,
-            "revenue": 456985786.0
+            "cust": 1650,
+            "revenue": 460798311.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "KURIPAN",
-            "cust": 1600,
-            "revenue": 429758545.0
+            "cust": 1601,
+            "revenue": 431230345.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SAKRA",
-            "cust": 1406,
-            "revenue": 388836081.0
+            "cust": 1410,
+            "revenue": 391014306.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "NARMADA",
-            "cust": 1483,
-            "revenue": 384500157.0
+            "cust": 1486,
+            "revenue": 386928057.0
         },
         {
             "kabupaten": "KOTA BIMA",
             "kecamatan": "MPUNDA",
-            "cust": 1038,
-            "revenue": 378049655.0
+            "cust": 1042,
+            "revenue": 381520815.0
         },
         {
             "kabupaten": "KOTA BIMA",
             "kecamatan": "RASANAE BARAT",
-            "cust": 1037,
-            "revenue": 376849305.0
+            "cust": 1039,
+            "revenue": 378043685.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "PRINGGABAYA",
-            "cust": 1410,
-            "revenue": 367353330.0
+            "cust": 1413,
+            "revenue": 367954495.0
         },
         {
             "kabupaten": "KOTA BIMA",
             "kecamatan": "RABA",
             "cust": 963,
-            "revenue": 366121605.0
+            "revenue": 366727525.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SELONG",
             "cust": 1226,
-            "revenue": 353039200.0
+            "revenue": 353461860.0
         },
         {
             "kabupaten": "KOTA BIMA",
             "kecamatan": "ASAKOTA",
             "cust": 899,
-            "revenue": 325368870.0
+            "revenue": 325685670.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "MOYO HILIR",
             "cust": 705,
-            "revenue": 301907840.0
+            "revenue": 302437580.0
         },
         {
             "kabupaten": "LOMBOK UTARA",
             "kecamatan": "PEMENANG",
-            "cust": 975,
-            "revenue": 301610980.0
+            "cust": 976,
+            "revenue": 302031080.0
         },
         {
             "kabupaten": "LOMBOK UTARA",
             "kecamatan": "TANJUNG",
-            "cust": 1052,
-            "revenue": 300658675.0
-        },
-        {
-            "kabupaten": "LOMBOK TENGAH",
-            "kecamatan": "BATUKLIANG UTARA",
-            "cust": 1204,
-            "revenue": 293490289.0
+            "cust": 1053,
+            "revenue": 301000430.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SIKUR",
-            "cust": 1021,
-            "revenue": 292564605.0
+            "cust": 1025,
+            "revenue": 294403735.0
+        },
+        {
+            "kabupaten": "LOMBOK TENGAH",
+            "kecamatan": "BATUKLIANG UTARA",
+            "cust": 1205,
+            "revenue": 294178594.0
         },
         {
             "kabupaten": "LOMBOK TENGAH",
             "kecamatan": "PRINGGARATA",
-            "cust": 1167,
-            "revenue": 288495895.0
+            "cust": 1171,
+            "revenue": 290260705.0
         },
         {
             "kabupaten": "LOMBOK BARAT",
             "kecamatan": "LINGSAR",
-            "cust": 981,
-            "revenue": 276017597.0
+            "cust": 984,
+            "revenue": 277632997.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "WAWO",
-            "cust": 698,
-            "revenue": 269403135.0
+            "cust": 699,
+            "revenue": 270041035.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SAKRA BARAT",
-            "cust": 953,
-            "revenue": 266074634.0
+            "cust": 954,
+            "revenue": 266789144.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "LABUHAN BADAS",
-            "cust": 679,
-            "revenue": 255870905.0
+            "cust": 683,
+            "revenue": 257884130.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "UNTER IWES",
-            "cust": 578,
-            "revenue": 236026046.0
+            "cust": 579,
+            "revenue": 236292516.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "PRINGGASELA",
-            "cust": 908,
-            "revenue": 235307395.0
+            "cust": 910,
+            "revenue": 236128625.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "KERUAK",
-            "cust": 813,
-            "revenue": 233063490.0
+            "cust": 816,
+            "revenue": 234479645.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "ALAS",
-            "cust": 720,
-            "revenue": 228076090.0
+            "cust": 722,
+            "revenue": 230709960.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "WOHA",
-            "cust": 598,
-            "revenue": 221491345.0
+            "cust": 600,
+            "revenue": 222498145.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SAKRA TIMUR",
-            "cust": 739,
-            "revenue": 218214300.0
-        },
-        {
-            "kabupaten": "LOMBOK UTARA",
-            "kecamatan": "BAYAN",
-            "cust": 865,
-            "revenue": 215782095.0
+            "cust": 740,
+            "revenue": 219233910.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "TERARA",
-            "cust": 841,
-            "revenue": 213196743.0
+            "cust": 854,
+            "revenue": 216682738.0
+        },
+        {
+            "kabupaten": "LOMBOK UTARA",
+            "kecamatan": "BAYAN",
+            "cust": 867,
+            "revenue": 216260710.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "PALIBELO",
             "cust": 476,
-            "revenue": 209764545.0
+            "revenue": 210185705.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SUKAMULIA",
-            "cust": 714,
-            "revenue": 209660235.0
+            "cust": 715,
+            "revenue": 209871190.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "LABUHAN HAJI",
-            "cust": 768,
-            "revenue": 206857980.0
-        },
-        {
-            "kabupaten": "LOMBOK TIMUR",
-            "kecamatan": "SURALAGA",
-            "cust": 768,
-            "revenue": 205594980.0
+            "cust": 770,
+            "revenue": 207757295.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "JEROWARU",
-            "cust": 849,
-            "revenue": 205566539.0
+            "cust": 851,
+            "revenue": 207346934.0
+        },
+        {
+            "kabupaten": "LOMBOK TIMUR",
+            "kecamatan": "SURALAGA",
+            "cust": 769,
+            "revenue": 206093705.0
         },
         {
             "kabupaten": "LOMBOK UTARA",
             "kecamatan": "GANGGA",
-            "cust": 741,
-            "revenue": 203493385.0
+            "cust": 743,
+            "revenue": 203961710.0
         },
         {
             "kabupaten": "KOTA TANGERANG",
             "kecamatan": "PINANG",
             "cust": 95,
-            "revenue": 200433000.0
+            "revenue": 201379800.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "MOYO HULU",
-            "cust": 528,
-            "revenue": 188618195.0
+            "cust": 530,
+            "revenue": 189581765.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "BOLO",
-            "cust": 516,
-            "revenue": 187364465.0
+            "cust": 518,
+            "revenue": 188374525.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "AIKMEL",
-            "cust": 656,
-            "revenue": 174445125.0
-        },
-        {
-            "kabupaten": "LOMBOK TIMUR",
-            "kecamatan": "SAMBELIA",
-            "cust": 655,
-            "revenue": 165949515.0
+            "cust": 657,
+            "revenue": 175096605.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "BELO",
-            "cust": 435,
-            "revenue": 165453600.0
+            "cust": 437,
+            "revenue": 167452880.0
+        },
+        {
+            "kabupaten": "LOMBOK TIMUR",
+            "kecamatan": "SAMBELIA",
+            "cust": 656,
+            "revenue": 166321415.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "SAPE",
-            "cust": 441,
-            "revenue": 157205890.0
+            "cust": 445,
+            "revenue": 157849930.0
         },
         {
             "kabupaten": "LOMBOK UTARA",
             "kecamatan": "KAYANGAN",
             "cust": 583,
-            "revenue": 155637715.0
+            "revenue": 155747715.0
         },
         {
             "kabupaten": "KOTA BIMA",
             "kecamatan": "RASANAE TIMUR",
             "cust": 409,
-            "revenue": 155393190.0
+            "revenue": 155700190.0
         },
         {
             "kabupaten": "SUMBAWA BARAT",
             "kecamatan": "TALIWANG",
             "cust": 523,
-            "revenue": 153991830.0
+            "revenue": 154624830.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "LOPOK",
             "cust": 436,
-            "revenue": 149814220.0
+            "revenue": 150083980.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "LAPE",
-            "cust": 415,
-            "revenue": 149431870.0
+            "cust": 416,
+            "revenue": 150028370.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "MOYO UTARA",
             "cust": 318,
-            "revenue": 137132420.0
+            "revenue": 137198420.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "MONTONG GADING",
-            "cust": 481,
-            "revenue": 127360145.0
+            "cust": 482,
+            "revenue": 127428020.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "ALAS BARAT",
-            "cust": 396,
-            "revenue": 124930440.0
+            "cust": 397,
+            "revenue": 125616740.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "UTAN",
-            "cust": 345,
-            "revenue": 114193835.0
+            "cust": 346,
+            "revenue": 114493335.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "LUNYUK",
-            "cust": 373,
-            "revenue": 106335975.0
+            "cust": 377,
+            "revenue": 108680205.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "MONTA",
-            "cust": 291,
-            "revenue": 105765695.0
+            "cust": 292,
+            "revenue": 105970520.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "PLAMPANG",
-            "cust": 347,
-            "revenue": 105384830.0
+            "cust": 348,
+            "revenue": 105619490.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "MADAPANGGA",
-            "cust": 322,
-            "revenue": 97918520.0
+            "cust": 324,
+            "revenue": 98105045.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "WANASABA",
-            "cust": 390,
-            "revenue": 95935860.0
+            "cust": 392,
+            "revenue": 96516815.0
         },
         {
             "kabupaten": "BIMA",
@@ -3365,14 +3365,14 @@
         {
             "kabupaten": "BIMA",
             "kecamatan": "WERA",
-            "cust": 277,
-            "revenue": 86346630.0
+            "cust": 278,
+            "revenue": 86411155.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "LABANGKA",
-            "cust": 241,
-            "revenue": 79618325.0
+            "cust": 242,
+            "revenue": 81019825.0
         },
         {
             "kabupaten": "BIMA",
@@ -3384,7 +3384,7 @@
             "kabupaten": "SUMBAWA",
             "kecamatan": "BUER",
             "cust": 264,
-            "revenue": 78531190.0
+            "revenue": 78549190.0
         },
         {
             "kabupaten": "BIMA",
@@ -3396,13 +3396,19 @@
             "kabupaten": "SUMBAWA",
             "kecamatan": "MARONGE",
             "cust": 196,
-            "revenue": 74812725.0
+            "revenue": 74914925.0
         },
         {
             "kabupaten": "BIMA",
             "kecamatan": "LANGGUDU",
             "cust": 209,
-            "revenue": 73191730.0
+            "revenue": 73277130.0
+        },
+        {
+            "kabupaten": "SUMBAWA",
+            "kecamatan": "EMPANG",
+            "cust": 228,
+            "revenue": 68652370.0
         },
         {
             "kabupaten": "SUMBAWA",
@@ -3411,46 +3417,40 @@
             "revenue": 68016320.0
         },
         {
-            "kabupaten": "SUMBAWA",
-            "kecamatan": "EMPANG",
-            "cust": 227,
-            "revenue": 67541970.0
+            "kabupaten": "BIMA",
+            "kecamatan": "DONGGO",
+            "cust": 176,
+            "revenue": 60533550.0
         },
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "LENANGGUAR",
-            "cust": 163,
-            "revenue": 60299670.0
+            "cust": 165,
+            "revenue": 60428720.0
         },
         {
             "kabupaten": "DOMPU",
             "kecamatan": "MANGGALEWA",
             "cust": 280,
-            "revenue": 60007790.0
-        },
-        {
-            "kabupaten": "BIMA",
-            "kecamatan": "DONGGO",
-            "cust": 175,
-            "revenue": 59930710.0
-        },
-        {
-            "kabupaten": "DOMPU",
-            "kecamatan": "DOMPU",
-            "cust": 175,
-            "revenue": 56211300.0
+            "revenue": 60100990.0
         },
         {
             "kabupaten": "DOMPU",
             "kecamatan": "PEKAT",
             "cust": 231,
-            "revenue": 55594360.0
+            "revenue": 56516540.0
+        },
+        {
+            "kabupaten": "DOMPU",
+            "kecamatan": "DOMPU",
+            "cust": 175,
+            "revenue": 56414800.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SUWELA",
-            "cust": 251,
-            "revenue": 55261255.0
+            "cust": 252,
+            "revenue": 55461710.0
         },
         {
             "kabupaten": "DENPASAR",
@@ -3485,8 +3485,8 @@
         {
             "kabupaten": "SUMBAWA",
             "kecamatan": "RHEE",
-            "cust": 131,
-            "revenue": 36679775.0
+            "cust": 132,
+            "revenue": 36763775.0
         },
         {
             "kabupaten": "SUMBAWA BARAT",
@@ -3516,19 +3516,19 @@
             "kabupaten": "DOMPU",
             "kecamatan": "WOJA",
             "cust": 117,
-            "revenue": 34914720.0
-        },
-        {
-            "kabupaten": "SUMBAWA BARAT",
-            "kecamatan": "SEKONGKANG",
-            "cust": 109,
-            "revenue": 34672930.0
+            "revenue": 35274080.0
         },
         {
             "kabupaten": "LOMBOK TIMUR",
             "kecamatan": "SEMBALUN",
-            "cust": 167,
-            "revenue": 33692355.0
+            "cust": 170,
+            "revenue": 34846005.0
+        },
+        {
+            "kabupaten": "SUMBAWA BARAT",
+            "kecamatan": "SEKONGKANG",
+            "cust": 110,
+            "revenue": 34694430.0
         },
         {
             "kabupaten": "KOTA BANDAR LAMPUNG",
@@ -3537,16 +3537,16 @@
             "revenue": 33655685.0
         },
         {
+            "kabupaten": "BIMA",
+            "kecamatan": "PARADO",
+            "cust": 75,
+            "revenue": 29889160.0
+        },
+        {
             "kabupaten": "SUMBAWA BARAT",
             "kecamatan": "MALUK",
             "cust": 110,
             "revenue": 29848280.0
-        },
-        {
-            "kabupaten": "BIMA",
-            "kecamatan": "PARADO",
-            "cust": 75,
-            "revenue": 29816660.0
         },
         {
             "kabupaten": "SUMBAWA BARAT",
@@ -3605,8 +3605,8 @@
         {
             "kabupaten": "DENPASAR",
             "kecamatan": "DENPASAR TIMUR",
-            "cust": 60,
-            "revenue": 18356280.0
+            "cust": 62,
+            "revenue": 19074480.0
         },
         {
             "kabupaten": "SUMBAWA BARAT",
@@ -3624,7 +3624,7 @@
             "kabupaten": "DOMPU",
             "kecamatan": "HUU",
             "cust": 55,
-            "revenue": 15059575.0
+            "revenue": 15198075.0
         },
         {
             "kabupaten": "JAKARTA PUSAT",
@@ -3675,16 +3675,16 @@
             "revenue": 10884180.0
         },
         {
+            "kabupaten": "BADUNG",
+            "kecamatan": "MENGWI",
+            "cust": 20,
+            "revenue": 10003780.0
+        },
+        {
             "kabupaten": "BIMA",
             "kecamatan": "TAMBORA",
             "cust": 31,
             "revenue": 9834515.0
-        },
-        {
-            "kabupaten": "BADUNG",
-            "kecamatan": "MENGWI",
-            "cust": 19,
-            "revenue": 9739280.0
         },
         {
             "kabupaten": "KOTA TEGAL",
@@ -3711,16 +3711,16 @@
             "revenue": 6520580.0
         },
         {
+            "kabupaten": "KOTA MAKASSAR",
+            "kecamatan": "RAPPOCINI",
+            "cust": 35,
+            "revenue": 6433540.0
+        },
+        {
             "kabupaten": "KLUNGKUNG",
             "kecamatan": "KLUNGKUNG",
             "cust": 17,
             "revenue": 6082315.0
-        },
-        {
-            "kabupaten": "KOTA MAKASSAR",
-            "kecamatan": "RAPPOCINI",
-            "cust": 34,
-            "revenue": 5890940.0
         },
         {
             "kabupaten": "GIANYAR",
@@ -4137,6 +4137,12 @@
             "revenue": 1442140.0
         },
         {
+            "kabupaten": "JAKARTA SELATAN",
+            "kecamatan": "TEBET",
+            "cust": 4,
+            "revenue": 1439600.0
+        },
+        {
             "kabupaten": "SINJAI",
             "kecamatan": "SINJAI UTARA",
             "cust": 3,
@@ -4147,12 +4153,6 @@
             "kecamatan": "BALIKPAPAN BARAT",
             "cust": 3,
             "revenue": 1420600.0
-        },
-        {
-            "kabupaten": "JAKARTA SELATAN",
-            "kecamatan": "TEBET",
-            "cust": 4,
-            "revenue": 1418100.0
         },
         {
             "kabupaten": "KOTA BANDUNG",
@@ -4299,15 +4299,15 @@
             "revenue": 1223500.0
         },
         {
-            "kabupaten": "KOTA SURABAYA",
-            "kecamatan": "GUBENG",
-            "cust": 3,
-            "revenue": 1205300.0
-        },
-        {
             "kabupaten": "MALANG",
             "kecamatan": "PAKIS",
             "cust": 1,
+            "revenue": 1205300.0
+        },
+        {
+            "kabupaten": "KOTA SURABAYA",
+            "kecamatan": "GUBENG",
+            "cust": 3,
             "revenue": 1205300.0
         },
         {
@@ -4333,6 +4333,12 @@
             "kecamatan": "MANYAR",
             "cust": 2,
             "revenue": 1173000.0
+        },
+        {
+            "kabupaten": "KLUNGKUNG",
+            "kecamatan": "DAWAN",
+            "cust": 5,
+            "revenue": 1171100.0
         },
         {
             "kabupaten": "KOTA BEKASI",
@@ -4365,21 +4371,15 @@
             "revenue": 1148300.0
         },
         {
-            "kabupaten": "KLUNGKUNG",
-            "kecamatan": "DAWAN",
-            "cust": 5,
-            "revenue": 1148100.0
+            "kabupaten": "KLATEN",
+            "kecamatan": "TULUNG",
+            "cust": 1,
+            "revenue": 1137500.0
         },
         {
             "kabupaten": "MAGELANG",
             "kecamatan": "SRUMBUNG",
             "cust": 2,
-            "revenue": 1137500.0
-        },
-        {
-            "kabupaten": "KLATEN",
-            "kecamatan": "TULUNG",
-            "cust": 1,
             "revenue": 1137500.0
         },
         {
@@ -4399,6 +4399,12 @@
             "kecamatan": "BANDAR",
             "cust": 2,
             "revenue": 1125400.0
+        },
+        {
+            "kabupaten": "KUTAI KARTANEGARA",
+            "kecamatan": "LOA KULU",
+            "cust": 3,
+            "revenue": 1122200.0
         },
         {
             "kabupaten": "BULELENG",
@@ -4587,6 +4593,12 @@
             "revenue": 975200.0
         },
         {
+            "kabupaten": "CILACAP",
+            "kecamatan": "CILACAP SELATAN",
+            "cust": 3,
+            "revenue": 975000.0
+        },
+        {
             "kabupaten": "KOTA SEMARANG",
             "kecamatan": "GUNUNGPATI",
             "cust": 2,
@@ -4687,6 +4699,12 @@
             "kecamatan": "BOJA",
             "cust": 1,
             "revenue": 933400.0
+        },
+        {
+            "kabupaten": "KOTA  PALOPO",
+            "kecamatan": "WARA TIMUR",
+            "cust": 3,
+            "revenue": 929000.0
         },
         {
             "kabupaten": "TANAH LAUT",
@@ -4851,10 +4869,10 @@
             "revenue": 833500.0
         },
         {
-            "kabupaten": "KUTAI KARTANEGARA",
-            "kecamatan": "LOA KULU",
+            "kabupaten": "BANDUNG",
+            "kecamatan": "CIMENYAN",
             "cust": 2,
-            "revenue": 830800.0
+            "revenue": 833500.0
         },
         {
             "kabupaten": "KOTA MEDAN",
@@ -4905,6 +4923,12 @@
             "revenue": 805000.0
         },
         {
+            "kabupaten": "PURWOREJO",
+            "kecamatan": "BANYUURIP",
+            "cust": 1,
+            "revenue": 799100.0
+        },
+        {
             "kabupaten": "JAKARTA PUSAT",
             "kecamatan": "SENEN",
             "cust": 6,
@@ -4921,12 +4945,6 @@
             "kecamatan": "SAYUNG",
             "cust": 4,
             "revenue": 793300.0
-        },
-        {
-            "kabupaten": "CILACAP",
-            "kecamatan": "CILACAP SELATAN",
-            "cust": 3,
-            "revenue": 792500.0
         },
         {
             "kabupaten": "BULUNGAN",
@@ -5037,14 +5055,20 @@
             "revenue": 732900.0
         },
         {
-            "kabupaten": "TANGERANG SELATAN",
-            "kecamatan": "CIPUTAT TIMUR",
-            "cust": 1,
-            "revenue": 729000.0
+            "kabupaten": "SIDOARJO",
+            "kecamatan": "KREMBUNG",
+            "cust": 2,
+            "revenue": 729600.0
         },
         {
             "kabupaten": "LUWU TIMUR",
             "kecamatan": "TOWUTI",
+            "cust": 1,
+            "revenue": 729000.0
+        },
+        {
+            "kabupaten": "TANGERANG SELATAN",
+            "kecamatan": "CIPUTAT TIMUR",
             "cust": 1,
             "revenue": 729000.0
         },
@@ -5095,6 +5119,12 @@
             "kecamatan": "SINGARAN PATI",
             "cust": 2,
             "revenue": 715500.0
+        },
+        {
+            "kabupaten": "TABANAN",
+            "kecamatan": "MARGA",
+            "cust": 2,
+            "revenue": 714400.0
         },
         {
             "kabupaten": "KLATEN",
@@ -5307,12 +5337,6 @@
             "revenue": 638400.0
         },
         {
-            "kabupaten": "TABANAN",
-            "kecamatan": "MARGA",
-            "cust": 2,
-            "revenue": 631900.0
-        },
-        {
             "kabupaten": "BANYUWANGI",
             "kecamatan": "GENTENG",
             "cust": 1,
@@ -5469,6 +5493,12 @@
             "revenue": 583000.0
         },
         {
+            "kabupaten": "KOTA SEMARANG",
+            "kecamatan": "NGALIYAN",
+            "cust": 4,
+            "revenue": 579200.0
+        },
+        {
             "kabupaten": "PONOROGO",
             "kecamatan": "BABADAN",
             "cust": 1,
@@ -5533,12 +5563,6 @@
             "kecamatan": "PAGADEN",
             "cust": 1,
             "revenue": 557000.0
-        },
-        {
-            "kabupaten": "KOTA SEMARANG",
-            "kecamatan": "NGALIYAN",
-            "cust": 4,
-            "revenue": 556200.0
         },
         {
             "kabupaten": "FAK FAK",
@@ -5661,14 +5685,14 @@
             "revenue": 514000.0
         },
         {
-            "kabupaten": "CILACAP",
-            "kecamatan": "GANDRUNGMANGU",
+            "kabupaten": "PURWOREJO",
+            "kecamatan": "BENER",
             "cust": 1,
             "revenue": 512800.0
         },
         {
-            "kabupaten": "PURWOREJO",
-            "kecamatan": "BENER",
+            "kabupaten": "CILACAP",
+            "kecamatan": "GANDRUNGMANGU",
             "cust": 1,
             "revenue": 512800.0
         },
@@ -5691,15 +5715,15 @@
             "revenue": 511400.0
         },
         {
-            "kabupaten": "KABUPATEN MEMPAWAH",
-            "kecamatan": "SIANTAN",
-            "cust": 2,
-            "revenue": 509000.0
-        },
-        {
             "kabupaten": "DEMAK",
             "kecamatan": "BONANG",
             "cust": 1,
+            "revenue": 509000.0
+        },
+        {
+            "kabupaten": "KABUPATEN MEMPAWAH",
+            "kecamatan": "SIANTAN",
+            "cust": 2,
             "revenue": 509000.0
         },
         {
@@ -5853,14 +5877,14 @@
             "revenue": 476900.0
         },
         {
-            "kabupaten": "KEDIRI",
-            "kecamatan": "GURAH",
+            "kabupaten": "KONAWE",
+            "kecamatan": "UNAAHA",
             "cust": 1,
             "revenue": 475000.0
         },
         {
-            "kabupaten": "KONAWE",
-            "kecamatan": "UNAAHA",
+            "kabupaten": "KEDIRI",
+            "kecamatan": "GURAH",
             "cust": 1,
             "revenue": 475000.0
         },
@@ -5911,6 +5935,12 @@
             "kecamatan": "CILACAP TENGAH",
             "cust": 1,
             "revenue": 464500.0
+        },
+        {
+            "kabupaten": "MAGELANG",
+            "kecamatan": "MUNTILAN",
+            "cust": 2,
+            "revenue": 463800.0
         },
         {
             "kabupaten": "JAYAWIJAYA",
@@ -5979,12 +6009,6 @@
             "revenue": 448400.0
         },
         {
-            "kabupaten": "KOTA  PALOPO",
-            "kecamatan": "WARA TIMUR",
-            "cust": 2,
-            "revenue": 446000.0
-        },
-        {
             "kabupaten": "TANGERANG",
             "kecamatan": "TIGARAKSA",
             "cust": 1,
@@ -6003,14 +6027,14 @@
             "revenue": 444700.0
         },
         {
-            "kabupaten": "TANGERANG",
-            "kecamatan": "KRESEK",
+            "kabupaten": "BANJARNEGARA",
+            "kecamatan": "KALIBENING",
             "cust": 1,
             "revenue": 444300.0
         },
         {
-            "kabupaten": "BANJARNEGARA",
-            "kecamatan": "KALIBENING",
+            "kabupaten": "TANGERANG",
+            "kecamatan": "KRESEK",
             "cust": 1,
             "revenue": 444300.0
         },
@@ -6057,15 +6081,15 @@
             "revenue": 438200.0
         },
         {
-            "kabupaten": "SIDOARJO",
-            "kecamatan": "TANGGULANGIN",
-            "cust": 1,
-            "revenue": 437500.0
-        },
-        {
             "kabupaten": "BANJARNEGARA",
             "kecamatan": "BANJARNEGARA",
             "cust": 2,
+            "revenue": 437500.0
+        },
+        {
+            "kabupaten": "SIDOARJO",
+            "kecamatan": "TANGGULANGIN",
+            "cust": 1,
             "revenue": 437500.0
         },
         {
@@ -6441,15 +6465,15 @@
             "revenue": 359800.0
         },
         {
-            "kabupaten": "PINRANG",
-            "kecamatan": "CEMPA",
-            "cust": 1,
-            "revenue": 358500.0
-        },
-        {
             "kabupaten": "BULUKUMBA",
             "kecamatan": "UJUNG BULU",
             "cust": 2,
+            "revenue": 358500.0
+        },
+        {
+            "kabupaten": "PINRANG",
+            "kecamatan": "CEMPA",
+            "cust": 1,
             "revenue": 358500.0
         },
         {
@@ -6493,12 +6517,6 @@
             "kecamatan": "MOJO",
             "cust": 1,
             "revenue": 347800.0
-        },
-        {
-            "kabupaten": "PURWOREJO",
-            "kecamatan": "BANYUURIP",
-            "cust": 1,
-            "revenue": 347300.0
         },
         {
             "kabupaten": "SUKOHARJO",
@@ -6597,14 +6615,14 @@
             "revenue": 328000.0
         },
         {
-            "kabupaten": "PANDEGLANG",
-            "kecamatan": "CARITA",
-            "cust": 1,
+            "kabupaten": "BONE",
+            "kecamatan": "BENGO",
+            "cust": 2,
             "revenue": 326800.0
         },
         {
-            "kabupaten": "KOTA TASIKMALAYA",
-            "kecamatan": "CIHIDEUNG",
+            "kabupaten": "PANDEGLANG",
+            "kecamatan": "CARITA",
             "cust": 1,
             "revenue": 326800.0
         },
@@ -6615,9 +6633,9 @@
             "revenue": 326800.0
         },
         {
-            "kabupaten": "BONE",
-            "kecamatan": "BENGO",
-            "cust": 2,
+            "kabupaten": "KOTA TASIKMALAYA",
+            "kecamatan": "CIHIDEUNG",
+            "cust": 1,
             "revenue": 326800.0
         },
         {
@@ -6639,8 +6657,8 @@
             "revenue": 322800.0
         },
         {
-            "kabupaten": "KEPULAUAN ARU",
-            "kecamatan": "ARU SELATAN UTARA",
+            "kabupaten": "KUTAI BARAT",
+            "kecamatan": "MELAK",
             "cust": 1,
             "revenue": 321800.0
         },
@@ -6651,26 +6669,26 @@
             "revenue": 321800.0
         },
         {
-            "kabupaten": "BANDUNG",
-            "kecamatan": "CIWIDEY",
-            "cust": 1,
-            "revenue": 321800.0
-        },
-        {
-            "kabupaten": "KUTAI BARAT",
-            "kecamatan": "MELAK",
-            "cust": 1,
-            "revenue": 321800.0
-        },
-        {
             "kabupaten": "TEGAL",
             "kecamatan": "TARUB",
             "cust": 1,
             "revenue": 321800.0
         },
         {
+            "kabupaten": "BANDUNG",
+            "kecamatan": "CIWIDEY",
+            "cust": 1,
+            "revenue": 321800.0
+        },
+        {
             "kabupaten": "KOTA SAMARINDA",
             "kecamatan": "SAMBUTAN",
+            "cust": 1,
+            "revenue": 321800.0
+        },
+        {
+            "kabupaten": "KEPULAUAN ARU",
+            "kecamatan": "ARU SELATAN UTARA",
             "cust": 1,
             "revenue": 321800.0
         },
@@ -6771,14 +6789,14 @@
             "revenue": 309500.0
         },
         {
-            "kabupaten": "WONOGIRI",
-            "kecamatan": "NGUNTORONADI",
+            "kabupaten": "PANGKAJENE DAN KEPULAUAN",
+            "kecamatan": "PANGKAJENE",
             "cust": 1,
             "revenue": 307000.0
         },
         {
-            "kabupaten": "PANGKAJENE DAN KEPULAUAN",
-            "kecamatan": "PANGKAJENE",
+            "kabupaten": "WONOGIRI",
+            "kecamatan": "NGUNTORONADI",
             "cust": 1,
             "revenue": 307000.0
         },
@@ -6819,62 +6837,20 @@
             "revenue": 299000.0
         },
         {
-            "kabupaten": "KOTA  PALOPO",
-            "kecamatan": "WARA SELATAN",
-            "cust": 1,
-            "revenue": 297000.0
-        },
-        {
             "kabupaten": "GUNUNG KIDUL",
             "kecamatan": "NGAWEN",
             "cust": 1,
             "revenue": 297000.0
         },
         {
-            "kabupaten": "BENGKAYANG",
-            "kecamatan": "BENGKAYANG",
+            "kabupaten": "KOTA  PALOPO",
+            "kecamatan": "WARA SELATAN",
             "cust": 1,
-            "revenue": 296400.0
-        },
-        {
-            "kabupaten": "DEMAK",
-            "kecamatan": "DEMPET",
-            "cust": 1,
-            "revenue": 296400.0
-        },
-        {
-            "kabupaten": "KOTA BOGOR",
-            "kecamatan": "BOGOR BARAT",
-            "cust": 1,
-            "revenue": 296400.0
-        },
-        {
-            "kabupaten": "KOTA YOGYAKARTA",
-            "kecamatan": "PAKUALAMAN",
-            "cust": 1,
-            "revenue": 296400.0
-        },
-        {
-            "kabupaten": "KUTAI KARTANEGARA",
-            "kecamatan": "KENOHAN",
-            "cust": 1,
-            "revenue": 296400.0
+            "revenue": 297000.0
         },
         {
             "kabupaten": "KOTA CIREBON",
             "kecamatan": "KEJAKSAN",
-            "cust": 1,
-            "revenue": 296400.0
-        },
-        {
-            "kabupaten": "OGAN KOMERING ILIR",
-            "kecamatan": "LEMPUING JAYA",
-            "cust": 2,
-            "revenue": 296400.0
-        },
-        {
-            "kabupaten": "KOTA PRABUMULIH",
-            "kecamatan": "PRABUMULIH SELATAN",
             "cust": 1,
             "revenue": 296400.0
         },
@@ -6885,8 +6861,26 @@
             "revenue": 296400.0
         },
         {
-            "kabupaten": "HULU SUNGAI UTARA",
-            "kecamatan": "SUNGAI TABUKAN",
+            "kabupaten": "KOTA YOGYAKARTA",
+            "kecamatan": "PAKUALAMAN",
+            "cust": 1,
+            "revenue": 296400.0
+        },
+        {
+            "kabupaten": "GROBOGAN",
+            "kecamatan": "WIROSARI",
+            "cust": 1,
+            "revenue": 296400.0
+        },
+        {
+            "kabupaten": "OGAN KOMERING ILIR",
+            "kecamatan": "LEMPUING JAYA",
+            "cust": 2,
+            "revenue": 296400.0
+        },
+        {
+            "kabupaten": "KUTAI KARTANEGARA",
+            "kecamatan": "KENOHAN",
             "cust": 1,
             "revenue": 296400.0
         },
@@ -6897,14 +6891,38 @@
             "revenue": 296400.0
         },
         {
+            "kabupaten": "KOTA PRABUMULIH",
+            "kecamatan": "PRABUMULIH SELATAN",
+            "cust": 1,
+            "revenue": 296400.0
+        },
+        {
+            "kabupaten": "HULU SUNGAI UTARA",
+            "kecamatan": "SUNGAI TABUKAN",
+            "cust": 1,
+            "revenue": 296400.0
+        },
+        {
+            "kabupaten": "BENGKAYANG",
+            "kecamatan": "BENGKAYANG",
+            "cust": 1,
+            "revenue": 296400.0
+        },
+        {
+            "kabupaten": "KOTA BOGOR",
+            "kecamatan": "BOGOR BARAT",
+            "cust": 1,
+            "revenue": 296400.0
+        },
+        {
             "kabupaten": "KUTAI TIMUR",
             "kecamatan": "SANGKULIRANG",
             "cust": 1,
             "revenue": 296400.0
         },
         {
-            "kabupaten": "GROBOGAN",
-            "kecamatan": "WIROSARI",
+            "kabupaten": "DEMAK",
+            "kecamatan": "DEMPET",
             "cust": 1,
             "revenue": 296400.0
         },
@@ -6927,20 +6945,14 @@
             "revenue": 293500.0
         },
         {
-            "kabupaten": "SIDOARJO",
-            "kecamatan": "KREMBUNG",
-            "cust": 1,
-            "revenue": 293500.0
-        },
-        {
-            "kabupaten": "KEBUMEN",
-            "kecamatan": "ALIAN",
+            "kabupaten": "PATI",
+            "kecamatan": "WINONG",
             "cust": 1,
             "revenue": 293300.0
         },
         {
-            "kabupaten": "PATI",
-            "kecamatan": "WINONG",
+            "kabupaten": "KEBUMEN",
+            "kecamatan": "ALIAN",
             "cust": 1,
             "revenue": 293300.0
         },
@@ -6969,14 +6981,8 @@
             "revenue": 291500.0
         },
         {
-            "kabupaten": "CILACAP",
-            "kecamatan": "NUSAWUNGU",
-            "cust": 1,
-            "revenue": 291400.0
-        },
-        {
-            "kabupaten": "KOTA MAKASSAR",
-            "kecamatan": "UJUNG PANDANG",
+            "kabupaten": "BANYUASIN",
+            "kecamatan": "BANYUASIN I",
             "cust": 1,
             "revenue": 291400.0
         },
@@ -6993,8 +6999,14 @@
             "revenue": 291400.0
         },
         {
-            "kabupaten": "BANYUASIN",
-            "kecamatan": "BANYUASIN I",
+            "kabupaten": "CILACAP",
+            "kecamatan": "NUSAWUNGU",
+            "cust": 1,
+            "revenue": 291400.0
+        },
+        {
+            "kabupaten": "KOTA MAKASSAR",
+            "kecamatan": "UJUNG PANDANG",
             "cust": 1,
             "revenue": 291400.0
         },
@@ -7011,14 +7023,14 @@
             "revenue": 288100.0
         },
         {
-            "kabupaten": "KUTAI TIMUR",
-            "kecamatan": "MUARA WAHAU",
+            "kabupaten": "SUKOHARJO",
+            "kecamatan": "NGUTER",
             "cust": 1,
             "revenue": 287600.0
         },
         {
-            "kabupaten": "SUKOHARJO",
-            "kecamatan": "NGUTER",
+            "kabupaten": "KUTAI TIMUR",
+            "kecamatan": "MUARA WAHAU",
             "cust": 1,
             "revenue": 287600.0
         },
@@ -7101,12 +7113,6 @@
             "revenue": 271500.0
         },
         {
-            "kabupaten": "KLATEN",
-            "kecamatan": "GANTIWARNO",
-            "cust": 1,
-            "revenue": 271400.0
-        },
-        {
             "kabupaten": "JEMBRANA",
             "kecamatan": "MENDOYO",
             "cust": 1,
@@ -7115,6 +7121,12 @@
         {
             "kabupaten": "OGAN KOMERING ULU",
             "kecamatan": "BATURAJA BARAT",
+            "cust": 1,
+            "revenue": 271400.0
+        },
+        {
+            "kabupaten": "KLATEN",
+            "kecamatan": "GANTIWARNO",
             "cust": 1,
             "revenue": 271400.0
         },
@@ -7144,12 +7156,6 @@
         },
         {
             "kabupaten": "KUTAI TIMUR",
-            "kecamatan": "RANTAU PULUNG",
-            "cust": 1,
-            "revenue": 269400.0
-        },
-        {
-            "kabupaten": "KUTAI TIMUR",
             "kecamatan": "TELUK PANDAN",
             "cust": 1,
             "revenue": 269400.0
@@ -7157,6 +7163,12 @@
         {
             "kabupaten": "GUNUNG KIDUL",
             "kecamatan": "SEMANU",
+            "cust": 1,
+            "revenue": 269400.0
+        },
+        {
+            "kabupaten": "KUTAI TIMUR",
+            "kecamatan": "RANTAU PULUNG",
             "cust": 1,
             "revenue": 269400.0
         },
@@ -7203,14 +7215,14 @@
             "revenue": 265100.0
         },
         {
-            "kabupaten": "SUKABUMI",
-            "kecamatan": "NAGRAK",
+            "kabupaten": "PINRANG",
+            "kecamatan": "PALETEANG",
             "cust": 1,
             "revenue": 264600.0
         },
         {
-            "kabupaten": "PINRANG",
-            "kecamatan": "PALETEANG",
+            "kabupaten": "SUKABUMI",
+            "kecamatan": "NAGRAK",
             "cust": 1,
             "revenue": 264600.0
         },
@@ -7290,12 +7302,6 @@
             "kabupaten": "PANDEGLANG",
             "kecamatan": "KADUHEJO",
             "cust": 1,
-            "revenue": 251000.0
-        },
-        {
-            "kabupaten": "MAGELANG",
-            "kecamatan": "MUNTILAN",
-            "cust": 2,
             "revenue": 251000.0
         },
         {
@@ -7437,15 +7443,15 @@
             "revenue": 224500.0
         },
         {
-            "kabupaten": "LAMPUNG SELATAN",
-            "kecamatan": "TANJUNG BINTANG",
-            "cust": 2,
-            "revenue": 218800.0
-        },
-        {
             "kabupaten": "SIDOARJO",
             "kecamatan": "JABON",
             "cust": 1,
+            "revenue": 218800.0
+        },
+        {
+            "kabupaten": "LAMPUNG SELATAN",
+            "kecamatan": "TANJUNG BINTANG",
+            "cust": 2,
             "revenue": 218800.0
         },
         {
@@ -7485,8 +7491,8 @@
             "revenue": 213200.0
         },
         {
-            "kabupaten": "BERAU",
-            "kecamatan": "TANJUNG REDEB",
+            "kabupaten": "PEKANBARU",
+            "kecamatan": "MARPOYAN DAMAI",
             "cust": 1,
             "revenue": 212800.0
         },
@@ -7497,8 +7503,8 @@
             "revenue": 212800.0
         },
         {
-            "kabupaten": "PEKANBARU",
-            "kecamatan": "MARPOYAN DAMAI",
+            "kabupaten": "KOTA KENDARI",
+            "kecamatan": "ABELI",
             "cust": 1,
             "revenue": 212800.0
         },
@@ -7509,8 +7515,8 @@
             "revenue": 212800.0
         },
         {
-            "kabupaten": "KOTA KENDARI",
-            "kecamatan": "ABELI",
+            "kabupaten": "BERAU",
+            "kecamatan": "TANJUNG REDEB",
             "cust": 1,
             "revenue": 212800.0
         },
@@ -7666,7 +7672,7 @@
         },
         {
             "kabupaten": "SEMARANG",
-            "kecamatan": "GETASAN",
+            "kecamatan": "PABELAN",
             "cust": 1,
             "revenue": 182400.0
         },
@@ -7677,8 +7683,26 @@
             "revenue": 182400.0
         },
         {
+            "kabupaten": "KLATEN",
+            "kecamatan": "JOGONALAN",
+            "cust": 1,
+            "revenue": 182400.0
+        },
+        {
             "kabupaten": "KOTA LUBUK LINGGAU",
             "kecamatan": "LUBUK LINGGAU TIMUR II",
+            "cust": 1,
+            "revenue": 182400.0
+        },
+        {
+            "kabupaten": "OGAN ILIR",
+            "kecamatan": "RANTAU PANJANG",
+            "cust": 1,
+            "revenue": 182400.0
+        },
+        {
+            "kabupaten": "SEMARANG",
+            "kecamatan": "GETASAN",
             "cust": 1,
             "revenue": 182400.0
         },
@@ -7691,24 +7715,6 @@
         {
             "kabupaten": "DEMAK",
             "kecamatan": "DEMAK",
-            "cust": 1,
-            "revenue": 182400.0
-        },
-        {
-            "kabupaten": "KLATEN",
-            "kecamatan": "JOGONALAN",
-            "cust": 1,
-            "revenue": 182400.0
-        },
-        {
-            "kabupaten": "SEMARANG",
-            "kecamatan": "PABELAN",
-            "cust": 1,
-            "revenue": 182400.0
-        },
-        {
-            "kabupaten": "OGAN ILIR",
-            "kecamatan": "RANTAU PANJANG",
             "cust": 1,
             "revenue": 182400.0
         },
@@ -7773,26 +7779,20 @@
             "revenue": 170200.0
         },
         {
-            "kabupaten": "BANDUNG",
-            "kecamatan": "CIMENYAN",
-            "cust": 1,
-            "revenue": 170000.0
-        },
-        {
             "kabupaten": "PINRANG",
             "kecamatan": "WATANG SAWITO",
             "cust": 1,
             "revenue": 170000.0
         },
         {
-            "kabupaten": "JAKARTA BARAT",
-            "kecamatan": "GROGOL PETAMBURAN",
+            "kabupaten": "KOTA BANDUNG",
+            "kecamatan": "LENGKONG",
             "cust": 1,
             "revenue": 169000.0
         },
         {
-            "kabupaten": "KOTA BANDUNG",
-            "kecamatan": "LENGKONG",
+            "kabupaten": "JAKARTA BARAT",
+            "kecamatan": "GROGOL PETAMBURAN",
             "cust": 1,
             "revenue": 169000.0
         },
@@ -7863,14 +7863,14 @@
             "revenue": 155200.0
         },
         {
-            "kabupaten": "NUNUKAN",
-            "kecamatan": "NUNUKAN",
+            "kabupaten": "TULANG BAWANG",
+            "kecamatan": "GEDUNG MENENG",
             "cust": 1,
             "revenue": 155000.0
         },
         {
-            "kabupaten": "TULANG BAWANG",
-            "kecamatan": "GEDUNG MENENG",
+            "kabupaten": "NUNUKAN",
+            "kecamatan": "NUNUKAN",
             "cust": 1,
             "revenue": 155000.0
         },
@@ -7917,15 +7917,15 @@
             "revenue": 141980.0
         },
         {
-            "kabupaten": "KOTA DEPOK",
-            "kecamatan": "CINERE",
-            "cust": 2,
-            "revenue": 139100.0
-        },
-        {
             "kabupaten": "KEDIRI",
             "kecamatan": "NGANCAR",
             "cust": 1,
+            "revenue": 139100.0
+        },
+        {
+            "kabupaten": "KOTA DEPOK",
+            "kecamatan": "CINERE",
+            "cust": 2,
             "revenue": 139100.0
         },
         {
@@ -7953,12 +7953,6 @@
             "revenue": 137000.0
         },
         {
-            "kabupaten": "LAHAT",
-            "kecamatan": "LAHAT",
-            "cust": 1,
-            "revenue": 133500.0
-        },
-        {
             "kabupaten": "LAMONGAN",
             "kecamatan": "GLAGAH",
             "cust": 1,
@@ -7967,6 +7961,12 @@
         {
             "kabupaten": "KEPULAUAN SANGIHE",
             "kecamatan": "TABUKAN UTARA",
+            "cust": 1,
+            "revenue": 133500.0
+        },
+        {
+            "kabupaten": "LAHAT",
+            "kecamatan": "LAHAT",
             "cust": 1,
             "revenue": 133500.0
         },
@@ -7989,14 +7989,14 @@
             "revenue": 132000.0
         },
         {
-            "kabupaten": "JEMBRANA",
-            "kecamatan": "PEKUTATAN",
+            "kabupaten": "PESAWARAN",
+            "kecamatan": "TEGINENENG",
             "cust": 1,
             "revenue": 131500.0
         },
         {
-            "kabupaten": "PESAWARAN",
-            "kecamatan": "TEGINENENG",
+            "kabupaten": "JEMBRANA",
+            "kecamatan": "PEKUTATAN",
             "cust": 1,
             "revenue": 131500.0
         },
@@ -8139,26 +8139,26 @@
             "revenue": 115500.0
         },
         {
-            "kabupaten": "KONAWE",
-            "kecamatan": "PONDIDAHA",
-            "cust": 1,
-            "revenue": 115160.0
-        },
-        {
             "kabupaten": "OGAN KOMERING ULU TIMUR",
             "kecamatan": "BELITANG",
             "cust": 1,
             "revenue": 115160.0
         },
         {
-            "kabupaten": "OGAN KOMERING ULU",
-            "kecamatan": "BATURAJA TIMUR",
+            "kabupaten": "KONAWE",
+            "kecamatan": "PONDIDAHA",
             "cust": 1,
-            "revenue": 114000.0
+            "revenue": 115160.0
         },
         {
             "kabupaten": "KARANGANYAR",
             "kecamatan": "JUMAPOLO",
+            "cust": 1,
+            "revenue": 114000.0
+        },
+        {
+            "kabupaten": "OGAN KOMERING ULU",
+            "kecamatan": "BATURAJA TIMUR",
             "cust": 1,
             "revenue": 114000.0
         },
@@ -8265,38 +8265,20 @@
             "revenue": 101900.0
         },
         {
-            "kabupaten": "KOTA BEKASI",
-            "kecamatan": "RAWA LUMBU",
-            "cust": 1,
-            "revenue": 101000.0
-        },
-        {
             "kabupaten": "PURBALINGGA",
             "kecamatan": "KALIMANAH",
             "cust": 1,
             "revenue": 101000.0
         },
         {
-            "kabupaten": "JEMBER",
-            "kecamatan": "SEMBORO",
+            "kabupaten": "KOTA BEKASI",
+            "kecamatan": "RAWA LUMBU",
             "cust": 1,
-            "revenue": 100500.0
-        },
-        {
-            "kabupaten": "SUMEDANG",
-            "kecamatan": "CIMANGGUNG",
-            "cust": 1,
-            "revenue": 100500.0
+            "revenue": 101000.0
         },
         {
             "kabupaten": "PANGKAJENE DAN KEPULAUAN",
             "kecamatan": "BALOCCI",
-            "cust": 1,
-            "revenue": 100500.0
-        },
-        {
-            "kabupaten": "SIDOARJO",
-            "kecamatan": "GEDANGAN",
             "cust": 1,
             "revenue": 100500.0
         },
@@ -8307,14 +8289,26 @@
             "revenue": 100500.0
         },
         {
-            "kabupaten": "JAKARTA UTARA",
-            "kecamatan": "KOJA",
+            "kabupaten": "SUMEDANG",
+            "kecamatan": "CIMANGGUNG",
             "cust": 1,
-            "revenue": 98500.0
+            "revenue": 100500.0
         },
         {
-            "kabupaten": "HALMAHERA BARAT",
-            "kecamatan": "IBU SELATAN",
+            "kabupaten": "SIDOARJO",
+            "kecamatan": "GEDANGAN",
+            "cust": 1,
+            "revenue": 100500.0
+        },
+        {
+            "kabupaten": "JEMBER",
+            "kecamatan": "SEMBORO",
+            "cust": 1,
+            "revenue": 100500.0
+        },
+        {
+            "kabupaten": "JAKARTA UTARA",
+            "kecamatan": "KOJA",
             "cust": 1,
             "revenue": 98500.0
         },
@@ -8325,14 +8319,20 @@
             "revenue": 98500.0
         },
         {
-            "kabupaten": "KOTA SURAKARTA",
-            "kecamatan": "BANJARSARI",
+            "kabupaten": "SAMBAS",
+            "kecamatan": "JAWAI",
             "cust": 1,
             "revenue": 98500.0
         },
         {
-            "kabupaten": "SAMBAS",
-            "kecamatan": "JAWAI",
+            "kabupaten": "HALMAHERA BARAT",
+            "kecamatan": "IBU SELATAN",
+            "cust": 1,
+            "revenue": 98500.0
+        },
+        {
+            "kabupaten": "KOTA SURAKARTA",
+            "kecamatan": "BANJARSARI",
             "cust": 1,
             "revenue": 98500.0
         },
@@ -8397,14 +8397,14 @@
             "revenue": 93500.0
         },
         {
-            "kabupaten": "MAGETAN",
-            "kecamatan": "KARAS",
+            "kabupaten": "BANYUMAS",
+            "kecamatan": "PURWOKERTO UTARA",
             "cust": 1,
             "revenue": 92000.0
         },
         {
-            "kabupaten": "BANYUMAS",
-            "kecamatan": "PURWOKERTO UTARA",
+            "kabupaten": "MAGETAN",
+            "kecamatan": "KARAS",
             "cust": 1,
             "revenue": 92000.0
         },
@@ -8433,14 +8433,14 @@
             "revenue": 89200.0
         },
         {
-            "kabupaten": "TEMANGGUNG",
-            "kecamatan": "GEMAWANG",
+            "kabupaten": "BERAU",
+            "kecamatan": "SAMBALIUNG",
             "cust": 1,
             "revenue": 89000.0
         },
         {
-            "kabupaten": "BERAU",
-            "kecamatan": "SAMBALIUNG",
+            "kabupaten": "TEMANGGUNG",
+            "kecamatan": "GEMAWANG",
             "cust": 1,
             "revenue": 89000.0
         },
@@ -8499,14 +8499,20 @@
             "revenue": 83000.0
         },
         {
-            "kabupaten": "TABANAN",
-            "kecamatan": "SALAMADEG TIMUR",
+            "kabupaten": "JEMBER",
+            "kecamatan": "PUGER",
             "cust": 1,
             "revenue": 82500.0
         },
         {
-            "kabupaten": "JEMBER",
-            "kecamatan": "PUGER",
+            "kabupaten": "KEBUMEN",
+            "kecamatan": "ADIMULYO",
+            "cust": 1,
+            "revenue": 82500.0
+        },
+        {
+            "kabupaten": "TABANAN",
+            "kecamatan": "SALAMADEG TIMUR",
             "cust": 1,
             "revenue": 82500.0
         },
@@ -8519,12 +8525,6 @@
         {
             "kabupaten": "FLORES TIMUR",
             "kecamatan": "WOTAN ULUMANDO",
-            "cust": 1,
-            "revenue": 82500.0
-        },
-        {
-            "kabupaten": "KEBUMEN",
-            "kecamatan": "ADIMULYO",
             "cust": 1,
             "revenue": 82500.0
         },
@@ -8547,8 +8547,8 @@
             "revenue": 81055.0
         },
         {
-            "kabupaten": "CILACAP",
-            "kecamatan": "KESUGIHAN",
+            "kabupaten": "LEBONG",
+            "kecamatan": "LEBONG TENGAH",
             "cust": 1,
             "revenue": 80500.0
         },
@@ -8559,20 +8559,20 @@
             "revenue": 80500.0
         },
         {
-            "kabupaten": "KOTA SUKABUMI",
-            "kecamatan": "CITAMIANG",
-            "cust": 1,
-            "revenue": 80500.0
-        },
-        {
-            "kabupaten": "LEBONG",
-            "kecamatan": "LEBONG TENGAH",
+            "kabupaten": "CILACAP",
+            "kecamatan": "KESUGIHAN",
             "cust": 1,
             "revenue": 80500.0
         },
         {
             "kabupaten": "KEBUMEN",
             "kecamatan": "PETANAHAN",
+            "cust": 1,
+            "revenue": 80500.0
+        },
+        {
+            "kabupaten": "KOTA SUKABUMI",
+            "kecamatan": "CITAMIANG",
             "cust": 1,
             "revenue": 80500.0
         },
@@ -8589,14 +8589,14 @@
             "revenue": 77500.0
         },
         {
-            "kabupaten": "GOWA",
-            "kecamatan": "BONTONOMPO SELATAN",
+            "kabupaten": "BONE",
+            "kecamatan": "CINA",
             "cust": 1,
             "revenue": 77200.0
         },
         {
-            "kabupaten": "BONE",
-            "kecamatan": "CINA",
+            "kabupaten": "GOWA",
+            "kecamatan": "BONTONOMPO SELATAN",
             "cust": 1,
             "revenue": 77200.0
         },
@@ -8607,14 +8607,14 @@
             "revenue": 77000.0
         },
         {
-            "kabupaten": "KOTA BANJAR BARU",
-            "kecamatan": "LANDASAN ULIN",
+            "kabupaten": "MAGETAN",
+            "kecamatan": "KARANGREJO",
             "cust": 1,
             "revenue": 75500.0
         },
         {
-            "kabupaten": "MAGETAN",
-            "kecamatan": "KARANGREJO",
+            "kabupaten": "KOTA BANJAR BARU",
+            "kecamatan": "LANDASAN ULIN",
             "cust": 1,
             "revenue": 75500.0
         },
@@ -8661,26 +8661,14 @@
             "revenue": 66400.0
         },
         {
-            "kabupaten": "SUKOHARJO",
-            "kecamatan": "KARTASURA",
-            "cust": 1,
-            "revenue": 66000.0
-        },
-        {
-            "kabupaten": "BANGLI",
-            "kecamatan": "KINTAMANI",
-            "cust": 1,
-            "revenue": 66000.0
-        },
-        {
-            "kabupaten": "BANJARNEGARA",
-            "kecamatan": "MADUKARA",
-            "cust": 1,
-            "revenue": 66000.0
-        },
-        {
             "kabupaten": "KARANGASEM",
             "kecamatan": "RENDANG",
+            "cust": 1,
+            "revenue": 66000.0
+        },
+        {
+            "kabupaten": "MAGELANG",
+            "kecamatan": "SALAMAN",
             "cust": 1,
             "revenue": 66000.0
         },
@@ -8691,16 +8679,34 @@
             "revenue": 66000.0
         },
         {
+            "kabupaten": "BANJARNEGARA",
+            "kecamatan": "MADUKARA",
+            "cust": 1,
+            "revenue": 66000.0
+        },
+        {
+            "kabupaten": "BANGLI",
+            "kecamatan": "KINTAMANI",
+            "cust": 1,
+            "revenue": 66000.0
+        },
+        {
+            "kabupaten": "SUKOHARJO",
+            "kecamatan": "KARTASURA",
+            "cust": 1,
+            "revenue": 66000.0
+        },
+        {
             "kabupaten": "LAMPUNG UTARA",
             "kecamatan": "KOTABUMI UTARA",
             "cust": 1,
             "revenue": 66000.0
         },
         {
-            "kabupaten": "MAGELANG",
-            "kecamatan": "SALAMAN",
+            "kabupaten": "GROBOGAN",
+            "kecamatan": "KRADENAN",
             "cust": 1,
-            "revenue": 66000.0
+            "revenue": 64900.0
         },
         {
             "kabupaten": "BULUKUMBA",
@@ -8715,68 +8721,14 @@
             "revenue": 64900.0
         },
         {
-            "kabupaten": "GROBOGAN",
-            "kecamatan": "KRADENAN",
-            "cust": 1,
-            "revenue": 64900.0
-        },
-        {
             "kabupaten": "BANTUL",
             "kecamatan": "PIYUNGAN",
             "cust": 1,
             "revenue": 64560.0
         },
         {
-            "kabupaten": "PEKANBARU",
-            "kecamatan": "LIMA PULUH",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
-            "kabupaten": "WONOGIRI",
-            "kecamatan": "GIRIMARTO",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
             "kabupaten": "BOGOR",
             "kecamatan": "CIBUNGBULANG",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
-            "kabupaten": "PONOROGO",
-            "kecamatan": "SIMAN",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
-            "kabupaten": "SUKABUMI",
-            "kecamatan": "CIKIDANG",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
-            "kabupaten": "GRESIK",
-            "kecamatan": "KEBOMAS",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
-            "kabupaten": "KEBUMEN",
-            "kecamatan": "PEJAGOAN",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
-            "kabupaten": "KAUR",
-            "kecamatan": "NASAL",
-            "cust": 1,
-            "revenue": 64000.0
-        },
-        {
-            "kabupaten": "GRESIK",
-            "kecamatan": "KEDAMEAN",
             "cust": 1,
             "revenue": 64000.0
         },
@@ -8787,8 +8739,56 @@
             "revenue": 64000.0
         },
         {
+            "kabupaten": "GRESIK",
+            "kecamatan": "KEDAMEAN",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
+            "kabupaten": "KAUR",
+            "kecamatan": "NASAL",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
+            "kabupaten": "PEKANBARU",
+            "kecamatan": "LIMA PULUH",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
+            "kabupaten": "PONOROGO",
+            "kecamatan": "SIMAN",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
+            "kabupaten": "WONOGIRI",
+            "kecamatan": "GIRIMARTO",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
             "kabupaten": "MUARO JAMBI",
             "kecamatan": "JAMBI LUAR KOTA",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
+            "kabupaten": "KEBUMEN",
+            "kecamatan": "PEJAGOAN",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
+            "kabupaten": "GRESIK",
+            "kecamatan": "KEBOMAS",
+            "cust": 1,
+            "revenue": 64000.0
+        },
+        {
+            "kabupaten": "SUKABUMI",
+            "kecamatan": "CIKIDANG",
             "cust": 1,
             "revenue": 64000.0
         },
@@ -8847,14 +8847,14 @@
             "revenue": 60340.0
         },
         {
-            "kabupaten": "LUWU UTARA",
-            "kecamatan": "MASAMBA",
+            "kabupaten": "KULON PROGO",
+            "kecamatan": "WATES",
             "cust": 1,
             "revenue": 60340.0
         },
         {
-            "kabupaten": "KULON PROGO",
-            "kecamatan": "WATES",
+            "kabupaten": "LUWU UTARA",
+            "kecamatan": "MASAMBA",
             "cust": 1,
             "revenue": 60340.0
         },
@@ -8865,6 +8865,12 @@
             "revenue": 60340.0
         },
         {
+            "kabupaten": "OGAN KOMERING ULU",
+            "kecamatan": "ULU OGAN",
+            "cust": 1,
+            "revenue": 60000.0
+        },
+        {
             "kabupaten": "KENDAL",
             "kecamatan": "SUKOREJO",
             "cust": 1,
@@ -8873,12 +8879,6 @@
         {
             "kabupaten": "JAKARTA BARAT",
             "kecamatan": "TAMAN SARI",
-            "cust": 1,
-            "revenue": 60000.0
-        },
-        {
-            "kabupaten": "OGAN KOMERING ULU",
-            "kecamatan": "ULU OGAN",
             "cust": 1,
             "revenue": 60000.0
         },
@@ -8895,14 +8895,8 @@
             "revenue": 52380.0
         },
         {
-            "kabupaten": "MALANG",
-            "kecamatan": "TUREN",
-            "cust": 1,
-            "revenue": 50000.0
-        },
-        {
-            "kabupaten": "BLORA",
-            "kecamatan": "KUNDURAN",
+            "kabupaten": "BATANG",
+            "kecamatan": "BANYUPUTIH",
             "cust": 1,
             "revenue": 50000.0
         },
@@ -8913,8 +8907,14 @@
             "revenue": 50000.0
         },
         {
-            "kabupaten": "BATANG",
-            "kecamatan": "BANYUPUTIH",
+            "kabupaten": "MALANG",
+            "kecamatan": "TUREN",
+            "cust": 1,
+            "revenue": 50000.0
+        },
+        {
+            "kabupaten": "BLORA",
+            "kecamatan": "KUNDURAN",
             "cust": 1,
             "revenue": 50000.0
         },
@@ -8943,9 +8943,9 @@
             "revenue": 46170.0
         },
         {
-            "kabupaten": "BANYUMAS",
-            "kecamatan": "SOKARAJA",
-            "cust": 2,
+            "kabupaten": "KOTA SORONG",
+            "kecamatan": "SORONG MANOI",
+            "cust": 1,
             "revenue": 44500.0
         },
         {
@@ -8955,9 +8955,9 @@
             "revenue": 44500.0
         },
         {
-            "kabupaten": "KOTA SORONG",
-            "kecamatan": "SORONG MANOI",
-            "cust": 1,
+            "kabupaten": "BANYUMAS",
+            "kecamatan": "SOKARAJA",
+            "cust": 2,
             "revenue": 44500.0
         },
         {
@@ -8977,6 +8977,12 @@
             "kecamatan": "TAKKALALLA",
             "cust": 1,
             "revenue": 41500.0
+        },
+        {
+            "kabupaten": "KOTA BANJARMASIN",
+            "kecamatan": "BANJARMASIN UTARA",
+            "cust": 1,
+            "revenue": 41000.0
         },
         {
             "kabupaten": "BANYUWANGI",
@@ -9045,6 +9051,36 @@
             "revenue": 23500.0
         },
         {
+            "kabupaten": "TEGAL",
+            "kecamatan": "PAGERBARANG",
+            "cust": 1,
+            "revenue": 23000.0
+        },
+        {
+            "kabupaten": "GOWA",
+            "kecamatan": "PARIGI",
+            "cust": 1,
+            "revenue": 23000.0
+        },
+        {
+            "kabupaten": "PEKALONGAN",
+            "kecamatan": "KAJEN",
+            "cust": 1,
+            "revenue": 23000.0
+        },
+        {
+            "kabupaten": "KOTA PRABUMULIH",
+            "kecamatan": "CAMBAI",
+            "cust": 1,
+            "revenue": 23000.0
+        },
+        {
+            "kabupaten": "KOTA MALANG",
+            "kecamatan": "BLIMBING",
+            "cust": 1,
+            "revenue": 23000.0
+        },
+        {
             "kabupaten": "TANGERANG",
             "kecamatan": "TELUKNAGA",
             "cust": 1,
@@ -9057,32 +9093,8 @@
             "revenue": 23000.0
         },
         {
-            "kabupaten": "KOTA BANJARMASIN",
-            "kecamatan": "BANJARMASIN UTARA",
-            "cust": 1,
-            "revenue": 23000.0
-        },
-        {
-            "kabupaten": "KOTA PRABUMULIH",
-            "kecamatan": "CAMBAI",
-            "cust": 1,
-            "revenue": 23000.0
-        },
-        {
-            "kabupaten": "GOWA",
-            "kecamatan": "PARIGI",
-            "cust": 1,
-            "revenue": 23000.0
-        },
-        {
-            "kabupaten": "KOTA MALANG",
-            "kecamatan": "BLIMBING",
-            "cust": 1,
-            "revenue": 23000.0
-        },
-        {
-            "kabupaten": "PEKALONGAN",
-            "kecamatan": "KAJEN",
+            "kabupaten": "CIAMIS",
+            "kecamatan": "KAWALI",
             "cust": 1,
             "revenue": 23000.0
         },
@@ -9099,12 +9111,6 @@
             "revenue": 21500.0
         },
         {
-            "kabupaten": "KARANGASEM",
-            "kecamatan": "KUBU",
-            "cust": 1,
-            "revenue": 20000.0
-        },
-        {
             "kabupaten": "KUPANG",
             "kecamatan": "KUPANG TIMUR",
             "cust": 1,
@@ -9113,6 +9119,12 @@
         {
             "kabupaten": "KARANGANYAR",
             "kecamatan": "MATESIH",
+            "cust": 1,
+            "revenue": 20000.0
+        },
+        {
+            "kabupaten": "KARANGASEM",
+            "kecamatan": "KUBU",
             "cust": 1,
             "revenue": 20000.0
         },
@@ -9144,7 +9156,7 @@
     "geoHierarchy": [
         {
             "kabupaten": "LOMBOK TENGAH",
-            "cust": 36878,
+            "cust": 36948,
             "months": [
                 4599,
                 4234,
@@ -9159,12 +9171,12 @@
                 4888,
                 5453,
                 5525,
-                4478
+                4679
             ],
             "children": [
                 {
                     "name": "PUJUT",
-                    "cust": 6681,
+                    "cust": 6690,
                     "months": [
                         879,
                         730,
@@ -9179,12 +9191,12 @@
                         955,
                         1025,
                         1019,
-                        734
+                        766
                     ]
                 },
                 {
                     "name": "PRAYA",
-                    "cust": 5376,
+                    "cust": 5387,
                     "months": [
                         645,
                         657,
@@ -9199,12 +9211,12 @@
                         734,
                         788,
                         764,
-                        664
+                        694
                     ]
                 },
                 {
                     "name": "PRAYA BARAT",
-                    "cust": 5124,
+                    "cust": 5135,
                     "months": [
                         644,
                         558,
@@ -9219,12 +9231,12 @@
                         650,
                         756,
                         694,
-                        586
+                        615
                     ]
                 },
                 {
                     "name": "PRAYA BARAT DAYA",
-                    "cust": 3257,
+                    "cust": 3260,
                     "months": [
                         357,
                         343,
@@ -9239,12 +9251,12 @@
                         393,
                         501,
                         457,
-                        402
+                        420
                     ]
                 },
                 {
                     "name": "JONGGAT",
-                    "cust": 3647,
+                    "cust": 3655,
                     "months": [
                         434,
                         444,
@@ -9259,12 +9271,12 @@
                         466,
                         548,
                         570,
-                        443
+                        465
                     ]
                 },
                 {
                     "name": "PRAYA TENGAH",
-                    "cust": 2872,
+                    "cust": 2876,
                     "months": [
                         379,
                         355,
@@ -9279,12 +9291,12 @@
                         398,
                         423,
                         437,
-                        375
+                        386
                     ]
                 },
                 {
                     "name": "BATUKLIANG",
-                    "cust": 2128,
+                    "cust": 2133,
                     "months": [
                         246,
                         218,
@@ -9299,12 +9311,12 @@
                         262,
                         302,
                         337,
-                        287
+                        298
                     ]
                 },
                 {
                     "name": "JANAPRIA",
-                    "cust": 2105,
+                    "cust": 2115,
                     "months": [
                         282,
                         269,
@@ -9319,14 +9331,14 @@
                         237,
                         299,
                         339,
-                        230
+                        256
                     ]
                 }
             ]
         },
         {
             "kabupaten": "LOMBOK BARAT",
-            "cust": 22257,
+            "cust": 22298,
             "months": [
                 2682,
                 2661,
@@ -9341,12 +9353,12 @@
                 2977,
                 3173,
                 3105,
-                2627
+                2785
             ],
             "children": [
                 {
                     "name": "GERUNG",
-                    "cust": 3558,
+                    "cust": 3566,
                     "months": [
                         417,
                         374,
@@ -9361,12 +9373,12 @@
                         454,
                         509,
                         473,
-                        391
+                        420
                     ]
                 },
                 {
                     "name": "BATU LAYAR",
-                    "cust": 2369,
+                    "cust": 2372,
                     "months": [
                         325,
                         313,
@@ -9381,12 +9393,12 @@
                         368,
                         349,
                         339,
-                        289
+                        307
                     ]
                 },
                 {
                     "name": "KEDIRI",
-                    "cust": 2523,
+                    "cust": 2529,
                     "months": [
                         295,
                         292,
@@ -9401,12 +9413,12 @@
                         327,
                         351,
                         358,
-                        283
+                        306
                     ]
                 },
                 {
                     "name": "GUNUNGSARI",
-                    "cust": 2437,
+                    "cust": 2440,
                     "months": [
                         295,
                         332,
@@ -9421,12 +9433,12 @@
                         333,
                         325,
                         353,
-                        290
+                        300
                     ]
                 },
                 {
                     "name": "LABUAPI",
-                    "cust": 2475,
+                    "cust": 2481,
                     "months": [
                         298,
                         301,
@@ -9441,32 +9453,12 @@
                         346,
                         363,
                         330,
-                        285
-                    ]
-                },
-                {
-                    "name": "SEKOTONG",
-                    "cust": 2617,
-                    "months": [
-                        259,
-                        288,
-                        288,
-                        327,
-                        333,
-                        300,
-                        317,
-                        318,
-                        311,
-                        338,
-                        361,
-                        363,
-                        347,
-                        270
+                        299
                     ]
                 },
                 {
                     "name": "LEMBAR",
-                    "cust": 2415,
+                    "cust": 2421,
                     "months": [
                         291,
                         287,
@@ -9481,12 +9473,32 @@
                         317,
                         362,
                         338,
-                        323
+                        347
+                    ]
+                },
+                {
+                    "name": "SEKOTONG",
+                    "cust": 2620,
+                    "months": [
+                        259,
+                        288,
+                        288,
+                        327,
+                        333,
+                        300,
+                        317,
+                        318,
+                        311,
+                        338,
+                        361,
+                        363,
+                        347,
+                        284
                     ]
                 },
                 {
                     "name": "KURIPAN",
-                    "cust": 1600,
+                    "cust": 1601,
                     "months": [
                         187,
                         178,
@@ -9501,14 +9513,14 @@
                         184,
                         222,
                         217,
-                        196
+                        204
                     ]
                 }
             ]
         },
         {
             "kabupaten": "KOTA MATARAM",
-            "cust": 18393,
+            "cust": 18428,
             "months": [
                 2461,
                 2519,
@@ -9523,12 +9535,12 @@
                 2280,
                 2633,
                 2592,
-                2159
+                2304
             ],
             "children": [
                 {
                     "name": "AMPENAN",
-                    "cust": 4953,
+                    "cust": 4965,
                     "months": [
                         661,
                         647,
@@ -9543,12 +9555,12 @@
                         589,
                         684,
                         639,
-                        609
+                        644
                     ]
                 },
                 {
                     "name": "MATARAM",
-                    "cust": 3661,
+                    "cust": 3665,
                     "months": [
                         496,
                         496,
@@ -9563,12 +9575,12 @@
                         471,
                         520,
                         524,
-                        434
+                        464
                     ]
                 },
                 {
                     "name": "CAKRANEGARA",
-                    "cust": 2854,
+                    "cust": 2857,
                     "months": [
                         413,
                         433,
@@ -9583,12 +9595,12 @@
                         362,
                         423,
                         416,
-                        283
+                        309
                     ]
                 },
                 {
                     "name": "SANDUBAYA",
-                    "cust": 2762,
+                    "cust": 2767,
                     "months": [
                         349,
                         384,
@@ -9603,12 +9615,12 @@
                         358,
                         404,
                         410,
-                        342
+                        364
                     ]
                 },
                 {
                     "name": "SELAPRANG",
-                    "cust": 2477,
+                    "cust": 2482,
                     "months": [
                         324,
                         322,
@@ -9623,12 +9635,12 @@
                         294,
                         334,
                         357,
-                        276
+                        294
                     ]
                 },
                 {
                     "name": "SEKARBELA",
-                    "cust": 1932,
+                    "cust": 1939,
                     "months": [
                         223,
                         246,
@@ -9643,14 +9655,14 @@
                         214,
                         271,
                         255,
-                        217
+                        232
                     ]
                 }
             ]
         },
         {
             "kabupaten": "LOMBOK TIMUR",
-            "cust": 16459,
+            "cust": 16511,
             "months": [
                 2152,
                 2139,
@@ -9665,12 +9677,12 @@
                 2129,
                 2251,
                 2349,
-                2093
+                2226
             ],
             "children": [
                 {
                     "name": "MASBAGIK",
-                    "cust": 1644,
+                    "cust": 1650,
                     "months": [
                         203,
                         187,
@@ -9685,12 +9697,12 @@
                         242,
                         231,
                         203,
-                        202
+                        215
                     ]
                 },
                 {
                     "name": "SAKRA",
-                    "cust": 1406,
+                    "cust": 1410,
                     "months": [
                         188,
                         197,
@@ -9705,12 +9717,12 @@
                         166,
                         192,
                         181,
-                        197
+                        211
                     ]
                 },
                 {
                     "name": "PRINGGABAYA",
-                    "cust": 1410,
+                    "cust": 1413,
                     "months": [
                         189,
                         208,
@@ -9725,7 +9737,7 @@
                         180,
                         193,
                         216,
-                        182
+                        188
                     ]
                 },
                 {
@@ -9745,12 +9757,12 @@
                         135,
                         167,
                         158,
-                        149
+                        152
                     ]
                 },
                 {
                     "name": "SIKUR",
-                    "cust": 1021,
+                    "cust": 1025,
                     "months": [
                         126,
                         134,
@@ -9765,12 +9777,12 @@
                         125,
                         134,
                         119,
-                        107
+                        117
                     ]
                 },
                 {
                     "name": "SAKRA BARAT",
-                    "cust": 953,
+                    "cust": 954,
                     "months": [
                         126,
                         111,
@@ -9785,12 +9797,12 @@
                         145,
                         129,
                         154,
-                        109
+                        114
                     ]
                 },
                 {
                     "name": "PRINGGASELA",
-                    "cust": 908,
+                    "cust": 910,
                     "months": [
                         119,
                         116,
@@ -9805,12 +9817,12 @@
                         110,
                         116,
                         122,
-                        120
+                        125
                     ]
                 },
                 {
                     "name": "KERUAK",
-                    "cust": 813,
+                    "cust": 816,
                     "months": [
                         120,
                         90,
@@ -9825,14 +9837,14 @@
                         115,
                         89,
                         140,
-                        98
+                        103
                     ]
                 }
             ]
         },
         {
             "kabupaten": "SUMBAWA",
-            "cust": 9603,
+            "cust": 9631,
             "months": [
                 1271,
                 1261,
@@ -9847,12 +9859,12 @@
                 1359,
                 1516,
                 1561,
-                1286
+                1368
             ],
             "children": [
                 {
                     "name": "SUMBAWA",
-                    "cust": 2093,
+                    "cust": 2099,
                     "months": [
                         297,
                         285,
@@ -9867,7 +9879,7 @@
                         246,
                         288,
                         310,
-                        255
+                        272
                     ]
                 },
                 {
@@ -9887,12 +9899,12 @@
                         100,
                         120,
                         113,
-                        95
+                        100
                     ]
                 },
                 {
                     "name": "LABUHAN BADAS",
-                    "cust": 679,
+                    "cust": 683,
                     "months": [
                         76,
                         93,
@@ -9907,12 +9919,12 @@
                         83,
                         99,
                         109,
-                        73
+                        82
                     ]
                 },
                 {
                     "name": "UNTER IWES",
-                    "cust": 578,
+                    "cust": 579,
                     "months": [
                         72,
                         84,
@@ -9927,12 +9939,12 @@
                         96,
                         97,
                         90,
-                        95
+                        98
                     ]
                 },
                 {
                     "name": "ALAS",
-                    "cust": 720,
+                    "cust": 722,
                     "months": [
                         116,
                         112,
@@ -9947,12 +9959,12 @@
                         138,
                         135,
                         149,
-                        124
+                        129
                     ]
                 },
                 {
                     "name": "MOYO HULU",
-                    "cust": 528,
+                    "cust": 530,
                     "months": [
                         76,
                         65,
@@ -9967,7 +9979,7 @@
                         70,
                         86,
                         82,
-                        63
+                        69
                     ]
                 },
                 {
@@ -9987,12 +9999,12 @@
                         75,
                         66,
                         58,
-                        50
+                        52
                     ]
                 },
                 {
                     "name": "LAPE",
-                    "cust": 415,
+                    "cust": 416,
                     "months": [
                         53,
                         56,
@@ -10007,14 +10019,14 @@
                         45,
                         58,
                         54,
-                        48
+                        50
                     ]
                 }
             ]
         },
         {
             "kabupaten": "BIMA",
-            "cust": 5275,
+            "cust": 5291,
             "months": [
                 555,
                 638,
@@ -10029,12 +10041,12 @@
                 663,
                 714,
                 667,
-                550
+                588
             ],
             "children": [
                 {
                     "name": "WAWO",
-                    "cust": 698,
+                    "cust": 699,
                     "months": [
                         75,
                         96,
@@ -10049,12 +10061,12 @@
                         87,
                         86,
                         76,
-                        67
+                        70
                     ]
                 },
                 {
                     "name": "WOHA",
-                    "cust": 598,
+                    "cust": 600,
                     "months": [
                         72,
                         72,
@@ -10069,7 +10081,7 @@
                         85,
                         93,
                         110,
-                        73
+                        81
                     ]
                 },
                 {
@@ -10089,12 +10101,12 @@
                         64,
                         72,
                         74,
-                        55
+                        58
                     ]
                 },
                 {
                     "name": "BOLO",
-                    "cust": 516,
+                    "cust": 518,
                     "months": [
                         63,
                         54,
@@ -10109,12 +10121,12 @@
                         70,
                         84,
                         58,
-                        55
+                        59
                     ]
                 },
                 {
                     "name": "BELO",
-                    "cust": 435,
+                    "cust": 437,
                     "months": [
                         58,
                         44,
@@ -10129,12 +10141,12 @@
                         53,
                         71,
                         55,
-                        50
+                        55
                     ]
                 },
                 {
                     "name": "SAPE",
-                    "cust": 441,
+                    "cust": 445,
                     "months": [
                         43,
                         51,
@@ -10149,12 +10161,12 @@
                         52,
                         49,
                         42,
-                        39
+                        44
                     ]
                 },
                 {
                     "name": "MONTA",
-                    "cust": 291,
+                    "cust": 292,
                     "months": [
                         30,
                         24,
@@ -10169,12 +10181,12 @@
                         46,
                         53,
                         39,
-                        40
+                        42
                     ]
                 },
                 {
                     "name": "MADAPANGGA",
-                    "cust": 322,
+                    "cust": 324,
                     "months": [
                         24,
                         21,
@@ -10189,14 +10201,14 @@
                         26,
                         22,
                         23,
-                        14
+                        17
                     ]
                 }
             ]
         },
         {
             "kabupaten": "JAKARTA SELATAN",
-            "cust": 2166,
+            "cust": 2179,
             "months": [
                 236,
                 278,
@@ -10211,12 +10223,12 @@
                 1120,
                 328,
                 127,
-                237
+                269
             ],
             "children": [
                 {
                     "name": "SETIABUDI",
-                    "cust": 2131,
+                    "cust": 2144,
                     "months": [
                         231,
                         272,
@@ -10231,7 +10243,7 @@
                         1116,
                         326,
                         124,
-                        234
+                        265
                     ]
                 },
                 {
@@ -10351,7 +10363,7 @@
                         1,
                         1,
                         0,
-                        1
+                        2
                     ]
                 },
                 {
@@ -10378,7 +10390,7 @@
         },
         {
             "kabupaten": "KOTA BIMA",
-            "cust": 4322,
+            "cust": 4328,
             "months": [
                 598,
                 528,
@@ -10393,12 +10405,12 @@
                 566,
                 608,
                 575,
-                484
+                516
             ],
             "children": [
                 {
                     "name": "MPUNDA",
-                    "cust": 1038,
+                    "cust": 1042,
                     "months": [
                         155,
                         107,
@@ -10413,12 +10425,12 @@
                         141,
                         148,
                         135,
-                        119
+                        130
                     ]
                 },
                 {
                     "name": "RASANAE BARAT",
-                    "cust": 1037,
+                    "cust": 1039,
                     "months": [
                         156,
                         130,
@@ -10433,7 +10445,7 @@
                         129,
                         127,
                         135,
-                        121
+                        130
                     ]
                 },
                 {
@@ -10453,7 +10465,7 @@
                         131,
                         155,
                         133,
-                        121
+                        128
                     ]
                 },
                 {
@@ -10473,7 +10485,7 @@
                         116,
                         113,
                         118,
-                        74
+                        78
                     ]
                 },
                 {
@@ -10493,14 +10505,14 @@
                         49,
                         67,
                         54,
-                        50
+                        51
                     ]
                 }
             ]
         },
         {
             "kabupaten": "LOMBOK UTARA",
-            "cust": 4175,
+            "cust": 4181,
             "months": [
                 506,
                 531,
@@ -10515,12 +10527,12 @@
                 594,
                 697,
                 657,
-                580
+                603
             ],
             "children": [
                 {
                     "name": "PEMENANG",
-                    "cust": 975,
+                    "cust": 976,
                     "months": [
                         121,
                         127,
@@ -10535,12 +10547,12 @@
                         133,
                         165,
                         164,
-                        130
+                        133
                     ]
                 },
                 {
                     "name": "TANJUNG",
-                    "cust": 1052,
+                    "cust": 1053,
                     "months": [
                         136,
                         120,
@@ -10555,12 +10567,12 @@
                         151,
                         184,
                         157,
-                        153
+                        157
                     ]
                 },
                 {
                     "name": "BAYAN",
-                    "cust": 865,
+                    "cust": 867,
                     "months": [
                         80,
                         102,
@@ -10575,12 +10587,12 @@
                         122,
                         144,
                         130,
-                        114
+                        121
                     ]
                 },
                 {
                     "name": "GANGGA",
-                    "cust": 741,
+                    "cust": 743,
                     "months": [
                         112,
                         109,
@@ -10595,7 +10607,7 @@
                         117,
                         122,
                         109,
-                        108
+                        112
                     ]
                 },
                 {
@@ -10615,14 +10627,14 @@
                         75,
                         89,
                         100,
-                        76
+                        81
                     ]
                 }
             ]
         },
         {
             "kabupaten": "SUMBAWA BARAT",
-            "cust": 1205,
+            "cust": 1206,
             "months": [
                 178,
                 177,
@@ -10637,7 +10649,7 @@
                 217,
                 143,
                 177,
-                151
+                153
             ],
             "children": [
                 {
@@ -10657,7 +10669,7 @@
                         103,
                         58,
                         82,
-                        58
+                        59
                     ]
                 },
                 {
@@ -10702,7 +10714,7 @@
                 },
                 {
                     "name": "SEKONGKANG",
-                    "cust": 109,
+                    "cust": 110,
                     "months": [
                         11,
                         17,
@@ -10717,7 +10729,7 @@
                         12,
                         11,
                         12,
-                        8
+                        9
                     ]
                 },
                 {
@@ -10805,10 +10817,10 @@
     ],
     "geoKpis": {
         "kabCount": 268,
-        "kecCount": 1018,
+        "kecCount": 1020,
         "topKab": "LOMBOK TENGAH",
-        "topKabRev": 11035916939.0,
-        "topKabCust": 36878
+        "topKabRev": 11074491764.0,
+        "topKabCust": 36948
     },
     "heatmapMonths": [
         "Jan 25",

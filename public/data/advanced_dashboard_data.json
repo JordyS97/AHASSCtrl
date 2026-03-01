@@ -1,30 +1,25 @@
 {
     "kpis": {
-        "revenue": 60992.5,
-        "gp": 24608.26,
-        "units": 259341,
+        "revenue": 61312.21,
+        "gp": 24739.38,
+        "units": 260367,
         "margin": 40.3
     },
     "segmentation": [
         {
             "class": "Group",
-            "revenue": 2072.98,
-            "gp": 876.94,
-            "avg_trx": 279.78
+            "revenue": 2080.33,
+            "gp": 879.83,
+            "avg_trx": 279.51
         },
         {
             "class": "Regular",
-            "revenue": 58919.52,
-            "gp": 23731.31,
-            "avg_trx": 230.48
+            "revenue": 59231.88,
+            "gp": 23859.55,
+            "avg_trx": 230.8
         }
     ],
     "trends": [
-        {
-            "date": "2026-02-13",
-            "Regular": 114.08,
-            "Group": 8.43
-        },
         {
             "date": "2026-02-14",
             "Regular": 104.91,
@@ -82,7 +77,7 @@
         },
         {
             "date": "2026-02-25",
-            "Regular": 81.65,
+            "Regular": 81.84,
             "Group": 0.64
         },
         {
@@ -94,6 +89,11 @@
             "date": "2026-02-27",
             "Regular": 94.77,
             "Group": 10.89
+        },
+        {
+            "date": "2026-02-28",
+            "Regular": 152.31,
+            "Group": 7.34
         }
     ],
     "visitMix": [
@@ -102,36 +102,36 @@
             "AHASS Event yang di Develop oleh AHASS": 609,
             "AHASS Event yang di Develop oleh AHM": 0,
             "AHASS Event yang di Develop oleh MD": 27,
-            "Company (Perusahaan Swasta / BUMN) (C)": 8757,
-            "Door To Door / Home Care / Emergency Road Assistance, AHASS keliling (D)": 6782,
+            "Company (Perusahaan Swasta / BUMN) (C)": 8763,
+            "Door To Door / Home Care / Emergency Road Assistance, AHASS keliling (D)": 6788,
             "Instansi (Pemerintahan / Koperasi) (I)": 27,
-            "Non - Promotion": 19250,
+            "Non - Promotion": 19317,
             "Pit Express Indoor": 649,
             "Pit Express Outdoor": 8,
             "Pos AHASS": 231,
             "Public Area / Join Dealer Activity (P)": 0,
             "Reminder (CE Apps)": 261,
             "Reminder (Call)": 842,
-            "Reminder (SMS)": 742,
-            "Reminder (WA Reminder)": 312
+            "Reminder (SMS)": 771,
+            "Reminder (WA Reminder)": 365
         },
         {
             "Customer Class": "Regular",
-            "AHASS Event yang di Develop oleh AHASS": 35574,
+            "AHASS Event yang di Develop oleh AHASS": 35601,
             "AHASS Event yang di Develop oleh AHM": 72,
-            "AHASS Event yang di Develop oleh MD": 943,
+            "AHASS Event yang di Develop oleh MD": 945,
             "Company (Perusahaan Swasta / BUMN) (C)": 164,
-            "Door To Door / Home Care / Emergency Road Assistance, AHASS keliling (D)": 17987,
+            "Door To Door / Home Care / Emergency Road Assistance, AHASS keliling (D)": 18180,
             "Instansi (Pemerintahan / Koperasi) (I)": 3,
-            "Non - Promotion": 654042,
-            "Pit Express Indoor": 14527,
+            "Non - Promotion": 656484,
+            "Pit Express Indoor": 14599,
             "Pit Express Outdoor": 979,
-            "Pos AHASS": 48346,
+            "Pos AHASS": 48477,
             "Public Area / Join Dealer Activity (P)": 27,
-            "Reminder (CE Apps)": 15924,
-            "Reminder (Call)": 34889,
-            "Reminder (SMS)": 15614,
-            "Reminder (WA Reminder)": 4172
+            "Reminder (CE Apps)": 16021,
+            "Reminder (Call)": 34983,
+            "Reminder (SMS)": 15697,
+            "Reminder (WA Reminder)": 4185
         }
     ],
     "heatmap": [
@@ -194,43 +194,43 @@
     "spending": [
         {
             "class": "Group",
-            "avg_discount": 1725,
-            "avg_faktur": 52123
+            "avg_discount": 1719,
+            "avg_faktur": 52095
         },
         {
             "class": "Regular",
-            "avg_discount": 948,
-            "avg_faktur": 68923
+            "avg_discount": 949,
+            "avg_faktur": 69030
         }
     ],
     "motorProfile": {
         "Regular": {
             "top_models": {
-                "MT0-PCX 160 CBS": 47374,
-                "MD1A-Vario 125 CBS ISS SPION PLUS": 40391,
-                "MC1A-Vario 125 CBS SPION PLUS": 28749,
-                "MM0A-BEAT STREET PLUS": 26708,
-                "LR1-PCX160 CBS": 25294
+                "MT0-PCX 160 CBS": 47674,
+                "MD1A-Vario 125 CBS ISS SPION PLUS": 40466,
+                "MC1A-Vario 125 CBS SPION PLUS": 28791,
+                "MM0A-BEAT STREET PLUS": 26749,
+                "LR1-PCX160 CBS": 25367
             },
-            "avg_km": 8191933,
+            "avg_km": 8210217,
             "avg_year": 2023
         },
         "Group": {
             "top_models": {
                 "MJ0B-BEAT SPORTY CBS SPION AND SCREEN PLUS": 6203,
                 "HK0-New BeAT eSP CBS": 3030,
-                "MJ0C-BEAT SPORTY CBS SPION SCREEN HOOK PLUS": 2874,
+                "MJ0C-BEAT SPORTY CBS SPION SCREEN HOOK PLUS": 2922,
                 "LH2-BEAT SPORTY CBS": 2660,
-                "MJ1A-BEAT SPORTY CBS SPION PLUS": 2523
+                "MJ1A-BEAT SPORTY CBS SPION PLUS": 2560
             },
-            "avg_km": 3843528,
+            "avg_km": 3828003,
             "avg_year": 2023
         }
     },
     "retention": {
         "Regular": {
             "repeat_rate": 63.0,
-            "total_customers": 70029
+            "total_customers": 70167
         },
         "Group": {
             "repeat_rate": 65.0,
@@ -240,94 +240,94 @@
     "geography": [
         {
             "kabupaten": "LOMBOK TENGAH",
-            "Regular": 241528,
+            "Regular": 242284,
             "Group": 684
         },
         {
             "kabupaten": "LOMBOK BARAT",
-            "Regular": 153292,
+            "Regular": 153917,
             "Group": 255
         },
         {
             "kabupaten": "KOTA MATARAM",
-            "Regular": 133738,
-            "Group": 1598
+            "Regular": 134242,
+            "Group": 1607
         },
         {
             "kabupaten": "LOMBOK TIMUR",
-            "Regular": 104930,
+            "Regular": 105398,
             "Group": 107
         },
         {
             "kabupaten": "SUMBAWA",
-            "Regular": 78934,
+            "Regular": 79246,
             "Group": 249
         },
         {
             "kabupaten": "BIMA",
-            "Regular": 37836,
+            "Regular": 37978,
             "Group": 2
         },
         {
             "kabupaten": "KOTA BIMA",
-            "Regular": 32589,
+            "Regular": 32714,
             "Group": 113
         },
         {
             "kabupaten": "JAKARTA SELATAN",
-            "Regular": 311,
-            "Group": 31655
+            "Regular": 313,
+            "Group": 31807
         },
         {
             "kabupaten": "LOMBOK UTARA",
-            "Regular": 29885,
+            "Regular": 29955,
             "Group": 29
         },
         {
             "kabupaten": "SUMBAWA BARAT",
-            "Regular": 9143,
+            "Regular": 9152,
             "Group": 8
         }
     ],
     "staffAllocation": [
         {
             "name": "NASRULLAH",
-            "Regular": 3730.96,
+            "Regular": 3746.35,
             "Group": 350.26
         },
         {
             "name": "ASHABUL KAHFI",
-            "Regular": 2913.94,
+            "Regular": 2931.18,
             "Group": 91.87
         },
         {
             "name": "TAHZUL PAROZI",
-            "Regular": 2886.3,
-            "Group": 113.72
+            "Regular": 2897.13,
+            "Group": 114.59
         },
         {
             "name": "FUADDI",
-            "Regular": 2765.15,
+            "Regular": 2778.37,
             "Group": 57.46
         },
         {
             "name": "MUHAMMAD HASANA",
-            "Regular": 2499.99,
-            "Group": 85.34
+            "Regular": 2510.16,
+            "Group": 85.47
         },
         {
             "name": "OKY RAHMAT IQBA",
-            "Regular": 2461.26,
-            "Group": 102.42
+            "Regular": 2467.85,
+            "Group": 107.34
         },
         {
             "name": "JUMADIM",
-            "Regular": 2475.69,
+            "Regular": 2477.57,
             "Group": 39.54
         },
         {
             "name": "JODI APRILAHADI",
-            "Regular": 1892.81,
+            "Regular": 1902.12,
             "Group": 236.11
         }
     ]
