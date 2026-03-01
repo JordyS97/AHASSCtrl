@@ -1,24 +1,19 @@
 {
     "kpis": {
-        "revenue": 5133.78,
-        "gp": 2091.05,
-        "units": 35649,
-        "margin": 40.7
+        "revenue": 40371.81,
+        "gp": 16295.77,
+        "units": 259341,
+        "margin": 40.4
     },
     "financialFlow": {
-        "faktur": 5093.66,
-        "diskon": 40.12,
-        "ppn": 504.78,
-        "dpp": 4588.88,
-        "cogs": 5133.78,
-        "gp": 2091.05
+        "faktur": 39737.14,
+        "diskon": 634.66,
+        "ppn": 3937.92,
+        "dpp": 35799.23,
+        "cogs": 40371.81,
+        "gp": 16295.77
     },
     "trends": [
-        {
-            "date": "Jan 28",
-            "revenue": 99.22,
-            "gp": 37.93
-        },
         {
             "date": "Jan 29",
             "revenue": 105.13,
@@ -163,79 +158,84 @@
             "date": "Feb 26",
             "revenue": 97.94,
             "gp": 37.09
+        },
+        {
+            "date": "Feb 27",
+            "revenue": 105.66,
+            "gp": 39.49
         }
     ],
     "serviceMix": [
         {
             "name": "Jasa",
-            "value": 1461.71
+            "value": 11379.46
         },
         {
             "name": "Part",
-            "value": 629.34
+            "value": 4916.31
         }
     ],
     "ranking": [
         {
             "id": "01",
-            "name": "I MADE SULASTRA",
-            "units": 3508,
-            "revenue": 577.27
+            "name": "NASRULLAH",
+            "units": 22086,
+            "revenue": 4081.22
         },
         {
             "id": "02",
-            "name": "NASRULLAH",
-            "units": 2730,
-            "revenue": 465.51
+            "name": "ASHABUL KAHFI",
+            "units": 20585,
+            "revenue": 3005.81
         },
         {
             "id": "03",
             "name": "TAHZUL PAROZI",
-            "units": 2621,
-            "revenue": 367.29
+            "units": 18499,
+            "revenue": 3000.02
         },
         {
             "id": "04",
-            "name": "ASHABUL KAHFI",
-            "units": 2848,
-            "revenue": 364.93
+            "name": "FUADDI",
+            "units": 18531,
+            "revenue": 2822.61
         },
         {
             "id": "05",
-            "name": "FUADDI",
-            "units": 2545,
-            "revenue": 354.42
+            "name": "MUHAMMAD HASANAIN",
+            "units": 18957,
+            "revenue": 2585.33
         }
     ],
     "parts": [
         {
             "no": "88888ATS30ML",
             "part": "ATS Oil Additive",
-            "qty": 24092,
+            "qty": 179997,
             "trend": "+0%"
         },
         {
             "no": "082322MBK0LN1",
             "part": "MPX2 10W30 SL 0,8L IDE",
-            "qty": 8445,
+            "qty": 74184,
+            "trend": "+0%"
+        },
+        {
+            "no": "08294M99Z8YN1",
+            "part": "(D) SCOOTER GEAR OIL (120ML) I",
+            "qty": 43035,
             "trend": "+0%"
         },
         {
             "no": "082342MBK0LZ9",
             "part": "MPX2 10W30 SLMB 0,8L FED",
-            "qty": 7016,
+            "qty": 42080,
             "trend": "+0%"
         },
         {
             "no": "082322MBK3LN1",
             "part": "MPX2 10W30 SLMB 0,65L IDE E",
-            "qty": 7006,
-            "trend": "+0%"
-        },
-        {
-            "no": "082342MBK0LZ0",
-            "part": "SPX2 10W30 SLMB 0,8L REP",
-            "qty": 4882,
+            "qty": 31188,
             "trend": "+0%"
         }
     ]

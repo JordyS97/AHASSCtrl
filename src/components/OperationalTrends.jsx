@@ -3,10 +3,9 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import { useData } from '../DataContext';
 
 const OperationalTrends = () => {
-    const { datasets } = useData();
-    const dashboardData = datasets.dashboard;
-    if (!dashboardData?.trends) return <div className="glass-panel" style={{ height: '400px', color: 'var(--text-muted)', padding: '2rem' }}>Loading...</div>;
-    const data = dashboardData.trends;
+    const { dailyTrends, loading } = useData();
+    if (loading || !dailyTrends) return <div className="glass-panel" style={{ height: '400px', color: 'var(--text-muted)', padding: '2rem' }}>Loading...</div>;
+    const data = dailyTrends;
     return (
         <div className="glass-panel" style={{ height: '400px', display: 'flex', flexDirection: 'column' }}>
             <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>

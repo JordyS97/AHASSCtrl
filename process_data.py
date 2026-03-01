@@ -13,7 +13,7 @@ SOURCE_DIRS = [
     r"D:\01. NTB\H23_Data Nota Service PowerBI\2025",
     r"D:\01. NTB\H23_Data Nota Service PowerBI\2026"
 ]
-OUTPUT_DIR = r"d:\AntiGravity\Project04\data"
+OUTPUT_DIR = r"d:\AntiGravity\Project04\public\data"
 
 # Supabase config
 SUPABASE_URL = os.getenv('VITE_SUPABASE_URL', '')
@@ -180,6 +180,45 @@ def process_files():
 
     print("Pre-aggregating Staff Performance dashboard data...")
     generate_staff_performance_json(master_df)
+
+    print("Generating Granular Daily Metrics for frontend filters...")
+    generate_daily_metrics_json(master_df)
+
+def generate_daily_metrics_json(df):
+    """Generates granular daily metrics for frontend dynamic filtering."""
+    df['DateObj'] = pd.to_datetime(df['Tgl Faktur'], format='%Y-%m-%d', errors='coerce')
+    valid_df = df.dropna(subset=['DateObj']).copy()
+    
+    # Aggregating by Date, CM SAP (Workshop), and Customer Class
+    daily_agg = valid_df.groupby(['Tgl Faktur', 'CM SAP', 'Customer Class']).agg({
+        'Revenue': 'sum',
+        'Gross Profit': 'sum',
+        'No PKB': 'nunique',
+        'Diskon': 'sum',
+        'Total Faktur': 'sum'
+    }).reset_index()
+    
+    # Renaming No PKB to unit_entry for consistency
+    daily_agg.rename(columns={'No PKB': 'unit_entry'}, inplace=True)
+    
+    daily_metrics = []
+    for _, r in daily_agg.iterrows():
+        if r['Revenue'] == 0 and r['unit_entry'] == 0: continue
+        daily_metrics.append({
+            "d": str(r['Tgl Faktur']),
+            "w": str(r['CM SAP']),
+            "c": str(r['Customer Class']),
+            "r": float(r['Revenue']),
+            "g": float(r['Gross Profit']),
+            "u": int(r['unit_entry']),
+            "s": float(r['Diskon']),
+            "f": float(r['Total Faktur'])
+        })
+        
+    output_path = os.path.join(OUTPUT_DIR, "daily_metrics.json")
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(daily_metrics, f, indent=None) # Compressed JSON
+    print(f"Daily Metrics JSON generated at: {output_path} ({len(daily_metrics)} records)")
 
 def generate_overview_dashboard_json(df):
     """Generates the Overview Dashboard JSON (dashboard_data.json)."""
@@ -980,6 +1019,7 @@ def upload_to_supabase():
         'revenue_dashboard_data.json': 'revenue',
         'customer_intel_data.json': 'customerIntel',
         'staff_performance_data.json': 'staffPerformance',
+        'daily_metrics.json': 'dailyMetrics',
     }
 
     for filename, key in file_key_map.items():

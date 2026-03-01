@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.css';
 import { AuthProvider, useAuth } from './AuthContext';
-import { DataProvider } from './DataContext';
+import { DataProvider, useData } from './DataContext';
 import {
   LayoutDashboard,
   TrendingUp,
@@ -26,6 +26,8 @@ import OperationalTrends from './components/OperationalTrends';
 import ServiceMix from './components/ServiceMix';
 import ResourcePerformance from './components/ResourcePerformance';
 import PartsFavorites from './components/PartsFavorites';
+import DateFilter from './components/shared/DateFilter';
+import UnitEntryTrend from './components/UnitEntryTrend';
 
 // Revenue Trend Expansion
 import RevenueDashboard from './components/RevenueDashboard';
@@ -44,6 +46,7 @@ import AdminPanel from './components/AdminPanel';
 
 function AppContent() {
   const { user, profile, isAdmin, isApproved, signOut, loading } = useAuth();
+  const { dateRange, setDateRange } = useData();
   const [activeTab, setActiveTab] = useState('overview');
 
   // Loading state
@@ -126,147 +129,152 @@ function AppContent() {
   }
 
   return (
-    <DataProvider>
-      <div className="dashboard-layout">
-        {/* Sidebar */}
-        <aside className="sidebar">
-          <div className="logo">
-            <div style={{ width: 32, height: 32, background: 'var(--accent-cyan)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 'bold' }}>AH</div>
-            <span>AHASS <span className="text-cyan">CTRL</span></span>
-          </div>
+    <div className="dashboard-layout">
+      {/* Sidebar */}
+      <aside className="sidebar">
+        <div className="logo">
+          <div style={{ width: 32, height: 32, background: 'var(--accent-cyan)', borderRadius: 8, display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#000', fontWeight: 'bold' }}>AH</div>
+          <span>AHASS <span className="text-cyan">CTRL</span></span>
+        </div>
 
-          <nav style={{ display: 'flex', flexDirection: 'column', gap: '2rem', flex: 1 }}>
-            <div>
-              <div className="panel-subtitle" style={{ fontSize: '0.7rem', letterSpacing: 1, textTransform: 'uppercase' }}>OVERVIEW</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <a href="#"
-                  onClick={() => setActiveTab('overview')}
-                  style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'overview' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
-                  <LayoutDashboard size={18} /> Dashboard
-                </a>
-                <a href="#"
-                  onClick={() => setActiveTab('revenue')}
-                  style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'revenue' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
-                  <TrendingUp size={18} /> Revenue Trend
-                </a>
-                <a href="#"
-                  onClick={() => setActiveTab('intel')}
-                  style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'intel' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
-                  <Users size={18} /> Customer Intel
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div className="panel-subtitle" style={{ fontSize: '0.7rem', letterSpacing: 1, textTransform: 'uppercase' }}>OPERATIONS</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-                  <Briefcase size={18} /> Service Orders
-                </a>
-                <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
-                  <Wrench size={18} /> Parts & Materials
-                </a>
-                <a href="#"
-                  onClick={() => setActiveTab('staff')}
-                  style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'staff' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
-                  <UserCircle size={18} /> Staff Performance
-                </a>
-              </div>
-            </div>
-
-            <div>
-              <div className="panel-subtitle" style={{ fontSize: '0.7rem', letterSpacing: 1, textTransform: 'uppercase' }}>SETTINGS</div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                {isAdmin && (
-                  <a href="#"
-                    onClick={() => setActiveTab('admin')}
-                    style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'admin' ? 'var(--accent-purple)' : 'var(--text-muted)', textDecoration: 'none' }}>
-                    <Shield size={18} /> Admin Panel
-                  </a>
-                )}
-                <a href="#"
-                  onClick={() => setActiveTab('upload')}
-                  style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'upload' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
-                  <Upload size={18} /> Data Upload
-                </a>
-              </div>
-            </div>
-          </nav>
-
-          {/* User info + Logout at bottom */}
-          <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1rem', marginTop: 'auto' }}>
-            <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.3rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-              {user.email}
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-              <span style={{
-                fontSize: '0.7rem', padding: '0.15rem 0.5rem', borderRadius: '4px',
-                background: isAdmin ? 'rgba(170, 80, 255, 0.15)' : 'rgba(0, 242, 254, 0.1)',
-                color: isAdmin ? 'var(--accent-purple)' : 'var(--accent-cyan)',
-                fontWeight: 600
-              }}>
-                {isAdmin ? '👑 Admin' : 'User'}
-              </span>
-              <button onClick={signOut} style={{
-                background: 'none', border: 'none', color: 'var(--text-muted)',
-                cursor: 'pointer', padding: '0.3rem', display: 'flex', alignItems: 'center'
-              }} title="Sign out">
-                <LogOut size={16} />
-              </button>
+        <nav style={{ display: 'flex', flexDirection: 'column', gap: '2rem', flex: 1 }}>
+          <div>
+            <div className="panel-subtitle" style={{ fontSize: '0.7rem', letterSpacing: 1, textTransform: 'uppercase' }}>OVERVIEW</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <a href="#"
+                onClick={() => setActiveTab('overview')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'overview' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <LayoutDashboard size={18} /> Dashboard
+              </a>
+              <a href="#"
+                onClick={() => setActiveTab('revenue')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'revenue' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <TrendingUp size={18} /> Revenue Trend
+              </a>
+              <a href="#"
+                onClick={() => setActiveTab('intel')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'intel' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <Users size={18} /> Customer Intel
+              </a>
             </div>
           </div>
-        </aside>
 
-        {/* Main Content Area */}
-        <main className="main-content">
-          {activeTab !== 'revenue' && activeTab !== 'staff' && activeTab !== 'admin' && (
-            <header className="top-header">
-              <div>
-                <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Workshop Performance <span className="text-cyan">_</span></h1>
-                <p className="panel-subtitle">AHASS CTRL - Operational Intelligence Dashboard</p>
-              </div>
-              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                <div className="glass-panel" style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                  <div style={{ width: 8, height: 8, background: 'var(--accent-green)', borderRadius: '50%' }}></div>
-                  LIVE
-                </div>
-                <div className="glass-panel" style={{ padding: '0.5rem 1rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
-                  Last sync: Just now
-                </div>
-              </div>
-            </header>
-          )}
+          <div>
+            <div className="panel-subtitle" style={{ fontSize: '0.7rem', letterSpacing: 1, textTransform: 'uppercase' }}>OPERATIONS</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
+                <Briefcase size={18} /> Service Orders
+              </a>
+              <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'var(--text-muted)', textDecoration: 'none' }}>
+                <Wrench size={18} /> Parts & Materials
+              </a>
+              <a href="#"
+                onClick={() => setActiveTab('staff')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'staff' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <UserCircle size={18} /> Staff Performance
+              </a>
+            </div>
+          </div>
 
-          {activeTab === 'overview' && (
-            <>
-              <KpiCards />
-              <div className="charts-grid">
-                <OperationalTrends />
-                <FinancialFlow />
-              </div>
-              <div className="charts-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
-                <ServiceMix />
-                <ResourcePerformance />
-                <PartsFavorites />
-              </div>
-            </>
-          )}
+          <div>
+            <div className="panel-subtitle" style={{ fontSize: '0.7rem', letterSpacing: 1, textTransform: 'uppercase' }}>SETTINGS</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {isAdmin && (
+                <a href="#"
+                  onClick={() => setActiveTab('admin')}
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'admin' ? 'var(--accent-purple)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                  <Shield size={18} /> Admin Panel
+                </a>
+              )}
+              <a href="#"
+                onClick={() => setActiveTab('upload')}
+                style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: activeTab === 'upload' ? 'var(--accent-cyan)' : 'var(--text-muted)', textDecoration: 'none' }}>
+                <Upload size={18} /> Data Upload
+              </a>
+            </div>
+          </div>
+        </nav>
 
-          {activeTab === 'intel' && <CustomerIntelDashboard />}
-          {activeTab === 'revenue' && <RevenueDashboard />}
-          {activeTab === 'staff' && <StaffPerformanceDashboard />}
-          {activeTab === 'upload' && <DataUpload />}
-          {activeTab === 'admin' && <AdminPanel />}
-        </main>
-      </div>
-    </DataProvider>
+        {/* User info + Logout at bottom */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1rem', marginTop: 'auto' }}>
+          <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.3rem', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+            {user.email}
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+            <span style={{
+              fontSize: '0.7rem', padding: '0.15rem 0.5rem', borderRadius: '4px',
+              background: isAdmin ? 'rgba(170, 80, 255, 0.15)' : 'rgba(0, 242, 254, 0.1)',
+              color: isAdmin ? 'var(--accent-purple)' : 'var(--accent-cyan)',
+              fontWeight: 600
+            }}>
+              {isAdmin ? '👑 Admin' : 'User'}
+            </span>
+            <button onClick={signOut} style={{
+              background: 'none', border: 'none', color: 'var(--text-muted)',
+              cursor: 'pointer', padding: '0.3rem', display: 'flex', alignItems: 'center'
+            }} title="Sign out">
+              <LogOut size={16} />
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      {/* Main Content Area */}
+      <main className="main-content">
+        {activeTab !== 'revenue' && activeTab !== 'staff' && activeTab !== 'admin' && (
+          <header className="top-header">
+            <div>
+              <h1 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Workshop Performance <span className="text-cyan">_</span></h1>
+              <p className="panel-subtitle">AHASS CTRL - Operational Intelligence Dashboard</p>
+            </div>
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+              <DateFilter
+                startDate={dateRange.startDate}
+                endDate={dateRange.endDate}
+                onUpdate={setDateRange}
+              />
+              <div className="glass-panel" style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+                <div style={{ width: 8, height: 8, background: 'var(--accent-green)', borderRadius: '50%' }}></div>
+                LIVE
+              </div>
+            </div>
+          </header>
+        )}
+
+        {activeTab === 'overview' && (
+          <>
+            <KpiCards />
+            <div className="charts-grid" style={{ gridTemplateColumns: '1.5fr 1fr' }}>
+              <OperationalTrends />
+              <FinancialFlow />
+            </div>
+            <div style={{ marginTop: '1.5rem' }}>
+              <UnitEntryTrend />
+            </div>
+            <div className="charts-grid" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
+              <ServiceMix />
+              <ResourcePerformance />
+              <PartsFavorites />
+            </div>
+          </>
+        )}
+
+        {activeTab === 'intel' && <CustomerIntelDashboard />}
+        {activeTab === 'revenue' && <RevenueDashboard />}
+        {activeTab === 'staff' && <StaffPerformanceDashboard />}
+        {activeTab === 'upload' && <DataUpload />}
+        {activeTab === 'admin' && <AdminPanel />}
+      </main>
+    </div>
   );
 }
 
 function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <DataProvider>
+        <AppContent />
+      </DataProvider>
     </AuthProvider>
   );
 }
